@@ -1,14 +1,13 @@
-import { BrowserRouter, Router } from 'react-router-dom';
 import './App.css';
-import Header from './_component/common/Header';
-import Footer from './_component/common/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 
