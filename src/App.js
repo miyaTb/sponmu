@@ -1,4 +1,6 @@
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -11,6 +13,7 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <div className="App">
+      <Header />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -24,8 +27,8 @@ function App() {
         </Routes>
       </Router>
       <p>sponmu</p>
+      <Footer />
     </div>
-    
   );
 }
 
