@@ -1,34 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import headerLogo from '../../assets/headerLogo.png';
 
 export default function Header() {
-    const [isOpen, setIsopen] = useState(false);
-
-    const handleToggle = () => {
-        setIsopen(!isOpen);
-    }
   return (
     <header>
-        <div className="header">
-            <h1><img src="#" alt="sponmu" /></h1>
-            <ul className='headerUl'>
-                <li><a href="#"><img src="#" alt="通知" /></a></li>
-                <li><a href="#"><img src="#" alt="ショップかご" /></a></li>
-                <li><a href="#"><img src="#" alt="ユーザー" /></a></li>
-            </ul>
-        </div>
-        <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={handleToggle}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        <nav className={`menu ${isOpen ? 'open' : ''}`}>
-            <ul>
-                <li><a href="">rrr</a></li>
-                <li><a href="">rrrr</a></li>
-                <li><a href="">rrr</a></li>
-                <li><a href="">rrrr</a></li>
-            </ul>
-        </nav>
+      <div className="header">
+        <h1><img src={headerLogo} alt="sponmu" /></h1>
+        <ul className="headerUl">
+          <li><a href="/products">商品一覧</a></li>
+          <li><a href="#">レシピ</a></li> {/* 正しいパスに修正 */}
+          <li><a href="#"><img src="" alt="かご" /></a></li> {/* 正しいパスに修正 */}
+        </ul>
+      </div>
     </header>
-  )
+  );
 }

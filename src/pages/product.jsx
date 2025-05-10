@@ -2,7 +2,7 @@ import React from 'react';
 
 // 商品データの配列 (型定義なし)
 const products = [
-  { id: 1, name: '商品A', imageUrl: 'https://via.placeholder.com/150/FF0000' },
+  { id: 1, name: '商品A', imageUrl: 'https://via.placeholder.com/150/FF0000' ,},
   { id: 2, name: '商品B', imageUrl: 'https://via.placeholder.com/150/00FF00' },
   { id: 3, name: '商品C', imageUrl: 'https://via.placeholder.com/150/0000FF' },
   { id: 4, name: '商品D', imageUrl: 'https://via.placeholder.com/150/FFFF00' },

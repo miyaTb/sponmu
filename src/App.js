@@ -22,7 +22,6 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           <Route path="/brand" element={<Brand />} />
           <Route path="/column" element={<Column />} />
-          {/* 想定外アドレスは NotFound ページへ */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
