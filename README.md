@@ -1,3 +1,75 @@
+<div id="top"></div>
+
+## 使用技術一覧
+
+### マークアップ言語
+
+<p style="display: inline">
+    <img src="https://img.shields.io/badge/-HTML-white?style=for-the-badge&logo=html5&logoColor=#E34F26">
+    <img src="https://img.shields.io/badge/-CSS-grey?style=for-the-badge&logo=css&logoColor=#663399">
+</p>
+
+### フロントエンドフレームワーク
+
+<p style="display: inline">
+    <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+</p>
+
+### フロントエンド言語
+
+<p style="display: inline">
+    <img src="https://img.shields.io/badge/-JavaScript-20232A?style=for-the-badge&logo=javascript&logoColor=#F7DF1E">
+</p>
+
+## ブランチについて
+
+作品全体は`main`ブランチで管理します<br>
+`main`からブランチを切って作業しましょう<br>
+
+### ブランチの命名規則
+
+`feature/名前/何をするか`<br>
+例）README.md の作成 `feature/name/create-readme`
+
+### コミットメッセージの書き方
+
+強制ではないですが、こんな感じに書くとまとまります<br>
+| commit | 内容 |
+| ---- | ---- |
+| fix | バグ修正 |
+| add | 新規（ファイル）機能追加
+| update | 機能修正（バグではない）
+| remove | 削除 |
+
+例）ヘッダーの作成 `add/ヘッダーの作成`
+
+引用資料：[Git のコミットメッセージの書き方](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+
+## プルリクエストについて
+
+自分が作ったものに修正点がないかほかの人に確認を依頼します<br>
+
+### PR のコメントとほしいもの
+
+- どんなことを実装したか（画像添付あるととても親切）
+
+#### 以下は今回はなくてよい
+
+- テストケース
+- 技術要件
+
+### レビューするときの手順
+
+#### 確認用コマンド
+
+1. リポジトリのクローン<br>`git clone -b {該当ブランチ} https://github.com/miyaTb/sponmu`
+2. 作業ディレクトリへ移動
+3. 必要なパッケージのインストール<br>`npm ci`
+4. 開発サーバーの起動<br>`npm start`
+
+<br>
+<br>
+以下もとからあった内容です
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
