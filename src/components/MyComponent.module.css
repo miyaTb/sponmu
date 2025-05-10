@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+/* ********************************************
+// --- リセット ---
+// ※ブラウザのデフォルトCSSをリセット
+// ***************************************** */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+html {
+  font-size: 16px;
+}
+body {
+  /* font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+    "メイリオ", Meiryo, sans-serif; */
+  font-family: sans-serif;
+}
+header,
+footer,
+nav,
+menu,
+article,
+aside,
+section,
+details,
+figcaption,
+figure {
+  display: block;
+}
+ul,
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+img {
+  vertical-align: bottom;
+}
+a img {
+  border: none;
+}
+strong {
+  font-weight: normal;
+}
+i {
+  font-style: normal;
+}
+
+/* ********************************************
+// Button.jsx
+// ***************************************** */
+
+.button {
+  position: relative;
+  width: 100px;
+  height: 48px;
+  border: solid 4px;
+  border-radius: 30px;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.25);
+}
+
+.button a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  font-weight: 700;
+}
+
+/* ボタンの色を管理するclass */
+.btnGreen {
+  border-color: #fff;
+  color: #fff;
+  background-color: #007c3c;
+}
+
+.btnWhite {
+  border-color: #007c3c;
+  color: #007c3c;
+  background-color: #fff;
+}
+
+.btnYellow {
+  border-color: #007c3c;
+  color: #007c3c;
+  background-color: #fff50a;
+}
+
+/* ********************************************
+// Card.jsx
+// ***************************************** */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+  width: 330px;
+  height: 350px;
+  padding: 20px 25px;
+  background-color: #d6f8e6;
+  border: 5px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+  /* transition: transform 0.2s; */
+}
+
+.cardImage {
+  /* width: calc(100% - 50px); */
+  width: 280px;
+  height: 180px;
+  background-color: #fff;
+  object-fit: cover;
+}
+
+.cardContent {
+  width: 100%;
+  /* padding: 16px; */
+  overflow-wrap: anywhere;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+/* ********************************************
+// NewsHeading.jsx
+// ***************************************** */
+
+.newsWrapper {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  font-weight: 700;
+}
+
+.newsDate {
+  color: #007c3c;
+}
+
+.newsTitle {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.newsTitle:hover {
+  color: #007c3c;
+  cursor: pointer;
+}
+
+/* ********************************************
+// NewsHeading.jsx
+// ***************************************** */
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.newsListItem {
+  padding: 0 20px;
+  /* padding-bottom: 20px; */
+  border-bottom: 3px dotted #007c3c;
+}
+
+/* ********************************************
+// SectionTitle.jsx
+// ***************************************** */
+.sectionTitleWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: auto;
+  gap: 15px;
+  margin: 40px 0;
+  /* text-align: left; */
+}
+
+.title {
+  color: #000000;
+  font-size: 34px;
+}
+
+.subtitle {
+  color: #007c3c;
+  font-size: 14px;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

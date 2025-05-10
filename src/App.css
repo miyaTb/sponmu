@@ -1,1 +1,91 @@
+/* ********************************************
+// Home.js
+// ***************************************** */
 
+/* Hero */
+.hero {
+  text-align: center;
+}
+
+.hero-title {
+  color: #007c3c;
+  font-size: 1.75rem;
+}
+
+.hero-title::after {
+  content: "・・・・";
+  display: block;
+  margin-top: 2rem;
+}
+
+.hero-description {
+  margin-top: 50px;
+  line-height: 3rem;
+}
+
+/* Ranking */
+.ranking {
+  padding: 100px 0;
+  background: rgba(255, 245, 10, 0.4);
+}
+
+/* Commitment */
+.commitment {
+  /* background-color: grey; */
+}
+
+.commitment-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 85px;
+}
+
+.commitment-right {
+  text-align: right;
+}
+
+.commitment-image {
+  width: 600px;
+  height: 424px;
+  background-color: aqua;
+}
+
+.image-right {
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+
+.image-left {
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+.commitment-title {
+  color: #007c3c;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+.commitment-description {
+  width: 536px;
+  line-height: 4rem;
+}
+
+/* Recipe */
+.recipe {
+  margin: 0 auto;
+  background-color: #fff50a;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  justify-content: center;
+}
+
+/* News */
+.news {
+  margin-bottom: 295px;
+}
