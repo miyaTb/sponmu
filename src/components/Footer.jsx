@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import footerLogo from '../assets/footerLogo.png';
 
 export default function footer() {
   return (
     <footer>
         <div className='footerText'>
-            <img src="" alt="sponmu" />
+            <img src={footerLogo} alt="sponmu" />
             <p>〒000-0000<br/>
             aaaaaaaaaaa
             </p>
