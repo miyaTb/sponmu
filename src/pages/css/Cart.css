@@ -1,0 +1,131 @@
+.cart {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+.cart__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.cart__subtitle {
+  color: #007C3C;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.cart__content {
+  display: flex;
+  gap: 2rem;
+}
+.cart__items {
+  flex: 2;
+}
+.cart__summary {
+  flex: 1;
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  border-bottom: 3px dotted #007C3C;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.cart-item__content {
+  display: flex;
+  align-items: center;
+}
+.cart-item__image {
+  width: 180px;
+  height: 150px;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin-right: 1rem;
+  border: 5px solid black;
+}
+.cart-item__details {
+  flex: 1;
+}
+.cart-item__name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.cart-item__price {
+  color: #007C3C;
+}
+.cart-item__price--tax {
+  font-size: 0.75rem;
+}
+.cart-item__actions {
+  text-align: right;
+}
+.cart-item__button {
+  border: 1px solid #007C3C;
+  color: #007C3C;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+}
+.cart-item__remove {
+  font-size: 0.75rem;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.recently-viewed {
+  margin-top: 2rem;
+}
+.recently-viewed__title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.recently-viewed__list {
+  display: flex;
+  gap: 1rem;
+}
+.recently-viewed__image {
+  width: 292px;
+  height: 250px;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  border: 5px solid black;
+}
+.recently-viewed__name {
+  font-weight: bold;
+}
+.recently-viewed__price {
+  color: #007C3C;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.cart-summary {
+  background-color: rgba(255, 245, 10, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+.cart-summary__label {
+  font-size: 0.875rem;
+}
+.cart-summary__total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.cart-summary__note {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.cart-summary__button {
+  background-color: #007C3C;
+  color: white;
+  width: 260px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=Cart.css.map */

@@ -7,6 +7,8 @@ import Product from './pages/Product';
 import Brand from './pages/Brand';
 import Column from './pages/Column';
 import NotFound from './pages/NotFound';
+import Cart from './pages/Cart';
+import CartForm from './pages/CartForm';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           <Route path="/brand" element={<Brand />} />
           <Route path="/column" element={<Column />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/form" element={<CartForm />} />
           {/* 想定外アドレスは NotFound ページへ */}
           <Route path="*" element={<NotFound />} />
         </Routes>

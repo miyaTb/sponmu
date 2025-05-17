@@ -1,0 +1,194 @@
+// カラー変数
+$sponmu-green: #007C3C;
+$sponmu-yellow: #FFF50A;
+$sponmu-gray: #808080;
+
+.cart-form {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: auto;
+  justify-content: center;
+
+  &__main {
+    max-width: 600px;
+    flex:1;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__subtitle {
+    color: $sponmu-green;
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    margin-top: 1rem;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 1rem;
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 2px solid $sponmu-green;
+      border-radius: 30px;
+      background: white;
+      font-weight: bold;
+    }
+  }
+
+  &__fieldset {
+    margin-bottom: 2rem;
+    border: none;
+    padding: 0;
+  }
+
+  &__legend {
+    margin-bottom: 1rem;
+  }
+
+  &__zipcode-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.25rem;
+  }
+
+  &__input--zipcode {
+    flex: 1;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: $sponmu-green;
+    border: 2px solid $sponmu-green;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #e8f5e0;
+    }
+  }
+
+  &__submit {
+    display: block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: $sponmu-green;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &__sidebar {
+    background-color: rgba($sponmu-yellow,0.2);;
+    padding: 1.5rem;
+    border-radius: 30px;
+    max-width: 300px;
+  }
+
+  &__item-list {
+    border-bottom: 1px dotted $sponmu-gray;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item-image {
+    width: 48px;
+    height: 48px;
+    background-color: $sponmu-gray;
+    border-radius: 30px;
+  }
+
+  &__item-name {
+    font-weight: bold;
+  }
+
+  &__item-price {
+    font-size: 0.875rem;
+    color: $sponmu-green;
+  }
+
+  &__coupon {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__summary {
+    font-size: 0.875rem;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__note {
+    font-size: 0.75rem;
+    color: $sponmu-gray;
+  }
+
+  &__payment-toggle {
+    border: 2px solid $sponmu-green;
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    color: $sponmu-green;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #f1fdf1;
+    }
+  }
+
+  &__payment-options {
+    background-color: #d9f2dc;
+    border: 2px solid $sponmu-green;
+    border-radius: 30px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .cart-form__radio {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+
+      input {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+
+

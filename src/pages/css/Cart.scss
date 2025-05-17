@@ -1,0 +1,162 @@
+$sponmu-green:#007C3C;
+$sponmu-yellow:#FFF50A;
+$sponmu-gray:#808080;
+.cart {
+  padding: 2rem;
+  font-family: sans-serif;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: $sponmu-green;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__items {
+    flex: 2;
+  }
+
+  &__summary {
+    flex: 1;
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
+  }
+}
+
+.cart-item {
+  border-bottom: 3px dotted $sponmu-green;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    width: 180px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-right: 1rem;
+    border: 5px solid black;
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    color: $sponmu-green;
+
+    &--tax {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__actions {
+    text-align: right;
+  }
+
+  &__button {
+    border: 1px solid $sponmu-green;
+    color: $sponmu-green;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+  }
+
+  &__remove {
+    font-size: 0.75rem;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.recently-viewed {
+  margin-top: 2rem;
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__item {
+  }
+
+  &__image {
+    width: 292px;
+    height: 250px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    border: 5px solid black;
+
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__price {
+    color: $sponmu-green;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+}
+
+.cart-summary {
+  background-color: rgba($sponmu-yellow,0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+
+
+  &__label {
+    font-size: 0.875rem;
+  }
+
+  &__total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__note {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    background-color: $sponmu-green;
+    color: white;
+    width: 260px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+}
