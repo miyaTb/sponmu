@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../src/App.css'
+import '../../src/App.css';
 
-function ItemBox({ imageUrl, title, description, onClick }) {
+function ItemBox({ imageUrl, title, price, onClick }) {
   return (
-    <div className='itemBox' onClick={onClick}>
-      {imageUrl && <img src={imageUrl} alt={title} style={{ maxWidth: '100%', height: 'auto' }} />}
-      <h3 style={{ fontSize:'32px' }}>{title}</h3>
-      <p>{description}</p>
+    <div className='ItemBox'  onClick={onClick}>
+      <img src={imageUrl} alt={title} />
+      <h3>{title}</h3>
+      <p>{price}</p>
     </div>
   );
 }
