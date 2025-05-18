@@ -1,25 +1,23 @@
-// pages/productList.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProducts from '../hooks/productBox';
-import ItemBox from '../components/ItemBox'; // 汎用的な箱コンポーネントをインポート
+import ItemBox from '../components/ItemBox';
 
 function ProductListPage() {
   const { products } = useProducts();
 
   return (
-    <div>
-      <h1>Product List</h1>
-      <h2>商品一覧</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {products.map((product) => (
+    <div className='ProductItem'>
+      {products.map((product) => (
+        <Link key={product.id} to={`/products/${product.id}`}>
           <ItemBox
-            key={product.id}
+            id={product.id}
             imageUrl={product.imageUrl}
             title={product.name}
-            description={`¥ ${product.description}(税込)`} 
+            price={`¥ ${product.price}(税込)`}
           />
-        ))}
-      </div>
+        </Link>
+      ))}
     </div>
   );
 }
