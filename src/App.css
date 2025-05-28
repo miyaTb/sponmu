@@ -98,12 +98,20 @@ h2{
   }
   .ItemBox img{
     height: 270px;
+    object-fit: cover;
+
+  }
+  .ItemBox:hover{
+    img{
+      transform: scale(1.05);
+      transition:.3s
+    }
+  }
+  .itemImageWrapper{
+    height: 270px;
     border: 5px solid #000000;
     border-radius: 20px;
-    object-fit: cover;
-  }
-  .ItemBox img:hover{
-    
+    overflow: hidden;
   }
   .ItemBox h3{
     display: inline-block;
@@ -159,19 +167,19 @@ h2{
     border-bottom: #007C3C dotted 3px;
     color: #808080;
   }
-  .ProductResip{
+  .ProductRecipe{
     margin-top: 40px;
   }
-  .ProductResip h3{
+  .ProductRecipe h3{
     font-size: 36px;
   }
-  .resip{
+  .recipeMenu{
     display: flex;
     justify-content: start;
     gap: 30px;
     margin-top: 30px;
   }
-  .resip img{
+  .recipeMenu img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -204,6 +212,18 @@ h2{
   }
   .FreeShipping a{
     border-bottom: #007C3C 1px solid;
+    display: inline-block;
+    margin-left: 21px;
+  }
+  .FreeShipping p:before{
+    content: "";
+    background: url("./assets/arrow.png") no-repeat; 
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    margin-right: 5px;
   }
   .ProductMain{
     padding-bottom: 60px;
@@ -214,6 +234,9 @@ h2{
     display: inline-block;
     margin: 60px 0 30px;
   }
-
+  .ProductText p{
+    display: block;
+    margin-bottom: 30px;
+  }
 
 

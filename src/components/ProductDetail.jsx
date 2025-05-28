@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../src/App.css';
 
-function ProductDetail({ imageUrl, title,catchcopy, description,price, material,amount,method,date,arerugen, onClick }) {
+function ProductDetail({ imageUrl, title, catchcopy, description ,price, material,amount,method,date,arerugen, onClick }) {
     return (
             <div className='Product'>
                 <div className='ProductLeft'>
                     <img src={imageUrl} alt={title}/>
                     <div className='ProductImage'>
-                        <img />
-                        <img />
+                        <img src={imageUrl} alt=""/>
+                        <img src={imageUrl} alt=""/>
                     </div>
                     <p className='ProductInfo'>
                         <span>■ 商品情報</span>
@@ -18,17 +18,17 @@ function ProductDetail({ imageUrl, title,catchcopy, description,price, material,
                         <span>{date}</span>
                         <span>{arerugen}</span>
                     </p>
-                    <div className='ProductResip'>
+                    <div className='ProductRecipe'>
                         <h3>おすすめの食べ方</h3>
-                        <div className='resip'>
-                            <img/>
-                            <img/>
+                        <div className='recipeMenu'>
+                            <img src={imageUrl} alt=""/>
+                            <img src={imageUrl} alt=""/>
                         </div>
                     </div>
                 </div>
                 <div className='ProductRight'>
                     <div className='ProductMain'>
-                        <h2>{title}</h2>
+                        <h2 dangerouslySetInnerHTML={{ __html: title }} />
                         <p className='ProductPrice'>{price}</p>
                         <div className='ProductButton'>
                             <button>+1</button>
@@ -43,8 +43,8 @@ function ProductDetail({ imageUrl, title,catchcopy, description,price, material,
                         </p>
                     </div>
                     <div className='ProductText'>
-                        <h3>{catchcopy}</h3>
-                        <p dangerouslySetInnerHTML={{ __html: {description} }} />
+                        <h3 dangerouslySetInnerHTML={{ __html: catchcopy }} />
+                        <div dangerouslySetInnerHTML={{ __html: description }} />
                     </div>
                 </div>
             </div>

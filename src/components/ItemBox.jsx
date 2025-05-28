@@ -4,7 +4,9 @@ import '../../src/App.css';
 function ItemBox({ imageUrl, title, price, onClick }) {
   return (
     <div className='ItemBox'  onClick={onClick}>
-      <img src={imageUrl} alt={title} />
+      <div className='itemImageWrapper'> 
+        <img src={imageUrl} alt={title} />
+      </div>
       <h3>{title}</h3>
       <p>{price}</p>
     </div>
