@@ -1,21 +1,28 @@
 *{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-
 a {
-    text-decoration: none;
     color: #000000;
+    text-decoration: none;
   }
 img{
   width: 100%;
   height: auto;
+  display: block;
   object-fit: contain;
 }
-p{
-  line-height: 1.5;
+p,small{
   font-size: 16px;
+  line-height: 1.5;
+}
+small{
+  color: #007C3C;
+  display: block;
+}
+h2{
+  font-size: 48px;
 }
   
   /* ヘッダー */
@@ -25,14 +32,14 @@ p{
   .header {
     width: 100%;
     height: 60px;
-    display: flex;
-    justify-content: space-between;
-    position: fixed; 
-    z-index: 998;
-    border-bottom: 5px #000000 solid;
-    font-weight: 700;
     background: #FFF50A;
+    border-bottom: 5px #000000 solid;
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
     padding: 0 80px;
+    position: fixed;
+    z-index: 998;
   }
   
   .header h1 {
@@ -53,11 +60,11 @@ p{
 
   /* フッター */
   footer{
+    height: 300px;
     background-image: url("../src/assets/mountain.png");
     background-repeat: no-repeat;
-    padding: 60px 80px 0;
-    height: 300px;
     color: #ffffff;
+    padding: 60px 80px 0;
   }
   .footerText{
     display: flex;
@@ -78,3 +85,158 @@ p{
   .footerSponmu{
     text-align: center;
   }
+
+  /* ItemBox */
+  .ItemBox{
+    cursor: pointer; 
+    padding: 30px;
+    height: 500px;
+  }
+  .ItemBox:hover{
+    transition: .3s;
+    color: #007C3C;
+  }
+  .ItemBox img{
+    height: 270px;
+    object-fit: cover;
+
+  }
+  .ItemBox:hover{
+    img{
+      transform: scale(1.05);
+      transition:.3s
+    }
+  }
+  .itemImageWrapper{
+    height: 270px;
+    border: 5px solid #000000;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .ItemBox h3{
+    display: inline-block;
+    font-size: 32px;
+    margin: 20px 0;
+  }
+  .ItemBox p{
+    color: #007C3C;
+    font-weight: bold;
+  }
+  /* 商品リスト*/
+  .ProductList{
+    padding: 60px 80px 0;
+  }
+  .ProductItem{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ProductItem a{
+    display: block;
+  }
+  /* 商品詳細 */
+  .Product{
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+  .Product img{
+    border: 5px solid #000000;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .ProductLeft img{
+    width: 640px;
+    height: 550px;
+    margin-bottom: 20px;
+  }
+  .ProductImage{
+    display: flex;
+    justify-content: space-between;
+  }
+  .ProductImage img{
+    width: 307px;
+    height: 264px;
+  }
+  .ProductInfo span{
+    display: block;
+  }
+  .ProductInfo{
+    padding: 60px 0;
+    border-bottom: #007C3C dotted 3px;
+    color: #808080;
+  }
+  .ProductRecipe{
+    margin-top: 40px;
+  }
+  .ProductRecipe h3{
+    font-size: 36px;
+  }
+  .recipeMenu{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .recipeMenu img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .ProductPrice{
+    font-size: 32px;
+    font-weight: bold;
+    color: #007C3C;
+  }
+  .ProductButton{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    margin: 60px 0 10px;
+  }
+  .ProductButton button{
+    color: #007C3C;
+    border: 4px solid #007C3C;
+    border-radius: 30px;
+    text-align: center;
+    align-items: center;
+    padding: 5px 30px;
+    font-weight: bold;
+    background-color: #ffffff;
+    cursor: pointer; 
+  }
+  .FreeShipping p,.FreeShipping a{
+    color: #007C3C;
+    font-weight: bold;
+  }
+  .FreeShipping a{
+    border-bottom: #007C3C 1px solid;
+    display: inline-block;
+    margin-left: 21px;
+  }
+  .FreeShipping p:before{
+    content: "";
+    background: url("./assets/arrow.png") no-repeat; 
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    margin-right: 5px;
+  }
+  .ProductMain{
+    padding-bottom: 60px;
+    border-bottom: #007C3C dotted 3px;
+  }
+  .ProductText h3{
+    font-size: 32px;
+    display: inline-block;
+    margin: 60px 0 30px;
+  }
+  .ProductText p{
+    display: block;
+    margin-bottom: 30px;
+  }
+
+

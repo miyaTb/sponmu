@@ -9,6 +9,7 @@ import Product from './pages/Product';
 import Brand from './pages/Brand';
 import Column from './pages/Column';
 import NotFound from './pages/NotFound';
+import ProductLayout from './pages/ProductLayout';
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/products/:id" element={<Product />} />
+          <Route path="/products" element={<ProductLayout />}>
+            <Route index element={<ProductList />} />
+            <Route path=":id" element={<Product />} />
+          </Route>
           <Route path="/brand" element={<Brand />} />
           <Route path="/column" element={<Column />} />
           <Route path="*" element={<NotFound />} />
