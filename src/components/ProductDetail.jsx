@@ -30,7 +30,17 @@ function ProductDetail({ imageUrl, title,catchcopy, description,price, material,
                     <div className='ProductMain'>
                         <h2>{title}</h2>
                         <p className='ProductPrice'>{price}</p>
-                        <button></button>
+                        <div className='ProductButton'>
+                            <button>+1</button>
+                            <button>カートに入れる</button>
+                        </div>
+                        <div className='FreeShipping'>
+                            <p>3,000円以上のご購入で送料無料</p>
+                            <a href="">送料・返品について</a>
+                        </div>
+                        <p>
+
+                        </p>
                     </div>
                     <div className='ProductText'>
                         <h3>{catchcopy}</h3>

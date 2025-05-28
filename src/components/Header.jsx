@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header>
       <div className="header">
-        <h1><img src={headerLogo} alt="sponmu" /></h1>
+        <h1><a href="/"><img src={headerLogo} alt="sponmu" /></a></h1>
         <ul className="headerUl">
           <li><a href="/products">商品一覧</a></li>
           <li><a href="#">レシピ</a></li> 
