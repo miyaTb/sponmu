@@ -119,8 +119,8 @@ i {
 }
 
 .cardImage {
-  /* width: calc(100% - 50px); */
-  width: 280px;
+  width: 100%;
+  /* width: 280px; */
   height: 180px;
   background-color: #fff;
   border: 5px solid #000;
