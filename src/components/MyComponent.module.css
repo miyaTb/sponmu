@@ -107,8 +107,8 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 27px;
-  width: 330px;
+  gap: 15px;
+  width: 380px;
   height: 350px;
   padding: 20px 25px;
   background-color: #d6f8e6;
@@ -123,18 +123,200 @@ i {
   width: 280px;
   height: 180px;
   background-color: #fff;
+  border: 5px solid #000;
+  border-radius: 12px;
   object-fit: cover;
 }
 
 .cardContent {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   /* padding: 16px; */
   overflow-wrap: anywhere;
+  gap: 45px;
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: 2rem;
   margin-bottom: 8px;
+}
+
+.cardDescription {
+  display: flex;
+  gap: 40px;
+  color: #007c3c;
+  font-weight: 700;
+}
+
+.cardTime {
+  content: "";
+  display: inline-block;
+  height: 23px;
+  padding-left: 30px;
+  background-image: url("../assets/timeIcon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 23px;
+}
+
+.cardKcal {
+  content: "";
+  display: inline-block;
+  height: 25px;
+  padding-left: 28px;
+  background-image: url("../assets/fireIcon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 23px;
+}
+
+/* ********************************************
+// CardSlider.jsx
+// ***************************************** */
+
+:global(.swiper),
+:global(.swiper-wrapper),
+:global(.swiper-slide) {
+  overflow: visible;
+}
+
+/* :global(.swiper-slide) {
+  margin-left: 10px;
+  margin-right: 10px;
+} */
+
+.cardSliderWrapper {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  /* background-color: orange; */
+  z-index: 0;
+}
+
+.cardSwiper {
+  width: 100%;
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* margin-top: 100px; */
+  overflow: visible;
+}
+
+/* :global(.cardSwiper) {
+  overflow: visible;
+} */
+
+.cardSlide {
+  display: flex !important;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+:global(.swiper-slide-active) .card {
+  transform: scale(1.1); /* サイズを大きく */
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 強調したければ */
+  background-color: #acf1cc;
+  transition: transform 0.3s ease;
+}
+
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 2rem;
+  /* background-color: pink; */
+}
+
+.slideButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.navButton {
+  /* font-size: 24px; */
+  position: relative;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prevButton::before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #007c3c; /* ← 向き */
+}
+
+.nextButton::before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #007c3c; /* → 向き */
+}
+
+.dotWrapper {
+  display: flex;
+  /* justify-content: center; */
+  gap: 8px;
+  /* text-align: center;
+  cursor: pointer; */
+}
+
+.dot {
+  position: relative;
+  /* width: 16px; */
+  width: 30px;
+  /* height: 16px; */
+  cursor: pointer;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d6f8e6;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.activeDot::before {
+  background-color: #007c3c;
+  width: 12px;
+  height: 12px;
+}
+
+/* ********************************************
+// HotItems.jsx
+// ***************************************** */
+
+.hotItemContent {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #007c3c;
 }
 
 /* ********************************************
