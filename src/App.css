@@ -32,7 +32,7 @@ h2{
   .header {
     width: 100%;
     height: 60px;
-    background: #FFF50A;
+    background: #FFF029;
     border-bottom: 5px #000000 solid;
     display: flex;
     font-weight: 700;
@@ -87,7 +87,7 @@ h2{
   }
 
   /* ItemBox */
-  .ItemBox{
+  .ItemBox, .RecipeBox{
     cursor: pointer; 
     padding: 30px;
     height: 500px;
@@ -96,12 +96,12 @@ h2{
     transition: .3s;
     color: #007C3C;
   }
-  .ItemBox img{
+  .ItemBox img, .RecipeBox img{
     height: 270px;
     object-fit: cover;
 
   }
-  .ItemBox:hover{
+  .ItemBox:hover,.RecipeBox:hover{
     img{
       transform: scale(1.05);
       transition:.3s
@@ -113,12 +113,12 @@ h2{
     border-radius: 20px;
     overflow: hidden;
   }
-  .ItemBox h3{
+  .ItemBox h3,.RecipeBox h3{
     display: inline-block;
     font-size: 32px;
-    margin: 20px 0;
+    margin: 20px 0 5px;
   }
-  .ItemBox p{
+  .ItemBox p,.RecipeBox span{
     color: #007C3C;
     font-weight: bold;
   }
@@ -229,6 +229,10 @@ h2{
     padding-bottom: 60px;
     border-bottom: #007C3C dotted 3px;
   }
+  .ProductMain h2{
+    display: block;
+    margin-bottom: 30px;
+  }
   .ProductText h3{
     font-size: 32px;
     display: inline-block;
@@ -239,4 +243,156 @@ h2{
     margin-bottom: 30px;
   }
 
+  /* レシピ */
+  .RecipeBox span{
+    font-size: 16px;
+  }
+  .RecipeMiutes span:first-of-type::before{
+    content: "";
+    background: url(../src/assets/clock.png) no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin-right: 10px;
+  }
+  .RecipeMiutes{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  .RecipeMiutes span:last-of-type::before{
+    content: "";
+    background: url(../src/assets/kcal.png) no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin:0 10px;
+  }
+  .RecipeBox:hover{
+    transition: .3s;
+    color: #007C3C;
+  }
 
+
+  /* レシピ詳細 */
+  .Recipe{
+    padding-top: 30px;
+  }
+  .Recipe h2{
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+  .Recipe span{
+    font-weight: bold;
+  }
+  .recipeInfo{
+    display: flex;
+    gap: 60px;
+  }
+  .recipeInfo img{
+    width: 640px;
+    height: 410px;
+    border: #000000 5px solid;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .materialMethod{
+    padding-bottom: 20px;
+    border-bottom: 3px solid #007C3C;
+  }
+  .materialMethod h3,.useMaterial h3{
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .recipeMaterial div{
+    padding: 17px 0;
+    border-bottom: 3px dotted #007C3C;
+  }
+  .recipeMethod span{
+    padding: 10px 0;
+    border-bottom: 3px dotted #007C3C;
+  }
+  .Method{
+    width: 55%;
+  }
+  .recipeMaterial div{
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+  }
+  .materialMethod{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .recipeMaterial,.recipeMethod{
+    padding: 40px 60px;
+    border-top: 3px solid #007C3C;
+    display: flex;
+    flex-direction: column;
+  }
+  .recipeMethod span:first-of-type::before{
+    content: "1";
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    color: #007C3C;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: #007C3C 2px solid;
+    background-color: #e0eee7;
+    margin: 0 20px;
+  }
+  .recipeMethod span:nth-of-type(2)::before{
+    content: "2";
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    color: #007C3C;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: #007C3C 2px solid;
+    background-color: #e0eee7;
+    margin: 0 20px;
+  }
+  .RecipeMiutesDetail{
+    margin-top: 20px;
+    display: flex;
+    gap: 80px;
+  }
+  .RecipeMiutesDetail span{
+    font-size: 32px;
+    color: #007C3C;
+  }
+  .RecipeMiutesDetail span:first-of-type::before{
+    content: "";
+    background: url(../src/assets/clock.png) no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin-right: 10px;
+  }
+  .RecipeMiutesDetail span:last-of-type::before{
+    content: "";
+    background: url(../src/assets/kcal.png) no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin:0 10px;
+  }

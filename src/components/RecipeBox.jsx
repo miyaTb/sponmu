@@ -3,12 +3,15 @@ import '../../src/App.css';
 
 function RecipeBox({ imageUrl, title, miniutes, kcal, onClick }) {
   return (
-    <div className='ItemBox'  onClick={onClick}>
+    <div className='RecipeBox'  onClick={onClick}>
       <div className='itemImageWrapper'> 
         <img src={imageUrl} alt={title} />
       </div>
-      <span>{miniutes}</span>
-      <span>{kcal}</span>
+      <h3 dangerouslySetInnerHTML={{ __html: title }} />      
+        <div className='RecipeMiutes'>
+        <span>{miniutes}</span>
+        <span>{kcal}</span>
+      </div>
     </div>
   );
 }

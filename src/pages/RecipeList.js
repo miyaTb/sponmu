@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useProducts from '../hooks/productBox';
-import ItemBox from '../components/ItemBox';
+import useRecipes from '../hooks/RecipeBox';
+import RecipeBox from '../components/RecipeBox';
 
 function RecipeListPage() {
-  const { products } = useProducts();
+  const { recipes} = useRecipes();
 
   return (
     <div className='ProductItem'>
-      {products.map((recipe) => (
-        <Link key={recipe.id} to={`/recipe/${recipe.id}`}>
-          <ItemBox
+      {recipes.map((recipe) => (
+        <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
+          <RecipeBox
             id={recipe.id}
             miniutes={recipe.miniutes}
             kcal={recipe.kcal}

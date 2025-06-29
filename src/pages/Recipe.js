@@ -1,39 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom'; // Link をインポート
-import useProducts from '../hooks/productBox';
-import ProductDetail from '../components/ProductDetail'; // ItemBox をインポート
+import useRecipes from '../hooks/RecipeBox';
+import RecipeDetail from '../components/RecipeDetail'; // ItemBox をインポート
 
-function Product() {
+function Recipe() {
     const { id } = useParams();
-    const { products } = useProducts();
-    const [product, setProduct] = useState(null);
+    const { recipes } = useRecipes();
+    const [recipe, setRecipe] = useState(null);
   
     useEffect(() => {
-      const foundProduct = products.find((p) => p.id === parseInt(id, 10));
-      setProduct(foundProduct);
-    }, [id, products]);
+      const foundRecipe = recipes.find((p) => p.id === parseInt(id, 10));
+      setRecipe(foundRecipe);
+    }, [id, recipes]);
   
-    if (!product) {
+    if (!recipe) {
       return <div>Loading...</div>;
     }
 
   return (
       <div>
-      <ProductDetail
-        id={product.id}
-        imageUrl={product.imageUrl}
-        title={product.name}
-        material={`原材料名： ${product.material}`}
-        amount={`内容量： ${product.amount}`}
-        method={`保存方法：${product.method}`}
-        date={`賞味期限：${product.method}`}
-        arerugen={`アレルギー：${product.arerugen}`}
-        catchcopy={product.catchcopy}
-        description={product.description}
-        price={`¥ ${product.price}(税込)`}
+      <RecipeDetail
+        id={recipe.id}
+        imageUrl={recipe.imageUrl}
+        title={recipe.name}
+        miniutes={recipe.miniutes}
+        kcal={recipe.kcal}
+        material1={recipe.material1}
+        material2={recipe.material2}
+        amount1={recipe.amount1}
+        amount2={recipe.amount2}
+        method1={recipe.method1}
+        method2={recipe.method2}
+        description={recipe.description}
+
       />
       </div>
   );
 }
 
-export default Product;
+export default Recipe;
