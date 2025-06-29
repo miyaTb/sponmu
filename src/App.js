@@ -1,12 +1,13 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import ProductList from './pages/ProductList';
-import Product from './pages/Product';
-import Brand from './pages/Brand';
-import Column from './pages/Column';
-import NotFound from './pages/NotFound';
+import "./App.css";
+import "./styles/variables.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import ProductList from "./pages/ProductList";
+import Product from "./pages/Product";
+import Brand from "./pages/Brand";
+import Column from "./pages/Column";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -25,7 +26,6 @@ function App() {
       </Router>
       <p>sponmu</p>
     </div>
-    
   );
 }
 
