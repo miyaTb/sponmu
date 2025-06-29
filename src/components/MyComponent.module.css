@@ -59,16 +59,13 @@ i {
   position: relative;
   width: 100px;
   height: 48px;
-  border: solid 4px;
+  margin: 0 auto;
+  border: solid 4px var(--color-green);
   border-radius: 30px;
   font-size: 1rem;
   letter-spacing: 0.125rem;
-  transition: transform 0.25s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
-}
-
-.button:hover {
-  transform: scale(1.25);
 }
 
 .button a {
@@ -78,25 +75,39 @@ i {
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   font-weight: 700;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ボタンの色を管理するclass */
 .btnGreen {
-  border-color: #fff;
-  color: #fff;
-  background-color: #007c3c;
+  color: var(--color-white);
+  background-color: var(--color-green);
+}
+
+.btnGreen:hover {
+  color: var(--color-green);
+  background-color: var(--color-yellow);
 }
 
 .btnWhite {
-  border-color: #007c3c;
-  color: #007c3c;
-  background-color: #fff;
+  color: var(--color-green);
+  background-color: var(--color-white);
+}
+
+.btnWhite:hover {
+  color: var(--color-white);
+  background-color: var(--color-green);
 }
 
 .btnYellow {
-  border-color: #007c3c;
-  color: #007c3c;
-  background-color: #fff50a;
+  color: var(--color-green);
+  background-color: var(--color-yellow);
+}
+
+.btnYellow:hover {
+  color: var(--color-white);
+  background-color: var(--color-green);
 }
 
 /* ********************************************
@@ -107,23 +118,21 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   width: 380px;
   height: 350px;
-  padding: 20px 25px;
-  background-color: #d6f8e6;
-  border: 5px solid #000;
+  padding: 20px 15px;
+  background-color: var(--color-light-green02);
+  border: 5px solid var(--color-black);
   border-radius: 12px;
   overflow: hidden;
-  /* transition: transform 0.2s; */
 }
 
 .cardImage {
   width: 100%;
-  /* width: 280px; */
   height: 180px;
-  background-color: #fff;
-  border: 5px solid #000;
+  background-color: var(--color-white);
+  border: 5px solid var(--color-black);
   border-radius: 12px;
   object-fit: cover;
 }
@@ -132,20 +141,21 @@ i {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* padding: 16px; */
   overflow-wrap: anywhere;
-  gap: 45px;
+  gap: 35px;
 }
 
 .cardTitle {
   font-size: 2rem;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .cardDescription {
   display: flex;
-  gap: 40px;
-  color: #007c3c;
+  gap: 30px;
+  margin-left: 10px;
+  color: var(--color-green);
   font-weight: 700;
 }
 
@@ -181,48 +191,36 @@ i {
   overflow: visible;
 }
 
-/* :global(.swiper-slide) {
-  margin-left: 10px;
-  margin-right: 10px;
-} */
-
 .cardSliderWrapper {
   width: 100%;
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   position: relative;
   overflow: visible;
-  /* background-color: orange; */
   z-index: 0;
 }
 
 .cardSwiper {
   width: 100%;
-  /* max-width: 1280px; */
+  height: auto;
   margin: 0 auto;
-  /* margin-top: 100px; */
   overflow: visible;
 }
-
-/* :global(.cardSwiper) {
-  overflow: visible;
-} */
 
 .cardSlide {
   display: flex !important;
   justify-content: center;
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
 :global(.swiper-slide-active) .card {
-  transform: scale(1.1); /* サイズを大きく */
+  transform: scale(1.15); /* サイズを大きく */
   opacity: 1;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 強調したければ */
-  background-color: #acf1cc;
+  background-color: var(--color-light-green01);
   transition: transform 0.3s ease;
 }
 
@@ -232,7 +230,6 @@ i {
   align-items: center;
   gap: 24px;
   margin-top: 2rem;
-  /* background-color: pink; */
 }
 
 .slideButton {
@@ -243,7 +240,6 @@ i {
   gap: 100px;
 }
 .navButton {
-  /* font-size: 24px; */
   position: relative;
   padding: 8px;
   width: 40px;
@@ -264,28 +260,23 @@ i {
 .prevButton::before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid #007c3c; /* ← 向き */
+  border-right: 10px solid var(--color-green); /* ← 向き */
 }
 
 .nextButton::before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid #007c3c; /* → 向き */
+  border-left: 10px solid var(--color-green); /* → 向き */
 }
 
 .dotWrapper {
   display: flex;
-  /* justify-content: center; */
   gap: 8px;
-  /* text-align: center;
-  cursor: pointer; */
 }
 
 .dot {
   position: relative;
-  /* width: 16px; */
   width: 30px;
-  /* height: 16px; */
   cursor: pointer;
 }
 
@@ -297,26 +288,70 @@ i {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #d6f8e6;
+  background-color: var(--color-yellow-green);
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
 }
 
 .activeDot::before {
-  background-color: #007c3c;
+  background-color: var(--color-green);
   width: 12px;
   height: 12px;
 }
 
 /* ********************************************
-// HotItems.jsx
+// ItemCard.jsx
 // ***************************************** */
 
-.hotItemContent {
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.itemCardContent {
+  position: relative;
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: #007c3c;
+  background-color: var(--color-green);
+}
+
+.itemCardImage {
+  position: absolute;
+  width: 110%;
+  height: auto;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.itemCardImage:hover {
+  transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+}
+
+.itemCardText {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.low {
+  margin-top: 100px;
+}
+
+/* ********************************************
+// HotItem.jsx
+// ***************************************** */
+
+.hotItemContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
 }
 
 /* ********************************************
@@ -326,12 +361,11 @@ i {
 .newsWrapper {
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
   font-weight: 700;
 }
 
 .newsDate {
-  color: #007c3c;
+  color: var(--color-green);
 }
 
 .newsTitle {
@@ -341,7 +375,7 @@ i {
 }
 
 .newsTitle:hover {
-  color: #007c3c;
+  color: var(--color-green);
   cursor: pointer;
 }
 
@@ -357,8 +391,7 @@ i {
 
 .newsListItem {
   padding: 0 20px;
-  /* padding-bottom: 20px; */
-  border-bottom: 3px dotted #007c3c;
+  border-bottom: 3px dotted var(--color-green);
 }
 
 /* ********************************************
@@ -375,19 +408,22 @@ i {
   flex-direction: column;
   max-width: 600px;
   width: auto;
-  gap: 15px;
-  margin: 40px 0;
-  /* text-align: left; */
+  gap: 7.5px;
 }
 
 .title {
-  color: #000000;
-  font-size: 34px;
+  color: var(--color-black);
+  font-size: 48px;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
 }
 
 .subtitle {
-  color: #007c3c;
-  font-size: 14px;
+  color: var(--color-green);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  margin-right: -0.25rem;
 }
 
 .left {
@@ -400,4 +436,40 @@ i {
 
 .right {
   text-align: right;
+}
+
+/* ********************************************
+// Pagination.jsx
+// ***************************************** */
+.paginationContainer {
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+  margin: 88px auto 0;
+}
+
+.pageNumbersButton {
+  color: var(--color-green);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-green);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.paginationNumber {
+  display: flex;
+  gap: 10px;
+}
+
+.activePageNumberButton {
+  background-color: var(--color-yellow);
+}
+
+.paginationSlide {
+  background-color: var(--color-white);
+  border: 0px;
 }
