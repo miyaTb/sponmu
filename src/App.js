@@ -1,4 +1,6 @@
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
@@ -11,17 +13,21 @@ import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
 import CartForm from './pages/CartForm';
 import OrderComplete from './pages/OrderComplete';
+import ProductLayout from './pages/ProductLayout';
 
 function App() {
   return (
     <CartProvider>
       <div className="App">
+        <Header />
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/products/:id" element={<Product />} />
+            <Route path="/products" element={<ProductLayout />}>
+              <Route index element={<ProductList />} />
+              <Route path=":id" element={<Product />} />
+            </Route>
             <Route path="/brand" element={<Brand />} />
             <Route path="/column" element={<Column />} />
             <Route path="/cart" element={<Cart />} />
@@ -32,6 +38,7 @@ function App() {
           </Routes>
         </Router>
         <p>sponmu</p>
+        <Footer />
       </div>
     </CartProvider>
   );
