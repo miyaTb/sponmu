@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -38,19 +38,11 @@ function CardSlider() {
   return (
     <div className={styles.cardSliderWrapper}>
       <Swiper
-        modules={[Autoplay, Navigation]}
+        modules={[Navigation]}
         slidesPerView={3}
         centeredSlides={true}
         loop={true}
-        // navigation={true}
-        // onBeforeInit={(swiper) => {
-        //   swiper.params.navigation.prevEl = prevRef.current;
-        //   swiper.params.navigation.nextEl = nextRef.current;
-        //   // swiper.navigation.init();
-        //   // swiper.navigation.update();
-        // }}
         onSwiper={(swiper) => (swiperRef.current = swiper)} // ここで swiper を取得
-        // navigation={true}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // ループ時は realIndex を使う
         className={styles.cardSwiper}
       >
