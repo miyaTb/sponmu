@@ -2,20 +2,32 @@
 // Home.js
 // ***************************************** */
 
+/* Home */
+.home {
+}
+
 /* Hero */
 .hero {
   text-align: center;
 }
 
-.hero-title {
-  color: #007c3c;
-  font-size: 1.75rem;
+.hero-image {
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
-.hero-title::after {
-  content: "・・・・";
-  display: block;
-  margin-top: 2rem;
+.hero-image-text {
+  writing-mode: vertical-rl;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  left: 50%;
+  top: 20%;
+  color: var(--color-white);
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
 }
 
 .hero-description {
@@ -24,14 +36,25 @@
 }
 
 /* Ranking */
-.ranking {
-  padding: 100px 0;
-  background: rgba(255, 245, 10, 0.4);
+.hot-items {
+  height: 1300px;
+  padding-top: 250px;
+  background: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    var(--color-white) 50%,
+    var(--color-light-green03) 50%,
+    var(--color-light-green03) 100%
+  );
+  background-image: url(../src/assets/backimage01.png);
+  background-size: 100vw;
+  background-repeat: no-repeat;
 }
 
 /* Commitment */
 .commitment {
-  /* background-color: grey; */
+  padding: 150px 0;
+  background-color: var(--color-light-green03);
 }
 
 .commitment-container {
@@ -46,14 +69,18 @@
 }
 
 .commitment-image {
+  position: relative;
   width: 600px;
   height: 424px;
-  background-color: aqua;
+  overflow: hidden;
+  background-color: var(--color-white);
 }
 
-.image-right {
-  border-top-left-radius: 25%;
-  border-bottom-left-radius: 25%;
+.commitment-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image-left {
@@ -61,8 +88,13 @@
   border-bottom-right-radius: 25%;
 }
 
+.image-right {
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+
 .commitment-title {
-  color: #007c3c;
+  color: var(--color-green);
   font-size: 2rem;
   line-height: 4rem;
 }
@@ -72,10 +104,68 @@
   line-height: 4rem;
 }
 
+/* LoopLogo */
+.loop-logo {
+  position: relative;
+  overflow: hidden;
+  margin: 150px 0;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll-left 10s linear infinite;
+}
+
+.logo-image {
+  flex-shrink: 0;
+  width: auto;
+  margin-right: 240px;
+  height: 60px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Recipe */
+
 .recipe {
-  margin: 0 auto;
-  background-color: #fff50a;
+  position: relative;
+  padding: 150px 1rem;
+  background-color: var(--color-yellow);
+  overflow: hidden;
+}
+
+.recipe::before,
+.recipe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
+  background-size: cover;
+  z-index: 1;
+}
+
+.recipe::before {
+  top: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%202000%20500%22%20width%3D%22100%25%22%3E%3Cpath%20d%3D%22M%200%20150%20Q%20125%20150%20250%2075%20Q%20500%20-75%20750%2075%20Q%20875%20150%201000%20150%20Q%201125%20150%201250%2075%20Q%201500%20-75%201750%2075%20Q%201875%20150%202000%20150%20L%202000%20500%20L%200%20500%20Z%22%20fill%3D%22%23fff029%22/%3E%3C/svg%3E");
+}
+
+/* 下の波線 */
+.recipe::after {
+  bottom: 0;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%202000%20500%22%20width%3D%22100%25%22%3E%3Cpath%20d%3D%22M%200%20150%20Q%20125%20150%20250%2075%20Q%20500%20-75%20750%2075%20Q%20875%20150%201000%20150%20Q%201125%20150%201250%2075%20Q%201500%20-75%201750%2075%20Q%201875%20150%202000%20150%20L%202000%20500%20L%200%20500%20Z%22%20fill%3D%22%23fff029%22/%3E%3C/svg%3E");
 }
 
 .card-list {
@@ -87,5 +177,23 @@
 
 /* News */
 .news {
-  margin-bottom: 295px;
+  width: 80%;
+  margin: 0 auto 295px;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Column.js */
+.title {
+  margin-left: calc(-100vw + 229px);
+}
+
+.column-list {
+  width: calc(100vw - 176px);
+  margin-top: 28px;
+  margin-left: 80px;
 }
