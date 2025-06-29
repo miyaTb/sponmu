@@ -1,16 +1,34 @@
 import SectionTitle from "../components/SectionTitle";
 import Button from "../components/Button";
-import Card from "../components/Card";
-// import NewsHeading from "../components/NewsHeading";
+import HotItems from "../components/HotItems";
+import CardSlider from "../components/CardSlider";
 import NewsList from "../components/NewsList";
 
 import "../App.css";
 
+import mainvisual from "../assets/mainvisual.png";
+import commitment01 from "../assets/commitment01.png";
+import commitment02 from "../assets/commitment02.png";
+import logo from "../assets/looplogo.png";
+
 function Home() {
   return (
-    <div>
+    <div className="home">
       <section className="hero">
-        <h2 className="hero-title">私たちは</h2>
+        <div className="hero-mainvisual">
+          <img
+            src={mainvisual}
+            alt="メインビジュアル"
+            className="hero-image"
+          ></img>
+          <p className="hero-image-text">
+            <span>自然の恵みを</span>
+            <br />
+            <span>余すことなく</span>
+            <br />
+            <span>あなたの元へ</span>
+          </p>
+        </div>
         <p className="hero-description">
           私たちは、北海道の大自然の中で、牛たちに愛情を注げながら育て、
           <br />
@@ -24,8 +42,10 @@ function Home() {
         </p>
       </section>
 
-      <section className="ranking">
-        <SectionTitle title="RANKING" subtitle="人気商品" />
+      <section className="hot-items">
+        <SectionTitle title="HOT ITEMS" subtitle="人気商品" />
+        <HotItems />
+        <Button link="column" variant="btnGreen" />
       </section>
 
       <section className="commitment">
@@ -46,12 +66,12 @@ function Home() {
             </p>
           </div>
           <div className="commitment-image image-right">
-            <img src="" alt="自然"></img>
+            <img src={commitment01} alt="自然"></img>
           </div>
         </section>
         <section className="commitment-container commitent-right">
           <div className="commitment-image image-left">
-            <img src="" alt="食卓"></img>
+            <img src={commitment02} alt="食卓"></img>
           </div>
           <div className="commitment-text">
             <h3 className="commitment-title">
@@ -70,34 +90,27 @@ function Home() {
         </section>
       </section>
 
+      <section className="loop-logo">
+        <div className="logo-track">
+          <img className="logo-image" src={logo} alt="ロゴ" />
+          <img className="logo-image" src={logo} alt="ロゴ" />
+          <img className="logo-image" src={logo} alt="ロゴ" />
+        </div>
+      </section>
+
       <section className="recipe">
         <SectionTitle title="RECIPE" subtitle="おすすめの食べ方" />
         <div className="card-list">
-          <Card
-            image="aaa"
-            title="レモンヨーグルト"
-            description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-          />
-          <Card
-            image="aaa"
-            title="レモンヨーグルト"
-            description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-          />
-          <Card
-            image="aaa"
-            title="レモンヨーグルト"
-            description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-          />
+          <CardSlider />
         </div>
-        <Button variant="btnWhite" />
+        <Button variant="btnGreen" />
       </section>
 
       <section className="news">
         <SectionTitle title="NEWS" subtitle="お知らせ" />
-        <div>
-          {/* <NewsHeading title="テキストテキスト" date="2024.01.12"></NewsHeading> */}
+        <div className="news-container">
           <NewsList />
-          <Button variant="btnYellow" />
+          <Button link="column" variant="btnYellow" />
         </div>
       </section>
     </div>
