@@ -1,0 +1,13 @@
+:root {
+  /* 色 */
+  --color-black: #000000;
+  --color-gray: #808080;
+  --color-white: #ffffff;
+  --color-green: #007c3c;
+  --color-light-green01: #bdebd3;
+  --color-light-green02: #e0f8eb;
+  --color-light-green03: #f7fff4;
+  --color-yellow-green: #99c25e;
+  --color-yellow: #fff029;
+  --color-light-yellow: #fffba0;
+}
