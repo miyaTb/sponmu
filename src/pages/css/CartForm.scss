@@ -1,50 +1,96 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 // カラー変数
 $sponmu-green: #007C3C;
 $sponmu-yellow: #FFF50A;
 $sponmu-gray: #808080;
 
 .cart-form {
-  display: flex;
-  gap: 2rem;
   padding: 2rem;
   font-family: sans-serif;
   font-weight: bold;
-  margin: auto;
-  justify-content: center;
-
-  &__main {
-    max-width: 600px;
-    flex:1;
-  }
+  max-width: 1280px !important;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 
   &__title {
     font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    max-width: 1280px;
+    width: 100%;
   }
 
   &__subtitle {
     color: $sponmu-green;
-    margin-bottom: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  &__main {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
   }
 
   &__form {
-    margin-top: 1rem;
+    max-width: 600px;
+    flex: 1;
+    margin-top: 0;
   }
 
   &__label {
     display: block;
     margin-bottom: 1rem;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
 
     input,
     select {
       display: block;
-      width: 100%;
-      padding: 0.5rem;
+      width: 601px;
+      height: 48px;
+      padding: 0 20px;
       margin-top: 0.25rem;
-      border: 2px solid $sponmu-green;
+      border: 4px solid $sponmu-green;
       border-radius: 30px;
       background: white;
       font-weight: bold;
+      font-size: 16px;
+      box-sizing: border-box;
+      
+      &::placeholder {
+        color: #808080;
+        font-weight: bold;
+        font-size: 16px;
+      }
     }
+  }
+  
+  &__select--placeholder {
+    color: #808080 !important;
   }
 
   &__fieldset {
@@ -55,6 +101,9 @@ $sponmu-gray: #808080;
 
   &__legend {
     margin-bottom: 1rem;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
   }
 
   &__zipcode-group {
@@ -65,126 +114,238 @@ $sponmu-gray: #808080;
   }
 
   &__input--zipcode {
-    flex: 1;
+    width: 232px !important;
+    flex: none;
   }
 
   &__button {
-    padding: 0.5rem 1rem;
-    background-color: white;
-    color: $sponmu-green;
-    border: 2px solid $sponmu-green;
-    border-radius: 30px;
+    width: 100px;
+    height: 45px;
+    background-color: $sponmu-green;
+    color: white;
+    border: 4px solid $sponmu-green;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: #e8f5e0;
+      background-color: darken($sponmu-green, 10%);
     }
   }
 
   &__submit {
     display: block;
     margin-top: 2rem;
-    padding: 0.75rem 2rem;
+    width: 250px;
+    height: 45px;
     background-color: $sponmu-green;
     color: white;
-    border: none;
-    border-radius: 30px;
+    border: 4px solid $sponmu-green;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: darken($sponmu-green, 10%);
+    }
+
+    &:disabled {
+      background-color: $sponmu-gray;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
   }
 
   &__sidebar {
-    background-color: rgba($sponmu-yellow,0.2);;
-    padding: 1.5rem;
+    background-color: rgba($sponmu-yellow,0.2);
+    padding: 50px 40px;
     border-radius: 30px;
-    max-width: 300px;
+    width: 480px !important;
+    max-width: 480px !important;
+    min-width: 480px !important;
+    box-sizing: border-box;
+    height: fit-content;
+    align-self: flex-start;
+    
+    > * {
+      width: 400px !important;
+      max-width: 400px !important;
+      box-sizing: border-box;
+    }
   }
 
   &__item-list {
-    border-bottom: 1px dotted $sponmu-gray;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    margin-bottom: 100px;
   }
 
   &__item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 3px dotted $sponmu-green;
+  }
+
+  &__item-content {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
   }
 
   &__item-image {
-    width: 48px;
-    height: 48px;
+    width: 120px;
+    height: 100px;
     background-color: $sponmu-gray;
-    border-radius: 30px;
+    border-radius: 15px;
+    border: 5px solid black;
   }
 
   &__item-name {
     font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin: 0;
   }
 
   &__item-price {
-    font-size: 0.875rem;
+    font-size: 16px;
     color: $sponmu-green;
+    text-align: left;
+    margin: 0;
   }
 
   &__coupon {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    
+    input {
+      box-sizing: border-box;
+      width: 290px;
+      height: 48px;
+      background: #FFFFFF;
+      border: 4px solid $sponmu-green;
+      border-radius: 30px;
+      padding: 0 20px;
+      font-weight: bold;
+      
+      &::placeholder {
+        color: #999;
+      }
+    }
   }
 
   &__summary {
-    font-size: 0.875rem;
+    font-size: 16px;
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 32px;
       font-weight: bold;
       margin-top: 1rem;
       margin-bottom: 0.25rem;
     }
   }
 
+  &__total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__total-label {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &__total-amount {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+  }
+
   &__note {
     font-size: 0.75rem;
     color: $sponmu-gray;
+    text-align: right;
+  }
+
+  &__error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  &__payment-fieldset {
+    border: 2px solid $sponmu-green;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
   }
 
   &__payment-toggle {
-    border: 2px solid $sponmu-green;
-    border-radius: 30px;
-    padding: 0.5rem 1rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
     cursor: pointer;
-    margin-bottom: 0.5rem;
     background-color: #fff;
     color: $sponmu-green;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: background-color 0.2s ease;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
 
     &:hover {
       background-color: #f1fdf1;
     }
+
+    &::after {
+      content: '▼';
+      transition: transform 0.2s ease;
+    }
+
+    &.open::after {
+      transform: rotate(180deg);
+    }
   }
 
   &__payment-options {
-    background-color: #d9f2dc;
-    border: 2px solid $sponmu-green;
-    border-radius: 30px;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    background-color: #f8fdf8;
+    border-top: 1px solid rgba($sponmu-green, 0.2);
+    padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
 
     .cart-form__radio {
       font-weight: normal;
       display: flex;
       align-items: center;
+      padding: 0.5rem 0;
 
       input {
-        margin-right: 0.5rem;
+        margin-right: 0.75rem;
+        width: 18px;
+        height: 18px;
       }
     }
   }

@@ -1,20 +1,37 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './css/Cart.css';
 
-const CartItem = ({ name, price, taxIncludedPrice }) => (
+const CartItem = ({ id, name, taxIncludedPrice, quantity, onQuantityChange, onRemove }) => (
     <div className="cart-item">
         <div className="cart-item__content">
         <div className="cart-item__image" />
         <div className="cart-item__details">
             <h2 className="cart-item__name">{name}</h2>
             <p className="cart-item__price">
-            ¥{price} <span className="cart-item__price--tax">税込{taxIncludedPrice}円</span>
+            ¥{taxIncludedPrice.toLocaleString()}(税込)
             </p>
         </div>
         <div className="cart-item__actions">
-            <button className="cart-item__button">+1</button>
+            <div className="cart-item__button">
+                <button 
+                    className="cart-item__quantity-btn" 
+                    onClick={() => onQuantityChange(id, quantity - 1)}
+                    disabled={quantity <= 1}
+                >
+                    -
+                </button>
+                <span className="cart-item__quantity-display">{quantity}</span>
+                <button 
+                    className="cart-item__quantity-btn" 
+                    onClick={() => onQuantityChange(id, quantity + 1)}
+                >
+                    +
+                </button>
+            </div>
             <div>
-            <button className="cart-item__remove">商品を削除する</button>
+            <button className="cart-item__remove" onClick={() => onRemove(id)}>商品を削除する</button>
             </div>
         </div>
         </div>
@@ -36,28 +53,60 @@ const RecentlyViewed = () => (
     </div>
 );
 
-const CartSummary = () => (
+const CartSummary = ({ total, onCheckout }) => (
     <div className="cart-summary">
-        <p className="cart-summary__label">合計</p>
-        <h2 className="cart-summary__total">¥0,000（税込）</h2>
-        <p className="cart-summary__note">テキストテキストテキスト</p>
-        <button className="cart-summary__button">ご購入手続きへ</button>
+        <div className="cart-summary__header">
+            <p className="cart-summary__label">合計</p>
+            <h2 className="cart-summary__total">¥{total.toLocaleString()}（税込）</h2>
+        </div>
+        <div className="cart-summary__center">
+            <p className="cart-summary__note">送料は地域により異なります</p>
+            <button className="cart-summary__button" onClick={onCheckout}>ご購入手続きへ</button>
+        </div>
     </div>
 );
 
 const Cart = () => {
+    const navigate = useNavigate();
+    const { cartItems, handleQuantityChange, handleRemoveItem, calculateTotal } = useCart();
+
+    const handleCheckout = () => {
+        navigate('/cart/form');
+    };
+
+    if (cartItems.length === 0) {
+        return (
+            <div className="cart">
+                <h1 className="cart__title">CART</h1>
+                <p className="cart__subtitle">購入</p>
+                <div className="cart__empty">
+                    <p>カートに商品がありません</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="cart">
             <h1 className="cart__title">CART</h1>
             <p className="cart__subtitle">購入</p>
             <div className="cart__content">
                 <div className="cart__items">
-                    <CartItem name="しぼりたて生乳ヨーグルト" price="000" taxIncludedPrice="000" />
-                    <CartItem name="牧場の朝ミルク" price="000" taxIncludedPrice="000" />
+                    {cartItems.map(item => (
+                        <CartItem
+                            key={item.id}
+                            id={item.id}
+                            name={item.name}
+                            taxIncludedPrice={item.taxIncludedPrice}
+                            quantity={item.quantity}
+                            onQuantityChange={handleQuantityChange}
+                            onRemove={handleRemoveItem}
+                        />
+                    ))}
                     <RecentlyViewed />
                 </div>
                 <div className="cart__summary">
-                    <CartSummary />
+                    <CartSummary total={calculateTotal()} onCheckout={handleCheckout} />
                 </div>
             </div>
         </div>

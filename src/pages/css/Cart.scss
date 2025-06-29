@@ -1,9 +1,31 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 $sponmu-green:#007C3C;
 $sponmu-yellow:#FFF50A;
 $sponmu-gray:#808080;
 .cart {
-  padding: 2rem;
+  padding: 2rem 0;
   font-family: sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
 
   &__title {
     font-size: 1.5rem;
@@ -24,6 +46,7 @@ $sponmu-gray:#808080;
 
   &__items {
     flex: 2;
+    max-width: 800px;
   }
 
   &__summary {
@@ -36,8 +59,8 @@ $sponmu-gray:#808080;
 
 .cart-item {
   border-bottom: 3px dotted $sponmu-green;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 
   &__content {
     display: flex;
@@ -49,7 +72,7 @@ $sponmu-gray:#808080;
     height: 150px;
     background-color: #ccc;
     border-radius: 20px;
-    margin-right: 1rem;
+    margin-right: 24px;
     border: 5px solid black;
   }
 
@@ -64,27 +87,64 @@ $sponmu-gray:#808080;
 
   &__price {
     color: $sponmu-green;
-
-    &--tax {
-      font-size: 0.75rem;
-    }
+    font-weight: bold;
+    font-size: 32px;
   }
 
   &__actions {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
   }
 
   &__button {
-    border: 1px solid $sponmu-green;
+    background-color: white;
     color: $sponmu-green;
-    border-radius: 9999px;
-    padding: 0.25rem 0.75rem;
+    border: 2px solid $sponmu-green;
+    border-radius: 20px;
+    width: 94px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    cursor: pointer;
+  }
+
+  &__quantity-btn {
+    background-color: transparent;
+    border: none;
+    color: $sponmu-green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: rgba(0, 124, 60, 0.1);
+    }
+  }
+
+  &__quantity-display {
+    color: $sponmu-green;
+    font-weight: bold;
+    font-size: 14px;
   }
 
   &__remove {
-    font-size: 0.75rem;
+    font-size: 16px;
     text-decoration: underline;
-    margin-top: 0.5rem;
     background: none;
     border: none;
     color: inherit;
@@ -93,7 +153,7 @@ $sponmu-gray:#808080;
 }
 
 .recently-viewed {
-  margin-top: 2rem;
+  margin-top: 180px;
 
   &__title {
     font-weight: bold;
@@ -102,20 +162,25 @@ $sponmu-gray:#808080;
 
   &__list {
     display: flex;
-    gap: 1rem;
+    gap: 60px;
   }
 
   &__item {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__image {
-    width: 292px;
-    height: 250px;
+    width: 300px;
+    height: 257px;
     background-color: #ccc;
     border-radius: 20px;
     margin-bottom: 0.5rem;
     border: 5px solid black;
-
   }
 
   &__name {
@@ -125,7 +190,7 @@ $sponmu-gray:#808080;
   &__price {
     color: $sponmu-green;
     font-weight: bold;
-    font-size: 0.875rem;
+    font-size: 32px;
   }
 }
 
@@ -134,20 +199,31 @@ $sponmu-gray:#808080;
   border-radius: 20px;
   padding: 1.5rem;
 
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 
   &__label {
-    font-size: 0.875rem;
+    font-size: 16px;
+    margin: 0;
   }
 
   &__total {
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin: 0;
+  }
+
+  &__center {
+    text-align: center;
   }
 
   &__note {
     font-size: 0.875rem;
-    margin-bottom: 1rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 
   &__button {
@@ -158,5 +234,17 @@ $sponmu-gray:#808080;
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darken($sponmu-green, 10%);
+    }
   }
+}
+
+.cart__empty {
+  text-align: center;
+  padding: 2rem;
+  color: $sponmu-gray;
+  font-size: 1.125rem;
 }
