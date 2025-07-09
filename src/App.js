@@ -1,15 +1,16 @@
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import ProductList from './pages/ProductList';
-import Product from './pages/Product';
-import Brand from './pages/Brand';
-import Column from './pages/Column';
-import NotFound from './pages/NotFound';
-import ProductLayout from './pages/ProductLayout';
+import "./App.css";
+import "./styles/variables.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import ProductList from "./pages/ProductList";
+import Product from "./pages/Product";
+import Brand from "./pages/Brand";
+import Column from "./pages/Column";
+import NotFound from "./pages/NotFound";
+import ProductLayout from "./pages/ProductLayout";
 
 function App() {
   return (

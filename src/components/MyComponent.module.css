@@ -1,0 +1,475 @@
+@charset "UTF-8";
+
+/* ********************************************
+// --- リセット ---
+// ※ブラウザのデフォルトCSSをリセット
+// ***************************************** */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+html {
+  font-size: 16px;
+}
+body {
+  /* font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+    "メイリオ", Meiryo, sans-serif; */
+  font-family: sans-serif;
+}
+header,
+footer,
+nav,
+menu,
+article,
+aside,
+section,
+details,
+figcaption,
+figure {
+  display: block;
+}
+ul,
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+img {
+  vertical-align: bottom;
+}
+a img {
+  border: none;
+}
+strong {
+  font-weight: normal;
+}
+i {
+  font-style: normal;
+}
+
+/* ********************************************
+// Button.jsx
+// ***************************************** */
+
+.button {
+  position: relative;
+  width: 100px;
+  height: 48px;
+  margin: 0 auto;
+  border: solid 4px var(--color-green);
+  border-radius: 30px;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ボタンの色を管理するclass */
+.btnGreen {
+  color: var(--color-white);
+  background-color: var(--color-green);
+}
+
+.btnGreen:hover {
+  color: var(--color-green);
+  background-color: var(--color-yellow);
+}
+
+.btnWhite {
+  color: var(--color-green);
+  background-color: var(--color-white);
+}
+
+.btnWhite:hover {
+  color: var(--color-white);
+  background-color: var(--color-green);
+}
+
+.btnYellow {
+  color: var(--color-green);
+  background-color: var(--color-yellow);
+}
+
+.btnYellow:hover {
+  color: var(--color-white);
+  background-color: var(--color-green);
+}
+
+/* ********************************************
+// Card.jsx
+// ***************************************** */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 380px;
+  height: 350px;
+  padding: 20px 15px;
+  background-color: var(--color-light-green02);
+  border: 5px solid var(--color-black);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 180px;
+  background-color: var(--color-white);
+  border: 5px solid var(--color-black);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-wrap: anywhere;
+  gap: 35px;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.cardDescription {
+  display: flex;
+  gap: 30px;
+  margin-left: 10px;
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+.cardTime {
+  content: "";
+  display: inline-block;
+  height: 23px;
+  padding-left: 30px;
+  background-image: url("../assets/timeIcon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 23px;
+}
+
+.cardKcal {
+  content: "";
+  display: inline-block;
+  height: 25px;
+  padding-left: 28px;
+  background-image: url("../assets/fireIcon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 23px;
+}
+
+/* ********************************************
+// CardSlider.jsx
+// ***************************************** */
+
+:global(.swiper),
+:global(.swiper-wrapper),
+:global(.swiper-slide) {
+  overflow: visible;
+}
+
+.cardSliderWrapper {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+
+.cardSwiper {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.cardSlide {
+  display: flex !important;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+:global(.swiper-slide-active) .card {
+  transform: scale(1.15); /* サイズを大きく */
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 強調したければ */
+  background-color: var(--color-light-green01);
+  transition: transform 0.3s ease;
+}
+
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.slideButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.navButton {
+  position: relative;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prevButton::before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--color-green); /* ← 向き */
+}
+
+.nextButton::before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--color-green); /* → 向き */
+}
+
+.dotWrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  position: relative;
+  width: 30px;
+  cursor: pointer;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.activeDot::before {
+  background-color: var(--color-green);
+  width: 12px;
+  height: 12px;
+}
+
+/* ********************************************
+// ItemCard.jsx
+// ***************************************** */
+
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.itemCardContent {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+}
+
+.itemCardImage {
+  position: absolute;
+  width: 110%;
+  height: auto;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.itemCardImage:hover {
+  transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+}
+
+.itemCardText {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.low {
+  margin-top: 100px;
+}
+
+/* ********************************************
+// HotItem.jsx
+// ***************************************** */
+
+.hotItemContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+/* ********************************************
+// NewsHeading.jsx
+// ***************************************** */
+
+.newsWrapper {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.newsDate {
+  color: var(--color-green);
+}
+
+.newsTitle {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.newsTitle:hover {
+  color: var(--color-green);
+  cursor: pointer;
+}
+
+/* ********************************************
+// NewsHeading.jsx
+// ***************************************** */
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.newsListItem {
+  padding: 0 20px;
+  border-bottom: 3px dotted var(--color-green);
+}
+
+/* ********************************************
+// SectionTitle.jsx
+// ***************************************** */
+.sectionTitleWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: auto;
+  gap: 7.5px;
+}
+
+.title {
+  color: var(--color-black);
+  font-size: 48px;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+.subtitle {
+  color: var(--color-green);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  margin-right: -0.25rem;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+/* ********************************************
+// Pagination.jsx
+// ***************************************** */
+.paginationContainer {
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+  margin: 88px auto 0;
+}
+
+.pageNumbersButton {
+  color: var(--color-green);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-green);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.paginationNumber {
+  display: flex;
+  gap: 10px;
+}
+
+.activePageNumberButton {
+  background-color: var(--color-yellow);
+}
+
+.paginationSlide {
+  background-color: var(--color-white);
+  border: 0px;
+}

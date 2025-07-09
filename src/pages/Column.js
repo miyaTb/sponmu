@@ -1,9 +1,19 @@
+import SectionTitle from "../components/SectionTitle";
+import PaginationExample from "../components/PaginationExample";
+
+import "../App.css";
+
 function Column() {
-    return (
+  return (
     <div>
-        <h1>Column</h1>
+      <div class="title">
+        <SectionTitle title="NEWS" subtitle="お知らせ" align="left" />
+      </div>
+      <div class="column-list">
+        <PaginationExample />
+      </div>
     </div>
-    );
+  );
 }
 
 export default Column;
