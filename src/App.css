@@ -72,15 +72,20 @@ h2{
     flex-direction: column;
     gap: 20px;
   }
+  .footerDetail{
+    display: flex;
+    flex-direction: column;
+  }
   .footerText img{
     width: 150px;
   }
   .footerIcon{
     display: flex;
     justify-content: flex-end;
+    gap: 23px;
   }
   .footerIcon img{
-    width: 100px;
+    width: 23px;
   }
   .footerSponmu{
     text-align: center;
