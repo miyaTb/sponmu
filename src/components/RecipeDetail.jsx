@@ -1,17 +1,17 @@
 import React from 'react';
 import '../../src/App.css';
 
-function RecipeDetail({ imageUrl, title, material1, material2, description, amount1, amount2, method1, method2, miniutes, kcal, onClick }) {
+function RecipeDetail({ imageUrl, name, material1, material2, description, amount1, amount2, method1, method2, time, calories }) {
     return (
             <div className='Recipe'>
                 <div className='recipeInfo'>
-                    <img src={imageUrl} alt={title}/>
+                    <img src={`/assets/${imageUrl}`} alt={name} />
                     <div className='recipeText'>
-                        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+                        <h2 dangerouslySetInnerHTML={{ __html: name }} />
                         <div dangerouslySetInnerHTML={{ __html: description }} />
                         <div className='RecipeMiutesDetail'>
-                            <span>{miniutes}</span>
-                            <span>{kcal}</span>
+                            <span>{time}</span>
+                            <span>{calories}</span>
                         </div>
                     </div>
                 </div>
