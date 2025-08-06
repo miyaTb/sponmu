@@ -24,13 +24,9 @@ function Recipe() {
                 name={recipe.name}
                 time={recipe.time}
                 calories={recipe.calories}
-                material1={recipe.material1}
-                material2={recipe.material2}
-                amount1={recipe.amount1}
-                amount2={recipe.amount2}
-                method1={recipe.method1}
-                method2={recipe.method2}
-                description={recipe.description}
+                ingredients={recipe.ingredients}
+                summary={recipe.summary}
+                steps={recipe.steps}
             />
         </div>
     );

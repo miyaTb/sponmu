@@ -59,35 +59,6 @@ li {
   list-style: none;
 }
 
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-a {
-  color: #000000;
-  text-decoration: none;
-}
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-p,
-small {
-  font-size: 16px;
-  line-height: 1.5;
-}
-small {
-  color: #007c3c;
-  display: block;
-}
-h2 {
-  font-size: 48px;
-}
-
 /* ヘッダー */
 header {
   max-width: 100%;
@@ -155,7 +126,7 @@ footer {
   padding: 30px;
   height: 500px;
 }
-.ItemBox:hover {
+.ItemBox:hover, .RecipeBox:hover {
   transition: 0.3s;
   color: #007c3c;
 }
@@ -163,7 +134,7 @@ footer {
   height: 270px;
   object-fit: cover;
 }
-.ItemBox:hover {
+.ItemBox:hover, .RecipeBox:hover {
   img {
     transform: scale(1.05);
     transition: 0.3s;
@@ -178,7 +149,7 @@ footer {
 .ItemBox h3 {
   display: inline-block;
   font-size: 32px;
-  margin: 20px 0; /* こちらは元の your HEAD の margin: 20px 0 5px; と違います。リモートの 20px 0 を採用します。 */
+  margin: 20px 0; 
 }
 .ItemBox p {
   color: #007c3c;
@@ -191,10 +162,18 @@ footer {
 .ProductItem {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  row-gap: 100px;
+  column-gap: 120px;
+}
+.RecipeBox h3{
+  font-size: 32px;
+  display: inline-block;
+  margin:24px 0 16px 0;
 }
 .ProductItem a {
   display: block;
 }
+
 /* 商品詳細 */
 .Product {
   display: flex;
@@ -302,6 +281,179 @@ footer {
   margin-bottom: 30px;
 }
 
+/* Recipe */
+.RecipeMiutes span:nth-of-type(2):before{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('./assets/timeIcon.svg'); 
+  background-size: contain;  
+  margin-right: 8px;   
+  vertical-align: middle;
+  background-repeat: no-repeat; 
+}
+.RecipeMiutes span:first-of-type::before{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('./assets/kcal.png'); 
+  background-size: contain;  
+  margin-right: 8px;   
+  vertical-align: middle;
+  background-repeat: no-repeat; 
+}
+.RecipeBox:nth-of-type(2){
+  position: relative;
+  bottom: -20px;
+}
+.RecipeMiutes span{
+  font-weight: bold;
+  color: #007c3c;
+}
+.RecipeMiutes{
+  display: flex;
+  gap: 32px;
+}
+.RecipeBox:nth-of-type(2) .RecipeMiutes{
+  position: relative;
+  bottom: -40px;
+}
+.recipeInfo{
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.recipeInfo img{
+  width: 640px;
+  height: 410px;
+  border: #000000 solid 5px;
+  border-radius: 20px;
+}
+.RecipeMiutesDetail span{
+  font-weight: bold;
+  color: #007c3c;
+  font-size: 32px;
+}
+.RecipeMiutesDetail span:first-of-type::before{
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url('./assets/kcal.png'); 
+  background-size: contain;  
+  margin-right: 16px;   
+  vertical-align: middle;
+  background-repeat: no-repeat; 
+}
+.RecipeMiutesDetail span:nth-of-type(2):before{
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url('./assets/timeIcon.svg'); 
+  background-size: contain;  
+  margin-right: 16px;   
+  vertical-align: middle;
+  background-repeat: no-repeat; 
+}
+.RecipeMiutesDetail{
+  display: flex;
+  gap: 80px;
+}
+.recipeText div:first-of-type{
+  margin: 30px 0 30px;
+}
+.recipeMethod {
+  list-style: none; /* デフォルトの番号を非表示にする */
+  counter-reset: my-counter; /* カウンターをリセット */
+  padding-left: 0;
+}
+
+/* 各リスト項目（<li>）の設定 */
+.recipeMethod li {
+  position: relative; /* ::beforeの基準位置 */
+  align-items: center;
+  padding-left: 40px; /* 番号分のスペースを確保 */
+}
+
+/* デザイン性のある番号（::before）の装飾 */
+.recipeMethod li::before {
+  content: counter(my-counter); /* カウンターの値を表示 */
+  counter-increment: my-counter; /* カウンターを1増やす */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px; /* 番号を表示するボックスの幅 */
+  height: 30px; /* 番号を表示するボックスの高さ */
+  line-height: 30px; /* 縦方向の中央揃え */
+  text-align: center; /* 横方向の中央揃え */
+  background-color: #E0F8EB; /* 背景色 */
+  color: #007c3c; 
+  font-weight: bold;
+  border-radius: 50%; 
+  border: #007c3c 2px solid;
+  margin-left: 40px;
+  margin-top: 8px;
+}
+.materialMethod h3{
+  font-size: 32px;
+  text-align: center;
+  border-bottom: #007c3c 3px solid;
+  padding-bottom: 16px;
+}
+.materialMethod{
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: stretch; 
+  border-bottom: #007c3c 3px solid;
+}
+/* リスト全体をFlexboxのコンテナにする */
+.useMaterial{
+  margin: 100px auto;
+  text-align: center;
+}
+.recipeMaterial{
+  width: 450px;
+  padding: 30px 0;
+}
+.recipeMaterial li{
+  display: flex;
+  justify-content: space-between; /* 材料名と分量を左右に配置 */
+  align-items: baseline; /* テキストのベースラインを揃える */
+  margin-bottom: 8px; /* 項目間の余白 */
+  padding: 0 60px 8px;
+  border-bottom: #007c3c 3px dotted;
+  font-weight: bold;
+}
+.Method{
+  width: 700px;
+}
+.recipeMethod{
+  padding: 30px 0;
+}
+.Method li{
+  border-bottom: #007c3c 3px dotted;
+  display: flex;
+  align-items: baseline;
+  padding: 16px 40px 16px 100px;
+  font-weight: bold;
+}
+
+/* 材料名のスタイル */
+.ingredient-name {
+  text-align: left; /* 左揃え */
+  /* 必要に応じてフォントサイズなどを調整 */
+}
+
+/* 分量のスタイル */
+.ingredient-amount {
+  text-align: right; /* 右揃え */
+  /* 必要に応じてフォントサイズなどを調整 */
+}
 /* ********************************************
 // Home.js
 // ***************************************** */

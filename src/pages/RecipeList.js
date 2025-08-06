@@ -14,8 +14,6 @@ function RecipeListPage() {
             calories={recipe.calories}
             imageUrl={recipe.imageUrl}
             name={recipe.name}
-
-
           />
         </Link>
       ))}

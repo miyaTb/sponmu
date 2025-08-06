@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../src/App.css';
 
-function RecipeDetail({ imageUrl, name, material1, material2, description, amount1, amount2, method1, method2, time, calories }) {
+function RecipeDetail({ imageUrl, name, summary, ingredients, steps, time, calories }) {
     return (
             <div className='Recipe'>
                 <div className='recipeInfo'>
                     <img src={`/assets/${imageUrl}`} alt={name} />
                     <div className='recipeText'>
                         <h2 dangerouslySetInnerHTML={{ __html: name }} />
-                        <div dangerouslySetInnerHTML={{ __html: description }} />
+                        <div dangerouslySetInnerHTML={{ __html: summary }} />
                         <div className='RecipeMiutesDetail'>
                             <span>{time}</span>
                             <span>{calories}</span>
@@ -18,23 +18,27 @@ function RecipeDetail({ imageUrl, name, material1, material2, description, amoun
                 <div className='materialMethod'>
                     <div>
                         <h3>材料</h3>
-                        <div className='recipeMaterial'>
-                            <div>
-                                <span>{material1}</span>
-                                <span>{amount1}</span>
-                            </div>
-                            <div>
-                                <span>{material2}</span>
-                                <span>{amount2}</span>
-                            </div>
-                        </div>
+                       <ul className='recipeMaterial'>
+                        {ingredients.map((ingredient, index) => {
+                            const parts = ingredient.split(' ');
+                            const amount = parts.pop();
+                            const name = parts.join(' ');
+                        return (
+                            <li key={index}>
+                                <span className="ingredient-name">{name}</span>
+                                <span className="ingredient-amount">{amount}</span>
+                            </li>
+                        );
+                        })}
+                    </ul>
                     </div>
                     <div className='Method'>
                         <h3>つくり方</h3>
-                        <div className='recipeMethod'>
-                            <span>{method1}</span>
-                            <span>{method2}</span>
-                        </div>
+                        <ol className='recipeMethod'>
+                            {steps.map((step, index) => (
+                            <li key={index}>{step}</li>
+                            ))}
+                        </ol>
                     </div>
                 </div>
                 <div className='useMaterial'>
