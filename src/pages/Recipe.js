@@ -27,6 +27,7 @@ function Recipe() {
                 ingredients={recipe.ingredients}
                 summary={recipe.summary}
                 steps={recipe.steps}
+                MaterialUrl={recipe.MaterialUrl}
             />
         </div>
     );

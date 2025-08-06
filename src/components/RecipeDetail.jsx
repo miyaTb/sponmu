@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../src/App.css';
 
-function RecipeDetail({ imageUrl, name, summary, ingredients, steps, time, calories }) {
+function RecipeDetail({ imageUrl, name, summary, ingredients, steps, time, calories, MaterialUrl }) {
     return (
             <div className='Recipe'>
                 <div className='recipeInfo'>
@@ -43,6 +43,8 @@ function RecipeDetail({ imageUrl, name, summary, ingredients, steps, time, calor
                 </div>
                 <div className='useMaterial'>
                     <h3>レシピに使われている商品</h3>
+                    <img src={`/assets/${MaterialUrl}`} alt="" />
+                    <a href="">詳細はこちら</a>
                 </div>
             </div>
       );
