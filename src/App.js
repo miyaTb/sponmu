@@ -14,6 +14,8 @@ import Cart from './pages/Cart';
 import CartForm from './pages/CartForm';
 import OrderComplete from './pages/OrderComplete';
 import ProductLayout from './pages/ProductLayout';
+import "./styles/variables.css";
+
 
 function App() {
   return (
