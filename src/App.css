@@ -245,6 +245,7 @@ footer {
 // ***************************************** */
 /* Home */
 .home {
+  padding-top: 60px;
 }
 
 /* Hero */
@@ -265,7 +266,7 @@ footer {
   flex-direction: column;
   gap: 28px;
   left: 50%;
-  top: 20%;
+  top: calc(20% + 60px);
   color: var(--color-white);
   font-size: 2rem;
   transform: translate(-50%, -50%);
@@ -430,6 +431,7 @@ footer {
 
 /* Column.js */
 .title {
+  padding-top: 60px;
   margin-left: calc(-100vw + 229px);
 }
 
