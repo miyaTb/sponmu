@@ -11,12 +11,14 @@ import Brand from "./pages/Brand";
 import Column from "./pages/Column";
 import NotFound from "./pages/NotFound";
 import ProductLayout from "./pages/ProductLayout";
+import Breadcrumb from "../src/components/Breadcrumb";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Router>
+        <Breadcrumb />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
