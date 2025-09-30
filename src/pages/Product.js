@@ -1,21 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // Link をインポート
-import useProducts from '../hooks/productBox';
-import ProductDetail from '../components/ProductDetail'; // ItemBox をインポート
+import { useParams, Link } from 'react-router-dom';
+import recipesData from '../data/productBox.json'; // JSONファイルを直接インポート
+import ProductDetail from '../components/ProductDetail';
+import yogurtImage from '../assets/yogult.png';
+import yogurt2Image from '../assets/yogult2.png';
+import cheeseImage from '../assets/cheese.png';
+import milkImage from '../assets/milk.png';
+
+const imageMap = {
+  'yogult.png': yogurtImage,
+  'milk.png': milkImage,
+  'cheese_dip.jpg': cheeseImage,
+};
 
 function Product() {
-    const { id } = useParams();
-    const { products } = useProducts();
-    const [product, setProduct] = useState(null);
-  
-    useEffect(() => {
-      const foundProduct = products.find((p) => p.id === parseInt(id, 10));
-      setProduct(foundProduct);
-    }, [id, products]);
-  
-    if (!product) {
-      return <div>Loading...</div>;
-    }
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    // 取得したJSONデータにidを追加する処理
+    const productsWithId = recipesData.map((item, index) => ({
+      ...item,
+      id: index + 1, // 各アイテムにユニークなIDを付与
+      imageUrl: imageMap[item.imageFileName],
+    }));
+
+    // URLのidに一致する商品を見つける
+    const foundProduct = productsWithId.find((p) => p.id === parseInt(id, 10));
+    setProduct(foundProduct);
+  }, [id]); // idが変わったときに再実行
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
       <div>

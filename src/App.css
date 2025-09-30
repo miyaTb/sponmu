@@ -105,6 +105,8 @@ footer {
   img {
     transform: scale(1.05);
     transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0.8;
   }
 }
 .itemImageWrapper {
