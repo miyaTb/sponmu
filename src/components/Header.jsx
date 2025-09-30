@@ -1,5 +1,5 @@
 import React from 'react';
-import headerLogo from '../assets/headerLogo.png';
+import headerLogo from '../assets/headerLogo.svg';
 import shopIcon from '../assets/shopIcon.png';
 
 export default function Header() {
