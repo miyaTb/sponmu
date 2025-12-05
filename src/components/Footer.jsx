@@ -1,12 +1,13 @@
 import React from 'react';
-import footerLogo from '../assets/footerLogo.png';
 import X from '../assets/X.svg';
 import Instagram from '../assets/Instagram.svg';
-
+import footerLogo from '../assets/footerLogo.svg';
+import footerBG from '../assets/mountain.png';
 
 export default function footer() {
   return (
     <footer>
+        <img src={footerBG} alt="フッターの波形デザイン" className="footer-wave-image" />
         <div className='footerText'>
             <img src={footerLogo} alt="sponmu" />
             <div className='footerDetail'>
