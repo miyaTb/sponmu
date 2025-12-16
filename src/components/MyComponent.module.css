@@ -316,7 +316,7 @@ i {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: var(--color-green);
+  background-color: var(--color-yellow);
 }
 
 .itemCardImage {
