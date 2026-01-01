@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import '../../src/App.css';
 
-function ProductDetail({ imageUrl, title, catchcopy, description ,price, material,amount,method,date,arerugen, onClick }) {
+function ProductDetail({ id, imageUrl,englishName, title, catchcopy, description, price, priceValue, material, amount, method, date, arerugen }) {
+    const { addToCart } = useCart();
+    const navigate = useNavigate();
+    const [quantity, setQuantity] = useState(1);
+
+    const handleAddToCart = () => {
+        addToCart({
+            id,
+            name: title.replace(/<br\s*\/?>/gi, ' '),
+            englishName,
+            price: priceValue,
+            imageUrl
+        }, quantity);
+        navigate('/cart');
+    };
     return (
             <div className='Product'>
                 <div className='ProductLeft'>
@@ -29,10 +45,15 @@ function ProductDetail({ imageUrl, title, catchcopy, description ,price, materia
                 <div className='ProductRight'>
                     <div className='ProductMain'>
                         <h2 dangerouslySetInnerHTML={{ __html: title }} />
+                        <h3 className='ProductEnglishName'>{englishName}</h3>
                         <p className='ProductPrice'>{price}</p>
                         <div className='ProductButton'>
-                            <button>+1</button>
-                            <button>カートに入れる</button>
+                            <div className='QuantityControl'>
+                                <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>-</button>
+                                <span className='Quantity'>{quantity}</span>
+                                <button onClick={() => setQuantity(q => q + 1)}>+</button>
+                            </div>
+                            <button className='AddToCartButton' onClick={handleAddToCart}>カートに入れる</button>
                         </div>
                         <div className='FreeShipping'>
                             <p>3,000円以上のご購入で送料無料</p>
