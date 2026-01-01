@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "しぼりたて<br/>生乳ヨーグルト",
+    "englishName": "Fresh Whole Milk Yogurt",
     "price": 300,
     "imageUrl": "yogurtImage",
     "material": "生乳（北海道産）",
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "name": "牧場の朝ミルク",
+    "englishName": "Morning Farm Milk",
     "price": 1000,
     "imageUrl": "milkImage",
     "material": "生乳（北海道産）",
@@ -28,6 +30,7 @@
   {
     "id": 3,
     "name": "しあわせ飲むヨーグルト",
+    "englishName": "Happy Drinking Yogurt",
     "price": 1800,
     "imageUrl": "yogurt2Image",
     "material": "生乳（北海道産）、乳酸菌",
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "name": "やさしい塩チーズ",
+    "englishName": "Gentle Salted Cheese",
     "price": 1000,
     "imageUrl": "cheeseImage",
     "material": "生乳（北海道産）、食塩",
@@ -54,6 +58,7 @@
   {
     "id": 5,
     "name": "まきばのクリームチーズ",
+    "englishName": "Pasture Cream Cheese",
     "price": 1000,
     "imageUrl": "cheeseImage",
     "material": "生乳（北海道産）、クリーム",
@@ -67,6 +72,7 @@
   {
     "id": 6,
     "name": "放牧バター仕立て ヨーグルトスプレッド",
+    "englishName": "Pasture Butter Yogurt Spread",
     "price": 1500,
     "imageUrl": "yogurt2Image",
     "material": "生乳（北海道産）、乳酸菌、発酵バター",
