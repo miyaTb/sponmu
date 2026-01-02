@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import ActionButton from './ActionButton';
+import QuantityButton from './QuantityButton';
 import '../../src/App.css';
 
 function ProductDetail({ id, imageUrl,englishName, title, catchcopy, description, price, priceValue, material, amount, method, date, arerugen }) {
@@ -48,12 +50,15 @@ function ProductDetail({ id, imageUrl,englishName, title, catchcopy, description
                         <h3 className='ProductEnglishName'>{englishName}</h3>
                         <p className='ProductPrice'>{price}</p>
                         <div className='ProductButton'>
-                            <div className='QuantityControl'>
-                                <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>-</button>
-                                <span className='Quantity'>{quantity}</span>
-                                <button onClick={() => setQuantity(q => q + 1)}>+</button>
-                            </div>
-                            <button className='AddToCartButton' onClick={handleAddToCart}>カートに入れる</button>
+                            <QuantityButton
+                                quantity={quantity}
+                                onIncrease={() => setQuantity(q => q + 1)}
+                                onDecrease={() => setQuantity(q => Math.max(1, q - 1))}
+                                minQuantity={1}
+                            />
+                            <ActionButton variant="primary" onClick={handleAddToCart}>
+                                カートに入れる
+                            </ActionButton>
                         </div>
                         <div className='FreeShipping'>
                             <p>3,000円以上のご購入で送料無料</p>
