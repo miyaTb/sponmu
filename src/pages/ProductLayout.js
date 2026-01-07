@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import PageTitle from '../components/PageTitle';
 
 function ProductLayout() {
   return (
     <div className="ProductList">
-      <h2>Product<small>商品一覧</small></h2>
+      <PageTitle title="PRODUCT" subtitle="商品" />
       <div>
         <Outlet />
       </div>

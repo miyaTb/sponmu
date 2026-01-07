@@ -19,12 +19,13 @@ import OrderComplete from './pages/OrderComplete';
 import ProductLayout from './pages/ProductLayout';
 import "./styles/variables.css";
 
+
 function App() {
   return (
     <CartProvider>
+      <Router>
       <div className="App">
         <Header />
-        <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
@@ -44,10 +45,10 @@ function App() {
             {/* 想定外アドレスは NotFound ページへ */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Router>
         <p>sponmu</p>
         <Footer />
       </div>
+      </Router>
     </CartProvider>
   );
 }
