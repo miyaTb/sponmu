@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './css/Cart.css';
 
-const CartItem = ({ id, name, taxIncludedPrice, quantity, onQuantityChange, onRemove }) => (
+const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, onQuantityChange, onRemove }) => (
     <div className="cart-item">
         <div className="cart-item__content">
-        <div className="cart-item__image" />
+        <div className="cart-item__image">
+            <img src={imageUrl} alt={name} />
+        </div>
         <div className="cart-item__details">
             <h2 className="cart-item__name">{name}</h2>
+            <h3 className='cart-item__english-name'>{englishName}</h3>
             <p className="cart-item__price">
             ¥{taxIncludedPrice.toLocaleString()}(税込)
             </p>
@@ -33,7 +36,7 @@ const CartItem = ({ id, name, taxIncludedPrice, quantity, onQuantityChange, onRe
             <div>
             <button className="cart-item__remove" onClick={() => onRemove(id)}>商品を削除する</button>
             </div>
-        </div>
+        </div>  
         </div>
     </div>
 );
@@ -53,6 +56,17 @@ const RecentlyViewed = () => (
     </div>
 );
 
+const CartActions = ({ onContinueShopping, onClearCart }) => (
+    <div className="cart__actions">
+        <button className="cart__continue-shopping" onClick={onContinueShopping}>
+            買い物を続ける
+        </button>
+        <button className="cart__clear" onClick={onClearCart}>
+            カートの中身を空にする
+        </button>
+    </div>
+);
+
 const CartSummary = ({ total, onCheckout }) => (
     <div className="cart-summary">
         <div className="cart-summary__header">
@@ -68,10 +82,20 @@ const CartSummary = ({ total, onCheckout }) => (
 
 const Cart = () => {
     const navigate = useNavigate();
-    const { cartItems, handleQuantityChange, handleRemoveItem, calculateTotal } = useCart();
+    const { cartItems, handleQuantityChange, handleRemoveItem, calculateTotal, clearCart } = useCart();
 
     const handleCheckout = () => {
         navigate('/cart/form');
+    };
+
+    const handleContinueShopping = () => {
+        navigate('/');
+    };
+
+    const handleClearCart = () => {
+        if (window.confirm('カートの中身を全て削除してもよろしいですか？')) {
+            clearCart();
+        }
     };
 
     if (cartItems.length === 0) {
@@ -80,7 +104,8 @@ const Cart = () => {
                 <h1 className="cart__title">CART</h1>
                 <p className="cart__subtitle">購入</p>
                 <div className="cart__empty">
-                    <p>カートに商品がありません</p>
+                    <h2>買い物かごに商品が入っていません。</h2>
+                    <p>現在、買い物かごに商品が入っていません。<br />お買い物を続けるには下の 「お買い物を続ける」 をクリックしてください。</p>
                 </div>
             </div>
         );
@@ -97,12 +122,18 @@ const Cart = () => {
                             key={item.id}
                             id={item.id}
                             name={item.name}
+                            englishName={item.englishName}
                             taxIncludedPrice={item.taxIncludedPrice}
                             quantity={item.quantity}
+                            imageUrl={item.imageUrl}
                             onQuantityChange={handleQuantityChange}
                             onRemove={handleRemoveItem}
                         />
                     ))}
+                    <CartActions
+                        onContinueShopping={handleContinueShopping}
+                        onClearCart={handleClearCart}
+                    />
                     <RecentlyViewed />
                 </div>
                 <div className="cart__summary">

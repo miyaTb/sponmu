@@ -11,22 +11,7 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([
-        {
-            id: 1,
-            name: "しぼりたて生乳ヨーグルト",
-            price: 298,
-            taxIncludedPrice: 322,
-            quantity: 1
-        },
-        {
-            id: 2,
-            name: "牧場の朝ミルク",
-            price: 178,
-            taxIncludedPrice: 192,
-            quantity: 2
-        }
-    ]);
+    const [cartItems, setCartItems] = useState([]);
 
     const handleQuantityChange = (id, newQuantity) => {
         if (newQuantity < 1) return;
@@ -41,6 +26,28 @@ export const CartProvider = ({ children }) => {
         setCartItems(items => items.filter(item => item.id !== id));
     };
 
+    const addToCart = (product, quantity = 1) => {
+        setCartItems(items => {
+            const existingItem = items.find(item => item.id === product.id);
+            if (existingItem) {
+                return items.map(item =>
+                    item.id === product.id
+                        ? { ...item, quantity: item.quantity + quantity }
+                        : item
+                );
+            }
+            return [...items, {
+                id: product.id,
+                name: product.name,
+                englishName: product.englishName,
+                price: product.price,
+                taxIncludedPrice: product.price,
+                imageUrl: product.imageUrl,
+                quantity: quantity
+            }];
+        });
+    };
+
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => total + (item.taxIncludedPrice * item.quantity), 0);
     };
@@ -49,12 +56,18 @@ export const CartProvider = ({ children }) => {
         return cartItems.reduce((total, item) => total + (item.taxIncludedPrice * item.quantity), 0);
     };
 
+    const clearCart = () => {
+        setCartItems([]);
+    };
+
     const value = {
         cartItems,
         handleQuantityChange,
         handleRemoveItem,
+        addToCart,
         calculateTotal,
-        calculateSubtotal
+        calculateSubtotal,
+        clearCart
     };
 
     return (

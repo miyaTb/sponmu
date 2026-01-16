@@ -55,6 +55,42 @@ $sponmu-gray:#808080;
     max-width: 470px;
     margin: 0 auto;
   }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__continue-shopping,
+  &__clear {
+    width: 260px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__continue-shopping {
+    background-color: white;
+    color: $sponmu-green;
+    border: 2px solid $sponmu-green;
+
+    &:hover {
+      background-color: rgba($sponmu-green, 0.1);
+    }
+  }
+
+  &__clear {
+    background-color: $sponmu-green;
+    color: white;
+    border: 2px solid $sponmu-green;
+
+    &:hover {
+      background-color: darken($sponmu-green, 10%);
+    }
+  }
 }
 
 .cart-item {
@@ -82,6 +118,11 @@ $sponmu-gray:#808080;
 
   &__name {
     font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__english-name {
+    color: var(--color-gray);
     margin-bottom: 0.5rem;
   }
 
