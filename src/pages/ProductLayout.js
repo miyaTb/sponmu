@@ -1,5 +1,5 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
+import './css/Product.css'
 
 function ProductLayout() {
   return (

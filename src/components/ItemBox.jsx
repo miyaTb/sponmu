@@ -7,7 +7,7 @@ function ItemBox({ imageUrl, title, price, onClick }) {
       <div className='itemImageWrapper'> 
         <img src={imageUrl} alt={title} />
       </div>
-      <h3>{title}</h3>
+      <h3 className="product-title">{title}</h3>
       <p>{price}</p>
     </div>
   );

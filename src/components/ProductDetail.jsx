@@ -1,14 +1,25 @@
-import React from 'react';
-import '../../src/App.css';
+import  { useState } from 'react';
+import '../pages/css/Product.css'
 
-function ProductDetail({ imageUrl, title, catchcopy, description ,price, material,amount,method,date,arerugen, onClick }) {
+function ProductDetail({ imageUrl, subImageUrl1, subtitle, title, catchcopy, description ,price, material,amount,method,date,arerugen, onClick }) {
+    const [mainImage, setMainImage] = useState(imageUrl);
     return (
             <div className='Product'>
                 <div className='ProductLeft'>
-                    <img src={imageUrl} alt={title}/>
+                    <img src={mainImage} alt={title}/>
                     <div className='ProductImage'>
-                        <img src={imageUrl} alt=""/>
-                        <img src={imageUrl} alt=""/>
+                        <img src={imageUrl} alt=""
+                        onMouseEnter={() => setMainImage(imageUrl)} 
+                        onClick={() => setMainImage(imageUrl)} 
+                        />
+                        <img src={subImageUrl1} alt=""
+                        onMouseEnter={() => setMainImage(subImageUrl1)} 
+                        onClick={() => setMainImage(subImageUrl1)} 
+                        />
+                        <img src={subImageUrl1} alt=""
+                        onMouseEnter={() => setMainImage(subImageUrl1)} 
+                        onClick={() => setMainImage(subImageUrl1)} 
+                        />
                     </div>
                     <p className='ProductInfo'>
                         <span>■ 商品情報</span>
@@ -19,23 +30,27 @@ function ProductDetail({ imageUrl, title, catchcopy, description ,price, materia
                         <span>{arerugen}</span>
                     </p>
                     <div className='ProductRecipe'>
-                        <h3>おすすめの食べ方</h3>
+                        <h2>おすすめの食べ方</h2>
                         <div className='recipeMenu'>
-                            <img src={imageUrl} alt=""/>
-                            <img src={imageUrl} alt=""/>
+                            <a href=""><img src={imageUrl} alt=""/></a>
                         </div>
                     </div>
                 </div>
                 <div className='ProductRight'>
                     <div className='ProductMain'>
-                        <h2 dangerouslySetInnerHTML={{ __html: title }} />
-                        <p className='ProductPrice'>{price}</p>
+                        <h1 dangerouslySetInnerHTML={{ __html: title }} className="product-title"/>
+                        <h3 dangerouslySetInnerHTML={{ __html: subtitle }} className='productSubtitle'/>
+                        <span className='ProductPrice'>{price}</span>
                         <div className='ProductButton'>
-                            <button>+1</button>
-                            <button>カートに入れる</button>
+                            <div>
+                                <button>+</button>
+                                <span>0</span>
+                                <button>-</button>
+                            </div>
+                            <button className='cartBtn'>カートに入れる</button>
                         </div>
                         <div className='FreeShipping'>
-                            <p>3,000円以上のご購入で送料無料</p>
+                            <a href="">3,000円以上のご購入で送料無料</a>
                             <a href="">送料・返品について</a>
                         </div>
                         <p>
@@ -43,7 +58,7 @@ function ProductDetail({ imageUrl, title, catchcopy, description ,price, materia
                         </p>
                     </div>
                     <div className='ProductText'>
-                        <h3 dangerouslySetInnerHTML={{ __html: catchcopy }} />
+                        <h2 dangerouslySetInnerHTML={{ __html: catchcopy }} />
                         <div dangerouslySetInnerHTML={{ __html: description }} />
                     </div>
                 </div>

@@ -1,9 +1,12 @@
 [
   {
     "id": 1,
-    "name": "しぼりたて生乳ヨーグルト",
+    "name": "しぼりたて生乳\nヨーグルト",
+    "subName":"Fresh Milk Yogurt",
     "price": 300,
-    "imageFileName":"yogult.png",
+    "imageFileName":"yogurt.png",
+    "subImageFileName1":"yogurtsub1.png",
+    "subImageFileName2":"yogurt2.png",
     "material": "生乳（北海道産）",
     "amount": "350g",
     "method": "要冷蔵（10度以下）",
@@ -27,7 +30,7 @@
   },
   {
     "id": 3,
-    "name": "しあわせ飲むヨーグルト",
+    "name": "しあわせ飲む\nヨーグルト",
     "price": 1800,
     "imageFileName": "yogult.png",
     "material": "生乳（北海道産）、乳酸菌",
@@ -53,7 +56,7 @@
   },
   {
     "id": 5,
-    "name": "まきばのクリームチーズ",
+    "name": "まきばの\nクリームチーズ",
     "price": 1000,
     "imageUrl": "cheeseImage",
     "material": "生乳（北海道産）、クリーム",
@@ -66,7 +69,7 @@
   },
   {
     "id": 6,
-    "name": "放牧バター仕立て ヨーグルトスプレッド",
+    "name": "放牧バター仕立て\nヨーグルトスプレッド",
     "price": 1500,
     "imageUrl": "yogurt2Image",
     "material": "生乳（北海道産）、乳酸菌、発酵バター",
