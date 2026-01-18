@@ -1,29 +1,23 @@
-import React from "react";
+import React, { useState, useEffect, useParams } from "react";
 
 import ItemCard from "./ItemCard";
 
 import styles from "./MyComponent.module.css";
 
-import itemcheese from "../assets/itemcheese.png";
-import itemmilk from "../assets/itemmilk.png";
-import itemyoghurt from "../assets/itemyoghurt.png";
+import cheeseImage from "../assets/itemcheese.png";
+import milkImage from "../assets/itemmilk.png";
+import yoghurtImage from "../assets/itemyoghurt.png";
+
+import productBox from "../data/productBox.json";
 
 const HotItems = () => {
-  const items = [
-    { text: "やさしい塩チーズ", image: itemcheese, description: "チーズ" },
-    {
-      text: "しぼりたて生乳\nヨーグルト",
-      image: itemyoghurt,
-      description: "ヨーグルト",
-    },
-    { text: "牧場の朝ミルク", image: itemmilk, description: "牛乳" },
-  ];
   return (
     <div className={styles.hotItemContent}>
-      {items.map((item, index) => (
+      {productBox.slice(0, 3).map((item, index) => (
         <ItemCard
           key={index}
           {...item}
+          index={index}
           className={index === 1 ? styles.high : styles.low}
         />
       ))}
