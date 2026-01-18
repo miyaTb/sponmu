@@ -69,7 +69,7 @@ const ItemCard = ({
             <text className={styles.itemCardNameText}>
               <textPath
                 href="#bottomPath"
-                startOffset="45%"
+                startOffset="55%"
                 textAnchor="middle"
               >
                 {name.replace(/\n/g, " ")}
