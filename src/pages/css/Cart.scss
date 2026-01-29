@@ -1,0 +1,291 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+$sponmu-green:#007C3C;
+$sponmu-yellow:#FFF50A;
+$sponmu-gray:#808080;
+.cart {
+  padding: 2rem 0;
+  font-family: sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: $sponmu-green;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__items {
+    flex: 2;
+    max-width: 800px;
+  }
+
+  &__summary {
+    flex: 1;
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__continue-shopping,
+  &__clear {
+    width: 260px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__continue-shopping {
+    background-color: white;
+    color: $sponmu-green;
+    border: 2px solid $sponmu-green;
+
+    &:hover {
+      background-color: rgba($sponmu-green, 0.1);
+    }
+  }
+
+  &__clear {
+    background-color: $sponmu-green;
+    color: white;
+    border: 2px solid $sponmu-green;
+
+    &:hover {
+      background-color: darken($sponmu-green, 10%);
+    }
+  }
+}
+
+.cart-item {
+  border-bottom: 3px dotted $sponmu-green;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    width: 180px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-right: 24px;
+    border: 5px solid black;
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__english-name {
+    color: var(--color-gray);
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    color: $sponmu-green;
+    font-weight: bold;
+    font-size: 32px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  &__button {
+    background-color: white;
+    color: $sponmu-green;
+    border: 2px solid $sponmu-green;
+    border-radius: 20px;
+    width: 94px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    cursor: pointer;
+  }
+
+  &__quantity-btn {
+    background-color: transparent;
+    border: none;
+    color: $sponmu-green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: rgba(0, 124, 60, 0.1);
+    }
+  }
+
+  &__quantity-display {
+    color: $sponmu-green;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__remove {
+    font-size: 16px;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.recently-viewed {
+  margin-top: 180px;
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__item {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: 257px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    border: 5px solid black;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__price {
+    color: $sponmu-green;
+    font-weight: bold;
+    font-size: 32px;
+  }
+}
+
+.cart-summary {
+  background-color: rgba($sponmu-yellow,0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__label {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__total {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__center {
+    text-align: center;
+  }
+
+  &__note {
+    font-size: 0.875rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    background-color: $sponmu-green;
+    color: white;
+    width: 260px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darken($sponmu-green, 10%);
+    }
+  }
+}
+
+.cart__empty {
+  text-align: center;
+  padding: 2rem;
+  color: $sponmu-gray;
+  font-size: 1.125rem;
+}

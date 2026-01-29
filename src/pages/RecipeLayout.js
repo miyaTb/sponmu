@@ -1,11 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import PageTitle from '../components/PageTitle';
 
-function ProductLayout() {
+function RecipeLayout() {
   return (
     <div className="ProductList">
-      <PageTitle title="PRODUCT" subtitle="商品" />
+      <h2>RECIPE<small>おすすめの食べ方</small></h2>
       <div>
         <Outlet />
       </div>
@@ -13,4 +12,4 @@ function ProductLayout() {
   );
 }
 
-export default ProductLayout;
+export default RecipeLayout;

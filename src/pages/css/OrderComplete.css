@@ -1,0 +1,72 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.order-complete {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.order-complete__container {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.order-complete__image {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: 5px solid black;
+  margin: 0 auto;
+}
+
+.order-complete__message {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+  font-weight: bold;
+  max-width: 500px;
+}
+
+.order-complete__button {
+  background-color: #007C3C;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 200px;
+}
+
+.order-complete__button:hover {
+  background-color: #005a2d;
+}
