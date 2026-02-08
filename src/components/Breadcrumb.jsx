@@ -2,7 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import styles from "./MyComponent.module.css";
-import breadcrumbSeparatorPng from "../assets/breadcrumbSeparator.png";
+// import breadcrumbSeparatorPng from "../assets/breadcrumbSeparator.png";
+import breadcrumbSeparatorPng from "../assets/arrow.png";
 
 const Breadcrumb = () => {
   const location = useLocation();
