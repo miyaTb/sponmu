@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import recipesData from '../data/productBox.json'; // JSONファイルを直接インポート
 import ProductDetail from '../components/ProductDetail';
 import yogurtImage from '../assets/yogurt.png';
-import yogurtSubImage from '../assets/yogurtsub1.png';
+import yogurtSubImage1 from '../assets/yogurtsub1.png';
+import yogurtSubImage2 from '../assets/yogurtsub1.png';
 import cheeseImage from '../assets/cheese.png';
 import milkImage from '../assets/milk.png';
 import './css/Product.css'
@@ -15,7 +16,8 @@ const imageMap = {
 };
 
 const subImageMap ={
-  'yogurtsub1.png': yogurtSubImage,
+  'yogurtsub1.png': yogurtSubImage1,
+  'yogurt2.png': yogurtSubImage2,
 }
 
 function Product() {
@@ -28,7 +30,8 @@ function Product() {
       ...item,
       id: index + 1, // 各アイテムにユニークなIDを付与
       imageUrl: imageMap[item.imageFileName],
-      subImageUrl1: subImageMap[item.subImageFileName1]
+      subImageUrl1: subImageMap[item.subImageFileName1],
+      subImageUrl2: subImageMap[item.subImageFileName2]
     }));
 
     // URLのidに一致する商品を見つける
@@ -47,8 +50,10 @@ function Product() {
         id={product.id}
         imageUrl={product.imageUrl}
         subImageUrl1={product.subImageUrl1}
+        subImageUrl2={product.subImageUrl2}
         subtitle={product.subName}
         title={product.name}
+        englishName={product.englishName}
         material={`原材料名： ${product.material}`}
         amount={`内容量： ${product.amount}`}
         method={`保存方法：${product.method}`}
@@ -57,6 +62,7 @@ function Product() {
         catchcopy={product.catchcopy}
         description={product.description}
         price={`¥ ${product.price}(税込)`}
+        priceValue={product.price}
       />
       </div>
   );
