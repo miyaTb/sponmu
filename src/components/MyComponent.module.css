@@ -51,6 +51,49 @@ i {
 }
 
 /* ********************************************
+// Breadcrumb.jsx
+// ***************************************** */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-left: 80px;
+  font-size: 16px;
+  color: var(--color-green);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: var(--color-green);
+  /* font-weight: 700; */
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* color: var(--color-green);
+  font-weight: 700;
+  text-decoration: none; */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  /* margin: 0 0.5em; */
+  margin: 10px 24px;
+  color: var(--color-yellow);
+  width: 10px;
+}
+
+/* ********************************************
 // Button.jsx
 // ***************************************** */
 
@@ -63,7 +106,9 @@ i {
   border-radius: 30px;
   font-size: 1rem;
   letter-spacing: 0.125rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
   cursor: pointer;
 }
 
