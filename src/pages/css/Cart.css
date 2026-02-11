@@ -73,6 +73,10 @@ button {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+.cart-item__english-name {
+  color: var(--color-gray);
+  margin-bottom: 0.5rem;
+}
 .cart-item__price {
   color: #007C3C;
   font-weight: bold;
@@ -205,7 +209,7 @@ button {
   font-weight: bold;
 }
 .cart-summary__button:hover {
-  background-color: #004923;
+  background-color: rgb(0, 73, 35.3225806452);
 }
 
 .cart__empty {
