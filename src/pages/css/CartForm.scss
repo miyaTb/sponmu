@@ -80,12 +80,20 @@ $sponmu-gray: #808080;
       font-weight: bold;
       font-size: 16px;
       box-sizing: border-box;
-      
+
       &::placeholder {
         color: #808080;
         font-weight: bold;
         font-size: 16px;
       }
+
+      &.cart-form__input--error {
+        background: rgba(#C40808, 0.1);
+      }
+    }
+
+    select.cart-form__select--error {
+      background: rgba(#C40808, 0.1);
     }
   }
   
@@ -210,6 +218,13 @@ $sponmu-gray: #808080;
     background-color: $sponmu-gray;
     border-radius: 15px;
     border: 5px solid black;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__item-name {
@@ -325,6 +340,10 @@ $sponmu-gray: #808080;
 
     &.open::after {
       transform: rotate(180deg);
+    }
+
+    &--error {
+      background: rgba(#C40808, 0.1);
     }
   }
 
