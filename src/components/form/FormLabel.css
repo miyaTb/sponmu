@@ -1,0 +1,19 @@
+.form-label {
+    display: block;
+    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.form-label--h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-label__error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.25rem;
+}

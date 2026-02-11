@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './css/CartForm.css';
+import ActionButton from '../components/ActionButton';
+import PageTitle from '../components/PageTitle';
 
 const CartForm = () => {
     const navigate = useNavigate();
@@ -96,8 +98,8 @@ const CartForm = () => {
     const handleInputChange = (field, value) => {
         setFormData(prev => ({ ...prev, [field]: value }));
         if (errors.form[field]) {
-            setErrors(prev => ({ 
-                ...prev, 
+            setErrors(prev => ({
+                ...prev,
                 form: { ...prev.form, [field]: '' }
             }));
         }
@@ -105,6 +107,40 @@ const CartForm = () => {
         if (field === 'paymentMethod') {
             setUiState(prev => ({ ...prev, showPaymentOptions: false }));
         }
+    };
+
+    const validateField = (field) => {
+        let error = '';
+        switch (field) {
+            case 'email':
+                if (!formData.email) error = 'メールアドレスは必須です';
+                else if (!/\S+@\S+\.\S+/.test(formData.email)) error = '有効なメールアドレスを入力してください';
+                break;
+            case 'name':
+                if (!formData.name) error = 'お名前は必須です';
+                break;
+            case 'furigana':
+                if (!formData.furigana) error = 'フリガナは必須です';
+                break;
+            case 'phone':
+                if (!formData.phone) error = '電話番号は必須です';
+                break;
+            case 'zipcode':
+                if (!formData.zipcode) error = '郵便番号は必須です';
+                break;
+            case 'prefecture':
+                if (!formData.prefecture) error = '都道府県を選択してください';
+                break;
+            case 'city':
+                if (!formData.city) error = '市区町村・番地は必須です';
+                break;
+            default:
+                break;
+        }
+        setErrors(prev => ({
+            ...prev,
+            form: { ...prev.form, [field]: error }
+        }));
     };
 
     const validateForm = () => {
@@ -190,19 +226,26 @@ const CartForm = () => {
     const shipping = 300;
     const total = subtotal + shipping - coupon.discount;
 
+    const isFormIncomplete = !formData.email || !formData.name || !formData.furigana
+        || !formData.phone || !formData.zipcode || !formData.prefecture
+        || !formData.city || !formData.paymentMethod;
+
     return (
         <div className="cart-form">
-            <h1 className="cart-form__title">CART</h1>
-            <p className="cart-form__subtitle">購入</p>
+            <PageTitle
+            title="CART"
+            subtitle="購入"
+            />
             <div className="cart-form__main">
                 <form className="cart-form__form" onSubmit={handleSubmit}>
             <label className="cart-form__label">メールアドレス
-                <input 
-                    className="cart-form__input" 
-                    type="email" 
-                    placeholder="example@example.com" 
+                <input
+                    className={`cart-form__input ${errors.form.email ? 'cart-form__input--error' : ''}`}
+                    type="email"
+                    placeholder="example@example.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
+                    onBlur={() => validateField('email')}
                 />
                 {errors.form.email && <span className="cart-form__error">{errors.form.email}</span>}
             </label>
@@ -211,22 +254,24 @@ const CartForm = () => {
                 <legend className="cart-form__legend">購入者</legend>
 
                 <label className="cart-form__label">お名前
-                <input 
-                    className="cart-form__input" 
-                    type="text" 
-                    placeholder="姓名を入力してください" 
+                <input
+                    className={`cart-form__input ${errors.form.name ? 'cart-form__input--error' : ''}`}
+                    type="text"
+                    placeholder="姓名を入力してください"
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
+                    onBlur={() => validateField('name')}
                 />
                 {errors.form.name && <span className="cart-form__error">{errors.form.name}</span>}
                 </label>
                 <label className="cart-form__label">フリガナ
-                <input 
-                    className="cart-form__input" 
-                    type="text" 
-                    placeholder="カタカナで入力してください" 
+                <input
+                    className={`cart-form__input ${errors.form.furigana ? 'cart-form__input--error' : ''}`}
+                    type="text"
+                    placeholder="カタカナで入力してください"
                     value={formData.furigana}
                     onChange={(e) => handleInputChange('furigana', e.target.value)}
+                    onBlur={() => validateField('furigana')}
                 />
                 {errors.form.furigana && <span className="cart-form__error">{errors.form.furigana}</span>}
                 </label>
@@ -234,11 +279,12 @@ const CartForm = () => {
                 <label className="cart-form__label">郵便番号
                 <div className="cart-form__zipcode-group">
                     <input
-                    className="cart-form__input cart-form__input--zipcode"
+                    className={`cart-form__input cart-form__input--zipcode ${errors.form.zipcode ? 'cart-form__input--error' : ''}`}
                     type="text"
                     placeholder="123-4567"
                     value={formData.zipcode}
                     onChange={(e) => handleInputChange('zipcode', e.target.value)}
+                    onBlur={() => validateField('zipcode')}
                     />
                     <button
                     className="cart-form__button cart-form__button--search"
@@ -252,9 +298,10 @@ const CartForm = () => {
 
                 <label className="cart-form__label">都道府県
                 <select
-                    className={`cart-form__select ${!formData.prefecture ? 'cart-form__select--placeholder' : ''}`}
+                    className={`cart-form__select ${!formData.prefecture ? 'cart-form__select--placeholder' : ''} ${errors.form.prefecture ? 'cart-form__select--error' : ''}`}
                     value={formData.prefecture}
                     onChange={(e) => handleInputChange('prefecture', e.target.value)}
+                    onBlur={() => validateField('prefecture')}
                 >
                     {prefectures.map((pref, i) => (
                     <option key={i} value={pref}>{pref || '都道府県を選択してください'}</option>
@@ -265,12 +312,13 @@ const CartForm = () => {
 
                 <label className="cart-form__label">市区町村・番地
                 <input
-                    className="cart-form__input"
+                    className={`cart-form__input ${errors.form.city ? 'cart-form__input--error' : ''}`}
                     value={formData.city + formData.town}
                     onChange={(e) => {
                     handleInputChange('city', e.target.value);
                     handleInputChange('town', '');
                     }}
+                    onBlur={() => validateField('city')}
                 />
                 {errors.form.city && <span className="cart-form__error">{errors.form.city}</span>}
                 </label>
@@ -285,12 +333,13 @@ const CartForm = () => {
                 />
                 </label>
                 <label className="cart-form__label">電話番号
-                <input 
-                    className="cart-form__input" 
-                    type="text" 
-                    placeholder="090-1234-5678" 
+                <input
+                    className={`cart-form__input ${errors.form.phone ? 'cart-form__input--error' : ''}`}
+                    type="text"
+                    placeholder="090-1234-5678"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onBlur={() => validateField('phone')}
                 />
                 {errors.form.phone && <span className="cart-form__error">{errors.form.phone}</span>}
                 </label>
@@ -314,9 +363,9 @@ const CartForm = () => {
                 <legend className="cart-form__legend">お支払い情報の入力</legend>
                 
                 <div className="cart-form__payment-fieldset">
-                    <button 
+                    <button
                         type="button"
-                        className={`cart-form__payment-toggle ${uiState.showPaymentOptions ? 'open' : ''}`}
+                        className={`cart-form__payment-toggle ${uiState.showPaymentOptions ? 'open' : ''} ${errors.form.payment ? 'cart-form__payment-toggle--error' : ''}`}
                         onClick={handlePaymentToggle}
                     >
                         <span>{formData.paymentMethod || 'お支払い方法を選択'}</span>
@@ -346,13 +395,13 @@ const CartForm = () => {
                 </div>
             </fieldset>
 
-            <button 
-                className="cart-form__submit" 
+            <ActionButton
                 type="submit"
-                disabled={uiState.isSubmitting}
+                variant={isFormIncomplete ? 'gray' : 'primary'}
+                disabled={isFormIncomplete || uiState.isSubmitting}
             >
                 {uiState.isSubmitting ? '処理中...' : '注文を確定する'}
-            </button>
+            </ActionButton>
                 </form>
                 
                 <div className="cart-form__sidebar">
@@ -360,7 +409,9 @@ const CartForm = () => {
             {cartItems.map((item) => (
                 <div key={item.id} className="cart-form__item">
                 <div className="cart-form__item-content">
-                    <div className="cart-form__item-image" />
+                    <div className="cart-form__item-image">
+                        <img src={item.imageUrl} alt={item.name} />
+                    </div>
                     <div className="cart-form__item-details">
                         <p className="cart-form__item-name">{item.name}</p>
                         <p className="cart-form__item-price">¥{item.taxIncludedPrice.toLocaleString()}(税込) x {item.quantity}</p>

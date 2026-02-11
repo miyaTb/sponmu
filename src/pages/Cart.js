@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './css/Cart.css';
+import ActionButton from '../components/ActionButton';
+import PageTitle from '../components/PageTitle';
 
 const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, onQuantityChange, onRemove }) => (
     <div className="cart-item">
@@ -45,7 +47,7 @@ const RecentlyViewed = () => (
     <div className="recently-viewed">
         <h3 className="recently-viewed__title">最近見た商品</h3>
         <div className="recently-viewed__list">
-        {[1, 2].map((item) => (
+        {[1, 2, 3, 4].map((item) => (
             <div key={item} className="recently-viewed__item">
             <div className="recently-viewed__image" />
             <p className="recently-viewed__name">テキスト</p>
@@ -58,12 +60,12 @@ const RecentlyViewed = () => (
 
 const CartActions = ({ onContinueShopping, onClearCart }) => (
     <div className="cart__actions">
-        <button className="cart__continue-shopping" onClick={onContinueShopping}>
+        <ActionButton  onClick={onContinueShopping}>
             買い物を続ける
-        </button>
-        <button className="cart__clear" onClick={onClearCart}>
+        </ActionButton>
+        <ActionButton variant="gray"  onClick={onClearCart}>
             カートの中身を空にする
-        </button>
+        </ActionButton>
     </div>
 );
 
@@ -101,20 +103,24 @@ const Cart = () => {
     if (cartItems.length === 0) {
         return (
             <div className="cart">
-                <h1 className="cart__title">CART</h1>
-                <p className="cart__subtitle">購入</p>
                 <div className="cart__empty">
                     <h2>買い物かごに商品が入っていません。</h2>
                     <p>現在、買い物かごに商品が入っていません。<br />お買い物を続けるには下の 「お買い物を続ける」 をクリックしてください。</p>
                 </div>
+                <ActionButton  onClick={handleContinueShopping}>
+                    買い物を続ける
+                </ActionButton>
+                <RecentlyViewed />
             </div>
         );
     }
 
     return (
         <div className="cart">
-            <h1 className="cart__title">CART</h1>
-            <p className="cart__subtitle">購入</p>
+            <PageTitle
+            title="CART"
+            subtitle="購入"
+            />
             <div className="cart__content">
                 <div className="cart__items">
                     {cartItems.map(item => (
