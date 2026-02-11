@@ -45,7 +45,6 @@ function App() {
             {/* 想定外アドレスは NotFound ページへ */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        <p>sponmu</p>
         <Footer />
       </div>
       </Router>
