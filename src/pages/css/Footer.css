@@ -4,7 +4,7 @@
     padding: 0;
 }
 a {
-    color: #000000;
+    color: var(--color-black);
     text-decoration: none;
 }
 img {
@@ -21,7 +21,7 @@ span{
 /* footer */
 footer {
     height: 100%;
-    color: #ffffff;
+    color: var(--color-white);
     padding: 100px 80px 20px;
     position: relative;
 }
