@@ -1,5 +1,5 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
+import './css/Product.css'
 import PageTitle from '../components/PageTitle';
 
 function ProductLayout() {
