@@ -69,10 +69,7 @@ function Home() {
             <img src={commitment01} alt="自然"></img>
           </div>
         </section>
-        <section className="commitment-container commitent-right">
-          <div className="commitment-image image-left">
-            <img src={commitment02} alt="食卓"></img>
-          </div>
+        <section className="commitment-container commitment-right">
           <div className="commitment-text">
             <h3 className="commitment-title">
               新鮮さをそのまま、
@@ -86,6 +83,9 @@ function Home() {
               <br />
               EC限定でお届けするからこそ、できたての味わいを逃すことなく、あなたのもとへお届けできます。
             </p>
+          </div>
+          <div className="commitment-image image-left">
+            <img src={commitment02} alt="食卓"></img>
           </div>
         </section>
       </section>

@@ -499,12 +499,15 @@ footer {
 .commitment-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 85px;
+  justify-content: space-between; /* 左右に寄せる */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 120px;
 }
 
 .commitment-right {
-  text-align: right;
+  /* text-align: right; */
+  flex-direction: row-reverse;
 }
 
 .commitment-image {
@@ -530,6 +533,12 @@ footer {
 .image-right {
   border-top-left-radius: 25%;
   border-bottom-left-radius: 25%;
+}
+
+.commitment-text {
+  flex: 1;
+  max-width: 536px;
+  margin: 0 auto; /* 真ん中寄り */
 }
 
 .commitment-title {
