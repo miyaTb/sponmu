@@ -4,9 +4,9 @@ import ItemCard from "./ItemCard";
 
 import styles from "./MyComponent.module.css";
 
-import cheeseImage from "../assets/itemcheese.png";
-import milkImage from "../assets/itemmilk.png";
-import yoghurtImage from "../assets/itemyoghurt.png";
+import itemcheese from "../assets/itemcheese.png";
+import itemmilk from "../assets/itemmilk.png";
+import itemyoghurt from "../assets/itemyoghurt.png";
 
 import productBox from "../data/productBox.json";
 

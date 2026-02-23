@@ -1,31 +1,32 @@
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import ProductList from './pages/ProductList';
-import Product from './pages/Product';
-import Brand from './pages/Brand';
-import Column from './pages/Column';
-import NotFound from './pages/NotFound';
-import RecipeList from './pages/RecipeList'
-import Recipe from './pages/Recipe';
-import RecipeLayout from './pages/RecipeLayout';
-import Cart from './pages/Cart';
-import CartForm from './pages/CartForm';
-import OrderComplete from './pages/OrderComplete';
-import ProductLayout from './pages/ProductLayout';
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import ProductList from "./pages/ProductList";
+import Product from "./pages/Product";
+import Brand from "./pages/Brand";
+import Breadcrumb from "../src/components/Breadcrumb";
+import Column from "./pages/Column";
+import NotFound from "./pages/NotFound";
+import RecipeList from "./pages/RecipeList";
+import Recipe from "./pages/Recipe";
+import RecipeLayout from "./pages/RecipeLayout";
+import Cart from "./pages/Cart";
+import CartForm from "./pages/CartForm";
+import OrderComplete from "./pages/OrderComplete";
+import ProductLayout from "./pages/ProductLayout";
 import "./styles/variables.css";
-
 
 function App() {
   return (
     <CartProvider>
       <Router>
-      <div className="App">
-        <Header />
+        <div className="App">
+          <Header />
+          <Breadcrumb />
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
@@ -45,9 +46,9 @@ function App() {
             {/* 想定外アドレスは NotFound ページへ */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        <p>sponmu</p>
-        <Footer />
-      </div>
+          <p>sponmu</p>
+          <Footer />
+        </div>
       </Router>
     </CartProvider>
   );
