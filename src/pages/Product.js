@@ -23,6 +23,7 @@ function Product() {
         id={product.id}
         imageUrl={product.imageUrl}
         title={product.name}
+        englishName={product.englishName}
         material={`原材料名： ${product.material}`}
         amount={`内容量： ${product.amount}`}
         method={`保存方法：${product.method}`}
@@ -31,6 +32,7 @@ function Product() {
         catchcopy={product.catchcopy}
         description={product.description}
         price={`¥ ${product.price}(税込)`}
+        priceValue={product.price}
       />
       </div>
   );
