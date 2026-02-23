@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import ActionButton from './ActionButton';
 import QuantityButton from './QuantityButton';
+import recipesData from '../data/recipes.json';
 import "../../src/pages/css/Product.css";
 
 function ProductDetail({ id, imageUrl, subImageUrl1, subImageUrl2, englishName, title, catchcopy, description, price, priceValue, material, amount, method, date, arerugen }) {
@@ -10,6 +11,8 @@ function ProductDetail({ id, imageUrl, subImageUrl1, subImageUrl2, englishName, 
     const navigate = useNavigate();
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState(imageUrl);
+
+    const relatedRecipes = recipesData.filter(recipe => String(recipe.productId) === String(id));
 
     const handleAddToCart = () => {
         addToCart({
@@ -53,17 +56,28 @@ function ProductDetail({ id, imageUrl, subImageUrl1, subImageUrl2, englishName, 
                     <span>{date}</span>
                     <span>{arerugen}</span>
                 </p>
-                <div className='ProductRecipe'>
-                    <h2>おすすめの食べ方</h2>
-                    <div className='recipeMenu'>
-                        <a href=""><img src={imageUrl} alt=""/></a>
+
+                {relatedRecipes.length > 0 && (
+                    <div className='ProductRecipe'>
+                        <h2>おすすめの食べ方</h2>
+                        <div className='recipeMenu'>
+                            {relatedRecipes.map(recipe => (
+                                <div key={recipe.id} className='recipeItem'>
+                                    {/* 3. クリックでレシピ詳細ページへ */}
+                                    <Link to={`/recipe/${recipe.id}`}>
+                                        <img src={recipe.imageUrl} alt={recipe.name} />
+                                        <p>{recipe.name}</p>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
             
             <div className='ProductRight'>
                 <div className='ProductMain'>
-                    <h2 dangerouslySetInnerHTML={{ __html: title }} />
+                    <h1 dangerouslySetInnerHTML={{ __html: title }} />
                     <h3 className='ProductEnglishName'>{englishName}</h3>
                     <p className='ProductPrice'>{price}</p>
                     <div className='ProductButton'>

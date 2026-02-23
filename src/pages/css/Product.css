@@ -22,10 +22,14 @@ small,
 span,
 a {
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
 }
 h1{
     font-size: 48px;
+    line-height: 1.4;
 }
 h2 {
     font-size: 32px;
@@ -70,7 +74,6 @@ h3{
 }
 .ItemBox p {
     color: var(--color-green);
-    font-weight: bold;
     font-size: 20px;
 }
 /* 商品リスト*/
@@ -95,13 +98,10 @@ h3{
     justify-content: space-between;
     padding-top: 32px;
 }
-.ProductMain h2, .ProductEnglishName, .ProductPrice{
-    font-weight: bold;
-}
 .ProductEnglishName{
     color: var(--color-gray);
     display: block;
-    margin: 24px 0 40px;
+    margin: 20px 0 40px;
 }
 .Product img {
     border: 5px solid var(--color-black);
@@ -124,6 +124,7 @@ h3{
 .ProductInfo span {
     display: block;
     color: var(--color-gray);
+    line-height: 1.75;
 }
 .ProductInfo {
   padding: 48px 0;
@@ -134,13 +135,14 @@ h3{
 }
 .recipeMenu {
   margin-top: 32px;
+  gap:24px;
+  display: flex;
 }
 .recipeMenu img {
-  width: 206px;
-  height: 163px;
+  width: 234px;
+  height: 156px;
 }
 .ProductPrice {
-  font-weight: bold;
   font-size: 32px;
   color: var(--color-green);
 }
@@ -160,7 +162,6 @@ h3{
     border-radius: 30px;
     text-align: center;
     align-items: center;
-    font-weight: bold;
     background-color: var(--color-green);
     cursor: pointer;
 }
@@ -196,7 +197,7 @@ h3{
   border-bottom: 3px solid var(--color-green) ;
   position: relative;
   margin-left: 40px;
-  font-weight: bold;
+  line-height: 1.4;
 }
 .FreeShipping a:first-of-type::before {
   content: "";
@@ -205,9 +206,10 @@ h3{
   position: absolute;
   width: 16px;
   height: 16px;
-  top: 10px;
+  top: 3px;
   left: -40px;
   margin-right: 5px;
+  background-size: contain;
 }
 .ProductMain {
   padding-bottom: 56px;
@@ -218,9 +220,11 @@ h3{
 }
 .ProductText h2 {
   display: inline-block;
-  margin: 56px 0;
+  margin: 50px 0;
+  line-height: 1.4;
 }
 .ProductText p {
   display: block;
-  margin-bottom: 56px;
+  margin-bottom: 50px;
+  line-height: 1.75;
 }
