@@ -387,6 +387,12 @@ h2{
 // Home.js
 // ***************************************** */
 /* Home */
+<<<<<<< HEAD
+=======
+.home {
+  padding-top: 60px;
+}
+>>>>>>> main
 
 /* Hero */
 .hero {
@@ -406,7 +412,7 @@ h2{
   flex-direction: column;
   gap: 28px;
   left: 50%;
-  top: 20%;
+  top: calc(20% + 60px);
   color: var(--color-white);
   font-size: 2rem;
   transform: translate(-50%, -50%);
@@ -724,6 +730,7 @@ h2{
 
 /* Column.js */
 .title {
+  padding-top: 60px;
   margin-left: calc(-100vw + 229px);
 }
 
