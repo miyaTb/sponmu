@@ -20,7 +20,7 @@ export default function footer() {
           <a href=""><img src={X} alt="X" /></a>          
           <a href=""><img src={Instagram} alt="Instagram" /></a>
         </div>
-        <p className='footerSponmu'>@スポンジーズ</p>
+        <span className='footerSponmu'>@スポンジーズ</span>
     </footer>
   )
 };

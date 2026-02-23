@@ -46,14 +46,9 @@ function App() {
             {/* 想定外アドレスは NotFound ページへ */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-<<<<<<< HEAD
-        <Footer />
-      </div>
-=======
           <p>sponmu</p>
           <Footer />
         </div>
->>>>>>> main
       </Router>
     </CartProvider>
   );
