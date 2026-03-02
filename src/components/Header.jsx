@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import React from 'react';
-=======
->>>>>>> origin
 import { Link } from 'react-router-dom';
 import headerLogo from '../assets/headerLogo.svg';
 import shopIcon from '../assets/shopIcon.png';
