@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+>>>>>>> origin
 import { Link } from 'react-router-dom';
 import headerLogo from '../assets/headerLogo.svg';
 import shopIcon from '../assets/shopIcon.png';
+import "../pages/css/Header.css"
 
 export default function Header() {
   return (
