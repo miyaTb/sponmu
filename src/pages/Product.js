@@ -1,17 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // Link をインポート
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import useProducts from '../hooks/productBox';
 import ProductDetail from '../components/ProductDetail'; // ItemBox をインポート
+import { useRecentlyViewed } from '../context/RecentlyViewedContext';
 
 function Product() {
     const { id } = useParams();
     const { products } = useProducts();
     const [product, setProduct] = useState(null);
-  
+    const { addViewedProduct } = useRecentlyViewed();
+
     useEffect(() => {
       const foundProduct = products.find((p) => p.id === parseInt(id, 10));
       setProduct(foundProduct);
-    }, [id, products]);
+      if (foundProduct) {
+        addViewedProduct(foundProduct.id);
+      }
+    }, [id, products, addViewedProduct]);
   
     if (!product) {
       return <div>Loading...</div>;

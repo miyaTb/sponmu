@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
+import { RecentlyViewedProvider } from "./context/RecentlyViewedContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ProductList from "./pages/ProductList";
@@ -24,6 +25,7 @@ import "./styles/variables.css";
 function App() {
   return (
     <CartProvider>
+      <RecentlyViewedProvider>
       <Router>
         <div className="App">
           <Header />
@@ -50,6 +52,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </RecentlyViewedProvider>
     </CartProvider>
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useRecentlyViewed } from '../context/RecentlyViewedContext';
+import useProducts from '../hooks/productBox';
 import './css/Cart.css';
 import ActionButton from '../components/ActionButton';
 import PageTitle from '../components/PageTitle';
@@ -43,20 +45,33 @@ const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, 
     </div>
 );
 
-const RecentlyViewed = () => (
-    <div className="recently-viewed">
-        <h3 className="recently-viewed__title">最近見た商品</h3>
-        <div className="recently-viewed__list">
-        {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="recently-viewed__item">
-            <div className="recently-viewed__image" />
-            <p className="recently-viewed__name">テキスト</p>
-            <p className="recently-viewed__price">¥0,000(税込)</p>
+const RecentlyViewed = () => {
+    const { viewedIds } = useRecentlyViewed();
+    const { products } = useProducts();
+
+    const viewedProducts = viewedIds
+        .map(id => products.find(p => p.id === id))
+        .filter(Boolean);
+
+    if (viewedProducts.length === 0) return null;
+
+    return (
+        <div className="recently-viewed">
+            <h3 className="recently-viewed__title">最近見た商品</h3>
+            <div className="recently-viewed__list">
+            {viewedProducts.map((product) => (
+                <Link key={product.id} to={`/products/${product.id}`} className="recently-viewed__item">
+                <div className="recently-viewed__image">
+                    <img src={product.imageUrl} alt={product.name.replace(/<br\s*\/?>/g, '')} />
+                </div>
+                <p className="recently-viewed__name">{product.name.replace(/<br\s*\/?>/g, '')}</p>
+                <p className="recently-viewed__price">¥{product.price.toLocaleString()}(税込)</p>
+                </Link>
+            ))}
             </div>
-        ))}
         </div>
-    </div>
-);
+    );
+};
 
 const CartActions = ({ onContinueShopping, onClearCart }) => (
     <div className="cart__actions">

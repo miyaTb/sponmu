@@ -22,7 +22,7 @@ button {
   padding: 2rem 0;
   font-family: sans-serif;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
 }
 .cart__title {
   font-size: 1.5rem;
@@ -197,6 +197,8 @@ button {
 .recently-viewed__item {
   cursor: pointer;
   transition: opacity 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 .recently-viewed__item:hover {
   opacity: 0.8;
@@ -208,6 +210,13 @@ button {
   border-radius: 20px;
   margin-bottom: 0.5rem;
   border: 5px solid black;
+  overflow: hidden;
+}
+.recently-viewed__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .recently-viewed__name {
   font-weight: bold;
