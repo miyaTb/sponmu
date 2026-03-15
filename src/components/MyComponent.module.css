@@ -17,6 +17,7 @@ html {
 body {
   /* font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
     "メイリオ", Meiryo, sans-serif; */
+  font-family: sans-serif;
 }
 header,
 footer,
@@ -48,6 +49,49 @@ strong {
 }
 i {
   font-style: normal;
+}
+
+/* ********************************************
+// Breadcrumb.jsx
+// ***************************************** */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-left: 80px;
+  font-size: 16px;
+  color: var(--color-green);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: var(--color-green);
+  /* font-weight: 700; */
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* color: var(--color-green);
+  font-weight: 700;
+  text-decoration: none; */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  /* margin: 0 0.5em; */
+  margin: 10px 24px;
+  color: var(--color-yellow);
+  width: 10px;
 }
 
 /* ********************************************
@@ -332,19 +376,67 @@ i {
   text-align: center;
 }
 
+/* 画像とSVGを重ねるための親要素 */
+.cardVisualArea {
+  position: relative; /* 子要素の absolute の基準になる */
+  width: 380px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG：背景として全面に広げる */
+.circleSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 画像より背面に送る場合は1 */
+  overflow: visible;
+  pointer-events: none;
+}
+
+.itemCardCatchcopy {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+/* 円周文字のスタイル */
+.itemCardCatchcopyText {
+  fill: var(--color-green); /* 文字の色 */
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.itemCardNameText {
+  fill: var(--color-black); /* 文字の色 */
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+}
+
 .itemCardContent {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  background-color: var(--color-green);
+  background-color: var(--color-yellow);
+}
+
+.itemCardRanking {
+  position: absolute;
+  width: 100.8px;
+  top: -20px;
 }
 
 .itemCardImage {
   position: absolute;
-  width: 110%;
+  width: 80%;
   height: auto;
-  top: 42.5%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(10deg);
 }
@@ -355,7 +447,7 @@ i {
 
 .itemCardText {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 16px;
   line-height: 3rem;
 }
 
@@ -371,7 +463,7 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
+  gap: 32px;
   margin-top: 50px;
 }
 

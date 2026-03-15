@@ -1,7 +1,7 @@
 // hooks/product.js
 import { useState } from 'react';
-import yogurtImage from '../assets/yogult.png';
-import yogurt2Image from '../assets/yogult2.png';
+import yogurtImage from '../assets/yogurt.png';
+import yogurt2Image from '../assets/yogurtsub1.png';
 import cheeseImage from '../assets/cheese.png';
 import milkImage from '../assets/milk.png';
 import productData from '../data/productBox.json';
