@@ -3,31 +3,19 @@ import Pagination from "./Pagination";
 import NewsHeading from "./NewsHeading";
 import styles from "./MyComponent.module.css";
 
-const news = [
-  { date: "2024.01.12", title: "テキストテキストテキストテキスト" },
-  { date: "2024.09.13", title: "テキストテキストテキストテキスト" },
-  { date: "2024.11.30", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-  { date: "2024.01.01", title: "テキストテキストテキストテキスト" },
-];
+import news from "../data/news.json";
 
 const PaginationExample = () => {
+  const sortedNews = [...news].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(news.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = news.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = sortedNews.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div>

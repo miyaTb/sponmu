@@ -9,10 +9,41 @@ import styles from "./MyComponent.module.css";
 
 function CardSlider() {
   const cards = [
-    { image: "", title: "レモンヨーグルト1", time: "1", kcal: "101" },
-    { image: "", title: "レモンヨーグルト2", time: "1", kcal: "101" },
-    { image: "", title: "レモンヨーグルト3", time: "1", kcal: "101" },
-    { image: "", title: "レモンヨーグルト4", time: "1", kcal: "101" },
+    {
+      image: "",
+      title: "レモンヨーグルト1",
+      tag: "豆乳",
+      time: "1",
+      kcal: "101",
+    },
+    {
+      image: "",
+      title: "レモンヨーグルト2",
+      tag: "豆乳",
+      time: "1",
+      kcal: "101",
+    },
+    {
+      image: "",
+      title: "レモンヨーグルト3",
+      tag: "豆乳",
+      time: "1",
+      kcal: "101",
+    },
+    {
+      image: "",
+      title: "レモンヨーグルト4",
+      tag: "豆乳",
+      time: "1",
+      kcal: "101",
+    },
+    {
+      image: "",
+      title: "レモンヨーグルト5",
+      tag: "豆乳",
+      time: "1",
+      kcal: "101",
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,6 +71,7 @@ function CardSlider() {
       <Swiper
         modules={[Navigation]}
         slidesPerView={3}
+        // loopAdditionalSlides={5}
         centeredSlides={true}
         loop={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)} // ここで swiper を取得
