@@ -29,7 +29,6 @@ h2{
   font-size: 48px;
 }
   
-
 /* ItemBox */
 .ItemBox {
   cursor: pointer;
@@ -381,15 +380,11 @@ h2{
 .ingredient-amount {
   text-align: right; 
 }
-
-
 /* ********************************************
 // Home.js
 // ***************************************** */
 /* Home */
-.home {
-  padding-top: 60px;
-}
+
 /* Hero */
 .hero {
   text-align: center;
@@ -444,12 +439,15 @@ h2{
 .commitment-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 85px;
+  justify-content: space-between; /* 左右に寄せる */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 120px;
 }
 
 .commitment-right {
-  text-align: right;
+  /* text-align: right; */
+  flex-direction: row-reverse;
 }
 
 .commitment-image {
@@ -475,6 +473,12 @@ h2{
 .image-right {
   border-top-left-radius: 25%;
   border-bottom-left-radius: 25%;
+}
+
+.commitment-text {
+  flex: 1;
+  max-width: 536px;
+  margin: 0 auto; /* 真ん中寄り */
 }
 
 .commitment-title {
@@ -627,7 +631,8 @@ h2{
     gap: 20px;
     margin: 60px 0 10px;
   }
-  .ProductButton button{
+  .ProductButton > button,
+  .ProductButton > .action-button {
     color: #007C3C;
     border: 4px solid #007C3C;
     border-radius: 30px;
@@ -636,7 +641,7 @@ h2{
     padding: 5px 30px;
     font-weight: bold;
     background-color: #ffffff;
-    cursor: pointer; 
+    cursor: pointer;
   }
   .FreeShipping p,.FreeShipping a{
     color: #007C3C;

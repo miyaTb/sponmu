@@ -1,0 +1,12 @@
+.form-fieldset {
+    margin-bottom: 2rem;
+    border: none;
+    padding: 0;
+}
+
+.form-fieldset__legend {
+    margin-bottom: 1rem;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
