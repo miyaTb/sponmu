@@ -53,7 +53,7 @@ const ItemCard = ({
               {/* 下側の文字用パス (反時計回りに見えないように調整された弧) */}
               <path
                 id="bottomPath"
-                d="M 10,150 A 110,110 0 0,0 290,180"
+                d="M -10,150 A 160,160 0 0,0 310,150"
                 fill="none"
               />
             </defs>
@@ -69,7 +69,7 @@ const ItemCard = ({
             <text className={styles.itemCardNameText}>
               <textPath
                 href="#bottomPath"
-                startOffset="55%"
+                startOffset="50%"
                 textAnchor="middle"
               >
                 {name.replace(/\n/g, " ")}
