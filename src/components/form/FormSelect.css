@@ -1,0 +1,39 @@
+.form-select {
+    display: block;
+    width: 696px;
+    height: 40px;
+    padding: 0 20px;
+    margin-top: 0.25rem;
+    border: 4px solid #007C3C;
+    border-radius: 30px;
+    background: white url('../../assets/arrow.png') no-repeat right 20px center;
+    background-size: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-right: 45px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-select:focus {
+    outline: none;
+}
+
+.form-select--placeholder {
+    color: #808080;
+}
+
+.form-select option {
+    color: black;
+}
+
+.form-select--error {
+    background-color: rgba(196, 8, 8, 0.1);
+    background-image: url('../../assets/arrow.png');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 12px;
+}

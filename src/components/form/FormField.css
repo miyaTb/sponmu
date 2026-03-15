@@ -1,0 +1,12 @@
+.form-field {
+}
+
+.form-field--h2 .form-input {
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.form-field--h3 .form-input {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
