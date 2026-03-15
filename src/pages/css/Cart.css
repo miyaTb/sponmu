@@ -117,12 +117,14 @@ button {
   flex: 1;
 }
 .cart-item__name {
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 .cart-item__english-name {
+  font-size: 20px;
   color: var(--color-gray);
-  margin-bottom: 0.5rem;
+  margin-bottom: 48px;
 }
 .cart-item__price {
   color: var(--color-green);
@@ -134,40 +136,6 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 48px;
-}
-.cart-item__button {
-  background-color: white;
-  color: var(--color-green);
-  border: 2px solid var(--color-green);
-  border-radius: 20px;
-  width: 94px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  cursor: pointer;
-}
-.cart-item__quantity-btn {
-  background-color: transparent;
-  border: none;
-  color: var(--color-green);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-}
-.cart-item__quantity-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.cart-item__quantity-btn:hover:not(:disabled) {
-  background-color: rgba(0, 124, 60, 0.1);
 }
 .cart-item__quantity-display {
   color: var(--color-green);
@@ -220,11 +188,12 @@ button {
 }
 .recently-viewed__name {
   font-weight: bold;
+  font-size: 20px;
 }
 .recently-viewed__price {
   color: var(--color-green);
   font-weight: bold;
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .cart-summary {
@@ -234,11 +203,12 @@ button {
 }
 .cart-summary__header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .cart-summary__label {
   font-size: 16px;
+  font-weight: bold;
   margin: 0;
 }
 .cart-summary__total {

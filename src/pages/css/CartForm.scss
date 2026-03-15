@@ -41,7 +41,7 @@ $sponmu-gray: #808080;
   }
 
   &__subtitle {
-    color: $sponmu-green;
+    color: var(--color-green);
     text-align: left;
     margin-bottom: 2rem;
     max-width: 1280px;
@@ -63,7 +63,7 @@ $sponmu-gray: #808080;
   &__label {
     display: block;
     margin-bottom: 1rem;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
 
@@ -74,7 +74,7 @@ $sponmu-gray: #808080;
       height: 48px;
       padding: 0 20px;
       margin-top: 0.25rem;
-      border: 4px solid $sponmu-green;
+      border: 4px solid var(--color-green);
       border-radius: 30px;
       background: white;
       font-weight: bold;
@@ -129,9 +129,9 @@ $sponmu-gray: #808080;
   &__button {
     width: 100px;
     height: 45px;
-    background-color: $sponmu-green;
+    background-color: var(--color-green);
     color: white;
-    border: 4px solid $sponmu-green;
+    border: 4px solid var(--color-green);
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
@@ -151,9 +151,9 @@ $sponmu-gray: #808080;
     margin-top: 2rem;
     width: 250px;
     height: 45px;
-    background-color: $sponmu-green;
+    background-color: var(--color-green);
     color: white;
-    border: 4px solid $sponmu-green;
+    border: 4px solid var(--color-green);
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
@@ -161,7 +161,7 @@ $sponmu-gray: #808080;
     transition: background-color 0.2s ease;
 
     &:hover:not(:disabled) {
-      background-color: darken($sponmu-green, 10%);
+      background-color: color-mix(in srgb, var(--color-green), black 10%);
     }
 
     &:disabled {
@@ -196,7 +196,7 @@ $sponmu-gray: #808080;
   &__item {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 3px dotted $sponmu-green;
+    border-bottom: 3px dotted var(--color-green);
   }
 
   &__item-content {
@@ -235,8 +235,8 @@ $sponmu-gray: #808080;
   }
 
   &__item-price {
-    font-size: 16px;
-    color: $sponmu-green;
+    font-size: 32px;
+    color: var(--color-green);
     text-align: left;
     margin: 0;
   }
@@ -251,7 +251,7 @@ $sponmu-gray: #808080;
       width: 290px;
       height: 48px;
       background: #FFFFFF;
-      border: 4px solid $sponmu-green;
+      border: 4px solid var(--color-green);
       border-radius: 30px;
       padding: 0 20px;
       font-weight: bold;
@@ -306,7 +306,7 @@ $sponmu-gray: #808080;
   }
 
   &__payment-fieldset {
-    border: 2px solid $sponmu-green;
+    border: 4px solid var(--color-green);
     border-radius: 30px;
     margin-bottom: 2rem;
     padding: 0;
@@ -319,7 +319,7 @@ $sponmu-gray: #808080;
     padding: 1rem 1.5rem;
     cursor: pointer;
     background-color: #fff;
-    color: $sponmu-green;
+    color: var(--color-green);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -334,12 +334,17 @@ $sponmu-gray: #808080;
     }
 
     &::after {
-      content: '▼';
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url('../../assets/arrow2.png') no-repeat center / contain;
+      transform: rotate(90deg);
       transition: transform 0.2s ease;
     }
 
     &.open::after {
-      transform: rotate(180deg);
+      transform: rotate(270deg);
     }
 
     &--error {
@@ -349,7 +354,7 @@ $sponmu-gray: #808080;
 
   &__payment-options {
     background-color: #f8fdf8;
-    border-top: 1px solid rgba($sponmu-green, 0.2);
+    border-top: 1px solid rgba(var(--color-green), 0.2);
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;

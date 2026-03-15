@@ -221,7 +221,7 @@ const CartForm = () => {
         alert(message);
     };
 
-    const { cartItems, calculateSubtotal, calculateTotal } = useCart();
+    const { cartItems, calculateSubtotal } = useCart();
     const subtotal = calculateSubtotal();
     const shipping = 300;
     const total = subtotal + shipping - coupon.discount;

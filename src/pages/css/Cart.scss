@@ -135,13 +135,15 @@ button {
   }
 
   &__name {
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
   &__english-name {
+    font-size: 20px;
     color: var(--color-gray);
-    margin-bottom: 0.5rem;
+    margin-bottom: 48px;
   }
 
   &__price {
@@ -155,44 +157,6 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 48px;
-  }
-
-  &__button {
-    background-color: white;
-    color: var(--color-green);
-    border: 2px solid var(--color-green);
-    border-radius: 20px;
-    width: 94px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
-    cursor: pointer;
-  }
-
-  &__quantity-btn {
-    background-color: transparent;
-    border: none;
-    color: var(--color-green);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    &:hover:not(:disabled) {
-      background-color: rgba(0, 124, 60, 0.1);
-    }
   }
 
   &__quantity-display {
@@ -253,12 +217,13 @@ button {
 
   &__name {
     font-weight: bold;
+    font-size: 20px;
   }
 
   &__price {
     color: var(--color-green);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
   }
 }
 
@@ -269,12 +234,13 @@ button {
 
   &__header {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
   &__label {
     font-size: 16px;
+    font-weight: bold;
     margin: 0;
   }
 

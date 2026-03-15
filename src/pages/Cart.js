@@ -6,6 +6,7 @@ import useProducts from '../hooks/productBox';
 import './css/Cart.css';
 import ActionButton from '../components/ActionButton';
 import PageTitle from '../components/PageTitle';
+import QuantityButton from '../components/QuantityButton';
 
 const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, onQuantityChange, onRemove }) => (
     <div className="cart-item">
@@ -22,23 +23,15 @@ const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, 
         </div>
         <div className="cart-item__actions">
             <div className="cart-item__button">
-                <button 
-                    className="cart-item__quantity-btn" 
-                    onClick={() => onQuantityChange(id, quantity - 1)}
-                    disabled={quantity <= 1}
-                >
-                    -
-                </button>
-                <span className="cart-item__quantity-display">{quantity}</span>
-                <button 
-                    className="cart-item__quantity-btn" 
-                    onClick={() => onQuantityChange(id, quantity + 1)}
-                >
-                    +
-                </button>
+                <QuantityButton
+                    quantity={quantity}
+                    onIncrease={() => onQuantityChange(id, quantity + 1)}
+                    onDecrease={() => onQuantityChange(id, quantity - 1)}
+                    minQuantity={1}
+                />
             </div>
             <div>
-            <button className="cart-item__remove" onClick={() => onRemove(id)}>商品を削除する</button>
+            <button className="cart-item__remove" onClick={() => onRemove(id)}>削除</button>
             </div>
         </div>  
         </div>
@@ -92,7 +85,9 @@ const CartSummary = ({ total, onCheckout }) => (
         </div>
         <div className="cart-summary__center">
             <p className="cart-summary__note">送料は地域により異なります</p>
-            <button className="cart-summary__button" onClick={onCheckout}>ご購入手続きへ</button>
+            <ActionButton onClick={onCheckout}>
+                ご購入手続きへ
+            </ActionButton>
         </div>
     </div>
 );
