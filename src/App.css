@@ -29,7 +29,6 @@ h2{
   font-size: 48px;
 }
   
-
 /* ItemBox */
 .ItemBox {
   cursor: pointer;
@@ -381,15 +380,11 @@ h2{
 .ingredient-amount {
   text-align: right; 
 }
-
-
 /* ********************************************
 // Home.js
 // ***************************************** */
 /* Home */
-.home {
-  padding-top: 60px;
-}
+
 /* Hero */
 .hero {
   text-align: center;
