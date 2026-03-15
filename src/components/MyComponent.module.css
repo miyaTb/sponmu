@@ -17,7 +17,6 @@ html {
 body {
   /* font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
     "メイリオ", Meiryo, sans-serif; */
-  font-family: sans-serif;
 }
 header,
 footer,
@@ -163,9 +162,9 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  width: 436px;
-  height: 448.94px;
+  gap: 20px;
+  width: 380px;
+  height: 350px;
   padding: 20px 15px;
   background-color: var(--color-light-green02);
   border: 5px solid var(--color-black);
@@ -175,7 +174,7 @@ i {
 
 .cardImage {
   width: 100%;
-  height: 247px;
+  height: 180px;
   background-color: var(--color-white);
   border: 5px solid var(--color-black);
   border-radius: 12px;
@@ -187,58 +186,43 @@ i {
   flex-direction: column;
   width: 100%;
   overflow-wrap: anywhere;
-  padding: 0 14px;
-  gap: 68px;
-}
-
-.cardText {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: 35px;
 }
 
 .cardTitle {
   font-size: 2rem;
-  text-align: left;
-}
-
-.cardTag {
-  font-size: 14px;
-  color: var(--color-green);
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .cardDescription {
   display: flex;
-  gap: 32px;
+  gap: 30px;
+  margin-left: 10px;
   color: var(--color-green);
   font-weight: 700;
-  letter-spacing: 1.5px;
 }
 
 .cardTime {
   content: "";
   display: inline-block;
-  height: 32px;
-  padding-left: 36.63px;
+  height: 23px;
+  padding-left: 30px;
   background-image: url("../assets/timeIcon.svg");
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 26.63px;
-  line-height: 26.63px;
-  letter-spacing: 4px;
+  line-height: 23px;
 }
 
 .cardKcal {
   content: "";
   display: inline-block;
-  height: 32px;
-  padding-left: 36.63px;
+  height: 25px;
+  padding-left: 28px;
   background-image: url("../assets/fireIcon.svg");
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 26.63px;
-  line-height: 26.63px;
-  letter-spacing: 4px;
+  line-height: 23px;
 }
 
 /* ********************************************
@@ -253,7 +237,7 @@ i {
 
 .cardSliderWrapper {
   width: 100%;
-  max-width: 1440px;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,12 +259,8 @@ i {
   margin: 40px 0;
 }
 
-:global(.swiper-slide) .card {
-  transform: scale(0.9); /* サイズを小さく */
-}
-
 :global(.swiper-slide-active) .card {
-  transform: scale(1); /* サイズを元(1.0)に戻す */
+  transform: scale(1.15); /* サイズを大きく */
   opacity: 1;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 強調したければ */
@@ -293,8 +273,7 @@ i {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  padding: 0 0 32px;
-  height: 10px;
+  margin-top: 2rem;
 }
 
 .slideButton {
@@ -376,67 +355,19 @@ i {
   text-align: center;
 }
 
-/* 画像とSVGを重ねるための親要素 */
-.cardVisualArea {
-  position: relative; /* 子要素の absolute の基準になる */
-  width: 380px;
-  height: 380px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* SVG：背景として全面に広げる */
-.circleSvg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* 画像より背面に送る場合は1 */
-  overflow: visible;
-  pointer-events: none;
-}
-
-.itemCardCatchcopy {
-  color: var(--color-green);
-  font-weight: 700;
-}
-
-/* 円周文字のスタイル */
-.itemCardCatchcopyText {
-  fill: var(--color-green); /* 文字の色 */
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-}
-
-.itemCardNameText {
-  fill: var(--color-black); /* 文字の色 */
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.15em;
-}
-
 .itemCardContent {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  background-color: var(--color-yellow);
-}
-
-.itemCardRanking {
-  position: absolute;
-  width: 100.8px;
-  top: -20px;
+  background-color: var(--color-green);
 }
 
 .itemCardImage {
   position: absolute;
-  width: 80%;
+  width: 110%;
   height: auto;
-  top: 50%;
+  top: 42.5%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(10deg);
 }
@@ -447,7 +378,7 @@ i {
 
 .itemCardText {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 2rem;
   line-height: 3rem;
 }
 
@@ -463,7 +394,7 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 32px;
+  gap: 100px;
   margin-top: 50px;
 }
 
@@ -527,6 +458,8 @@ i {
 .title {
   color: var(--color-black);
   font-size: 48px;
+  font-weight: 900;
+  font-family: Nunito, sans-serif;
   letter-spacing: 0.5rem;
   margin-right: -0.5rem;
 }
@@ -535,6 +468,9 @@ i {
   color: var(--color-green);
   font-size: 20px;
   font-weight: 700;
+  font-family:
+    Zen Maru Gothic,
+    sans-serif;
   letter-spacing: 0.25rem;
   margin-right: -0.25rem;
 }
