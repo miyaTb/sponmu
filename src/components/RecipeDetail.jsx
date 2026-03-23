@@ -5,9 +5,9 @@ function RecipeDetail({ imageUrl, name, summary, ingredients, steps, time, calor
     return (
             <div className='Recipe'>
                 <div className='recipeInfo'>
-                    <img src={`/assets/${imageUrl}`} alt={name} />
+                    <img src={require(`../assets/${imageUrl}`)} alt={name} />
                     <div className='recipeText'>
-                        <h2 dangerouslySetInnerHTML={{ __html: name }} />
+                        <h1 dangerouslySetInnerHTML={{ __html: name }} />
                         <div dangerouslySetInnerHTML={{ __html: summary }} />
                         <div className='RecipeMiutesDetail'>
                             <span>{time}</span>
