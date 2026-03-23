@@ -103,7 +103,7 @@ function Home() {
         <div className="card-list">
           <CardSlider />
         </div>
-        <Button variant="btnGreen" />
+        <Button link="recipe" variant="btnWhite" />
       </section>
 
       <section className="news">

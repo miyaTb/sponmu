@@ -4,6 +4,7 @@
     "name": "フルーツヨーグルトボウル",
     "pair": "しぼりたて生乳ヨーグルト × 季節のフルーツ＆はちみつ",
     "imageUrl": "fruitYogultBowl.png",
+    "productId": 1,
     "time": "5分",
     "calories": "180kcal",
     "summary": "朝食やおやつにぴったりの、さっぱりヘルシーなフルーツヨーグルトボウル。<br>素材の甘さを活かした一品です。",
@@ -25,6 +26,7 @@
     "name": "ヨーグルトスムージー",
     "pair": "しあわせ飲むヨーグルト × バナナ＆豆乳",
     "imageUrl": "happyYougult.png",
+    "productId": 3,
     "time": "3分",
     "calories": "210kcal",
     "summary": "飲むヨーグルトのコクとバナナの自然な甘さが美味しい、朝にぴったりのスムージー。",
@@ -45,6 +47,7 @@
     "name": "クリームチーズディップ",
     "pair": "まきばのクリームチーズ × クラッカー＆ナッツ",
     "imageUrl": "creamCheese.png",
+    "productId": 5,
     "time": "10分",
     "calories": "250kcal",
     "summary": "パーティーやワインのお供にぴったりな、甘くない濃厚ディップ。",
@@ -66,6 +69,7 @@
     "pair": "やさしい塩チーズ × 食パン",
     "imageUrl": "saltCheese.png",
     "time": "7分",
+    "productId": 4,
     "calories": "320kcal",
     "summary": "塩チーズのコクと香ばしさがクセになる、シンプルで飽きのこないトースト。",
     "ingredients": [
@@ -84,6 +88,7 @@
     "pair": "しぼりたて生乳ヨーグルト × グラノーラ＆はちみつ",
     "imageUrl": "milkYougult.png",
     "time": "5分",
+    "productId": 1,
     "calories": "230kcal",
     "summary": "ザクザクのグラノーラとまろやかなヨーグルトが相性抜群のデザート。",
     "ingredients": [
@@ -103,6 +108,7 @@
     "pair": "放牧バター仕立て ヨーグルトスプレッド × はちみつ＆シナモン",
     "imageUrl": "yogultSpread.png",
     "time": "5分",
+    "productId": 6,
     "calories": "290kcal",
     "summary": "甘さ控えめでコクのあるスプレッドを塗った、ちょっと贅沢な朝のトースト。",
     "ingredients": [
