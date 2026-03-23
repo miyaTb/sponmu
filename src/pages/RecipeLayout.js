@@ -1,10 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import PageTitle from '../components/PageTitle';
+import './css/recipe.css'
 
 function RecipeLayout() {
   return (
     <div className="ProductList">
-      <h1>RECIPE<small>おすすめの食べ方</small></h1>
+      <PageTitle title="RECIPE" subtitle="おすすめの食べ方"/>
       <div>
         <Outlet />
       </div>

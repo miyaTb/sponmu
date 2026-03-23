@@ -64,8 +64,8 @@ function ProductDetail({ id, imageUrl, subImageUrl1, subImageUrl2, englishName, 
                             {relatedRecipes.map(recipe => (
                                 <div key={recipe.id} className='recipeItem'>
                                     {/* 3. クリックでレシピ詳細ページへ */}
-                                    <Link to={`/recipe/${recipe.id}`}>
-                                        <img src={recipe.imageUrl} alt={recipe.name} />
+                                    <Link to={`/recipes/${recipe.id}`}>
+                                        <img src={require(`../assets/${recipe.imageUrl}`)} alt={recipe.name} />
                                         <p>{recipe.name}</p>
                                     </Link>
                                 </div>

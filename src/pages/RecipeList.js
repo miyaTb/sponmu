@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import recipes from '../data/recipes.json';
 import RecipeBox from '../components/RecipeBox';
+import './css/recipe.css'
 
 function RecipeListPage() {
   return (
