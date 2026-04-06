@@ -2,16 +2,17 @@ import React from "react";
 import NewsHeading from "./NewsHeading";
 import styles from "./MyComponent.module.css";
 
+import news from "../data/news.json";
+
 const NewsList = () => {
-  const news = [
-    { date: "2024.01.12", title: "テキストテキストテキストテキスト" },
-    { date: "2024.09.13", title: "テキストテキストテキストテキスト" },
-    { date: "2024.11.30", title: "テキストテキストテキストテキスト" },
-  ];
+  const sortedNews = [...news].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   return (
     <div>
       <ul className={styles.newsList}>
-        {news.map((item) => (
+        {sortedNews.slice(0, 3).map((item) => (
           <li className={styles.newsListItem}>
             <NewsHeading date={item.date} title={item.title}></NewsHeading>
           </li>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import recipes from '../data/recipes.json'; 
 import RecipeDetail from '../components/RecipeDetail';
+import './css/recipe.css'
 
 function Recipe() {
     const { id } = useParams();

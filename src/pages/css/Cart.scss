@@ -18,14 +18,11 @@ button {
   cursor: pointer;
 }
 
-$sponmu-green:#007C3C;
-$sponmu-yellow:#FFF50A;
-$sponmu-gray:#808080;
 .cart {
   padding: 2rem 0;
   font-family: sans-serif;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
 
   &__title {
     font-size: 1.5rem;
@@ -34,7 +31,7 @@ $sponmu-gray:#808080;
   }
 
   &__subtitle {
-    color: $sponmu-green;
+    color: var(--color-green);
     margin-bottom: 1.5rem;
     font-weight: bold;
   }
@@ -74,27 +71,41 @@ $sponmu-gray:#808080;
 
   &__continue-shopping {
     background-color: white;
-    color: $sponmu-green;
-    border: 2px solid $sponmu-green;
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
 
     &:hover {
-      background-color: rgba($sponmu-green, 0.1);
+      background-color: rgba(0, 124, 60, 0.1);
     }
   }
 
   &__clear {
-    background-color: $sponmu-green;
+    background-color: var(--color-green);
     color: white;
-    border: 2px solid $sponmu-green;
+    border: 2px solid var(--color-green);
 
     &:hover {
-      background-color: darken($sponmu-green, 10%);
+      background-color: var(--color-green);
+    }
+  }
+
+  &__empty {
+    text-align: left;
+    padding: 2rem 0;
+
+    h2 {
+      color: var(--color-green);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--color-gray);
     }
   }
 }
 
 .cart-item {
-  border-bottom: 3px dotted $sponmu-green;
+  border-bottom: 3px dotted var(--color-green);
   padding-bottom: 40px;
   margin-bottom: 40px;
 
@@ -110,6 +121,13 @@ $sponmu-gray:#808080;
     border-radius: 20px;
     margin-right: 24px;
     border: 5px solid black;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__details {
@@ -117,17 +135,19 @@ $sponmu-gray:#808080;
   }
 
   &__name {
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
   &__english-name {
+    font-size: 20px;
     color: var(--color-gray);
-    margin-bottom: 0.5rem;
+    margin-bottom: 48px;
   }
 
   &__price {
-    color: $sponmu-green;
+    color: var(--color-green);
     font-weight: bold;
     font-size: 32px;
   }
@@ -139,46 +159,8 @@ $sponmu-gray:#808080;
     gap: 48px;
   }
 
-  &__button {
-    background-color: white;
-    color: $sponmu-green;
-    border: 2px solid $sponmu-green;
-    border-radius: 20px;
-    width: 94px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
-    cursor: pointer;
-  }
-
-  &__quantity-btn {
-    background-color: transparent;
-    border: none;
-    color: $sponmu-green;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    &:hover:not(:disabled) {
-      background-color: rgba(0, 124, 60, 0.1);
-    }
-  }
-
   &__quantity-display {
-    color: $sponmu-green;
+    color: var(--color-green);
     font-weight: bold;
     font-size: 14px;
   }
@@ -203,12 +185,14 @@ $sponmu-gray:#808080;
 
   &__list {
     display: flex;
-    gap: 60px;
+    gap: 30px;
   }
 
   &__item {
     cursor: pointer;
     transition: opacity 0.2s ease;
+    text-decoration: none;
+    color: inherit;
 
     &:hover {
       opacity: 0.8;
@@ -222,32 +206,41 @@ $sponmu-gray:#808080;
     border-radius: 20px;
     margin-bottom: 0.5rem;
     border: 5px solid black;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__name {
     font-weight: bold;
+    font-size: 20px;
   }
 
   &__price {
-    color: $sponmu-green;
+    color: var(--color-green);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
   }
 }
 
 .cart-summary {
-  background-color: rgba($sponmu-yellow,0.2);
+  background-color: rgba(255, 230, 50, 0.2);
   border-radius: 20px;
   padding: 1.5rem;
 
   &__header {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
   &__label {
     font-size: 16px;
+    font-weight: bold;
     margin: 0;
   }
 
@@ -268,7 +261,7 @@ $sponmu-gray:#808080;
   }
 
   &__button {
-    background-color: $sponmu-green;
+    background-color: var(--color-green);
     color: white;
     width: 260px;
     padding: 0.5rem 1.5rem;
@@ -278,14 +271,8 @@ $sponmu-gray:#808080;
     font-weight: bold;
 
     &:hover {
-      background-color: darken($sponmu-green, 10%);
+      background-color: var(--color-green);
     }
   }
 }
 
-.cart__empty {
-  text-align: center;
-  padding: 2rem;
-  color: $sponmu-gray;
-  font-size: 1.125rem;
-}

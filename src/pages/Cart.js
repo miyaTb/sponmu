@@ -1,7 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useRecentlyViewed } from '../context/RecentlyViewedContext';
+import useProducts from '../hooks/productBox';
 import './css/Cart.css';
+import ActionButton from '../components/ActionButton';
+import PageTitle from '../components/PageTitle';
+import QuantityButton from '../components/QuantityButton';
 
 const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, onQuantityChange, onRemove }) => (
     <div className="cart-item">
@@ -18,52 +23,57 @@ const CartItem = ({ id, name,englishName, taxIncludedPrice, quantity, imageUrl, 
         </div>
         <div className="cart-item__actions">
             <div className="cart-item__button">
-                <button 
-                    className="cart-item__quantity-btn" 
-                    onClick={() => onQuantityChange(id, quantity - 1)}
-                    disabled={quantity <= 1}
-                >
-                    -
-                </button>
-                <span className="cart-item__quantity-display">{quantity}</span>
-                <button 
-                    className="cart-item__quantity-btn" 
-                    onClick={() => onQuantityChange(id, quantity + 1)}
-                >
-                    +
-                </button>
+                <QuantityButton
+                    quantity={quantity}
+                    onIncrease={() => onQuantityChange(id, quantity + 1)}
+                    onDecrease={() => onQuantityChange(id, quantity - 1)}
+                    minQuantity={1}
+                />
             </div>
             <div>
-            <button className="cart-item__remove" onClick={() => onRemove(id)}>商品を削除する</button>
+            <button className="cart-item__remove" onClick={() => onRemove(id)}>削除</button>
             </div>
         </div>  
         </div>
     </div>
 );
 
-const RecentlyViewed = () => (
-    <div className="recently-viewed">
-        <h3 className="recently-viewed__title">最近見た商品</h3>
-        <div className="recently-viewed__list">
-        {[1, 2].map((item) => (
-            <div key={item} className="recently-viewed__item">
-            <div className="recently-viewed__image" />
-            <p className="recently-viewed__name">テキスト</p>
-            <p className="recently-viewed__price">¥0,000(税込)</p>
+const RecentlyViewed = () => {
+    const { viewedIds } = useRecentlyViewed();
+    const { products } = useProducts();
+
+    const viewedProducts = viewedIds
+        .map(id => products.find(p => p.id === id))
+        .filter(Boolean);
+
+    if (viewedProducts.length === 0) return null;
+
+    return (
+        <div className="recently-viewed">
+            <h3 className="recently-viewed__title">最近見た商品</h3>
+            <div className="recently-viewed__list">
+            {viewedProducts.map((product) => (
+                <Link key={product.id} to={`/products/${product.id}`} className="recently-viewed__item">
+                <div className="recently-viewed__image">
+                    <img src={product.imageUrl} alt={product.name.replace(/<br\s*\/?>/g, '')} />
+                </div>
+                <p className="recently-viewed__name">{product.name.replace(/<br\s*\/?>/g, '')}</p>
+                <p className="recently-viewed__price">¥{product.price.toLocaleString()}(税込)</p>
+                </Link>
+            ))}
             </div>
-        ))}
         </div>
-    </div>
-);
+    );
+};
 
 const CartActions = ({ onContinueShopping, onClearCart }) => (
     <div className="cart__actions">
-        <button className="cart__continue-shopping" onClick={onContinueShopping}>
+        <ActionButton  onClick={onContinueShopping}>
             買い物を続ける
-        </button>
-        <button className="cart__clear" onClick={onClearCart}>
+        </ActionButton>
+        <ActionButton variant="gray"  onClick={onClearCart}>
             カートの中身を空にする
-        </button>
+        </ActionButton>
     </div>
 );
 
@@ -75,7 +85,9 @@ const CartSummary = ({ total, onCheckout }) => (
         </div>
         <div className="cart-summary__center">
             <p className="cart-summary__note">送料は地域により異なります</p>
-            <button className="cart-summary__button" onClick={onCheckout}>ご購入手続きへ</button>
+            <ActionButton onClick={onCheckout}>
+                ご購入手続きへ
+            </ActionButton>
         </div>
     </div>
 );
@@ -101,20 +113,24 @@ const Cart = () => {
     if (cartItems.length === 0) {
         return (
             <div className="cart">
-                <h1 className="cart__title">CART</h1>
-                <p className="cart__subtitle">購入</p>
                 <div className="cart__empty">
                     <h2>買い物かごに商品が入っていません。</h2>
                     <p>現在、買い物かごに商品が入っていません。<br />お買い物を続けるには下の 「お買い物を続ける」 をクリックしてください。</p>
                 </div>
+                <ActionButton  onClick={handleContinueShopping}>
+                    買い物を続ける
+                </ActionButton>
+                <RecentlyViewed />
             </div>
         );
     }
 
     return (
         <div className="cart">
-            <h1 className="cart__title">CART</h1>
-            <p className="cart__subtitle">購入</p>
+            <PageTitle
+            title="CART"
+            subtitle="購入"
+            />
             <div className="cart__content">
                 <div className="cart__items">
                     {cartItems.map(item => (

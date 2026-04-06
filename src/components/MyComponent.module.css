@@ -458,6 +458,8 @@ i {
 .title {
   color: var(--color-black);
   font-size: 48px;
+  font-weight: 900;
+  font-family: Nunito, sans-serif;
   letter-spacing: 0.5rem;
   margin-right: -0.5rem;
 }
@@ -466,6 +468,9 @@ i {
   color: var(--color-green);
   font-size: 20px;
   font-weight: 700;
+  font-family:
+    Zen Maru Gothic,
+    sans-serif;
   letter-spacing: 0.25rem;
   margin-right: -0.25rem;
 }
