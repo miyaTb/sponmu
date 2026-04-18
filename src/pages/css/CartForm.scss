@@ -352,6 +352,11 @@ $sponmu-gray: #808080;
     padding: 0;
     background-color: #fff;
     overflow: hidden;
+
+    // フィールド内に配置する場合は fieldset 側の余白を除去
+    .cart-form__field & {
+      margin-bottom: 0;
+    }
   }
 
   &__payment-toggle {
@@ -360,7 +365,7 @@ $sponmu-gray: #808080;
     height: 40px;
     cursor: pointer;
     background-color: #fff;
-    color: var(--color-green);
+    color: var(--color-black);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -401,6 +406,11 @@ $sponmu-gray: #808080;
     flex-direction: column;
     gap: 0.75rem;
 
+    &--scroll {
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
     .cart-form__radio {
       font-weight: normal;
       display: flex;
@@ -413,6 +423,10 @@ $sponmu-gray: #808080;
         height: 18px;
       }
     }
+  }
+
+  &__toggle-placeholder {
+    color: #808080;
   }
 }
 

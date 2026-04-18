@@ -315,13 +315,16 @@ button {
   background-color: #fff;
   overflow: hidden;
 }
+.cart-form__field .cart-form__payment-fieldset {
+  margin-bottom: 0;
+}
 .cart-form__payment-toggle {
   width: 696px;
   padding: 1rem 1.5rem;
   height: 40px;
   cursor: pointer;
   background-color: #fff;
-  color: var(--color-green);
+  color: var(--color-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -357,6 +360,10 @@ button {
   flex-direction: column;
   gap: 0.75rem;
 }
+.cart-form__payment-options--scroll {
+  max-height: 240px;
+  overflow-y: auto;
+}
 .cart-form__payment-options .cart-form__radio {
   font-weight: normal;
   display: flex;
@@ -367,4 +374,7 @@ button {
   margin-right: 0.75rem;
   width: 18px;
   height: 18px;
+}
+.cart-form__toggle-placeholder {
+  color: #808080;
 }/*# sourceMappingURL=CartForm.css.map */
