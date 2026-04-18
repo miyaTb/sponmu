@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import recipesData from '../data/productBox.json'; // JSONファイルを直接インポート
+import recipesData from '../data/productBox.json'; 
 import ProductDetail from '../components/ProductDetail';
-import yogurtImage from '../assets/yogurt.png';
-import yogurtSubImage1 from '../assets/yogurtsub1.png';
-import yogurtSubImage2 from '../assets/yogurtsub1.png';
+import yogult from '../assets/yogult.png';
+import yogultSubImage1 from '../assets/yogultSub1.png';
+import yogultSubImage2 from '../assets/yogultSub1.png';
 import cheeseImage from '../assets/cheese.png';
-import milkImage from '../assets/milk.png';
+import milk from '../assets/milk.png';
 import './css/Product.css'
 
 const imageMap = {
-  'yogurt.png': yogurtImage,
-  'milk.png': milkImage,
+  'yogurt.png': yogult,
+  'milk.png': milk,
   'cheese_dip.jpg': cheeseImage,
 };
 
 const subImageMap ={
-  'yogurtsub1.png': yogurtSubImage1,
-  'yogurt2.png': yogurtSubImage2,
+  'yogultSub1.png': yogultSubImage1,
+  'yogultSub2.png': yogultSubImage2,
 }
 
 function Product() {

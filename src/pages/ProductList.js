@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import productData from '../data/productBox.json';
 import ItemBox from '../components/ItemBox';
-import yogurtImage from '../assets/yogurt.png';
+import yogult from '../assets/yogult.png';
 import cheeseImage from '../assets/cheese.png';
-import milkImage from '../assets/milk.png';
+import milk from '../assets/milk.png';
 import './css/Product.css'
 
 // 1. 画像ファイル名とインポートした変数のマッピング
 const imageMap = {
-  'yogurt.png': yogurtImage,
+  'yogult.png': yogult,
   'cheese_dip.jpg': cheeseImage,
-  'cheese_toast.jpg': milkImage,
+  'cheese_toast.jpg': milk,
 };
 
 function ProductListPage() {

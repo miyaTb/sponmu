@@ -1,13 +1,15 @@
 // hooks/product.js
 import { useState } from 'react';
-import yogurtImage from '../assets/yogurt.png';
-import yogurt2Image from '../assets/yogurtsub1.png';
+import yogult from '../assets/yogult.png';
+import yogurt1Image from '../assets/yogultSub1.png';
+import yogurt2Image from '../assets/yogultSub2.png';
 import cheeseImage from '../assets/cheese.png';
 import milkImage from '../assets/milk.png';
 import productData from '../data/productBox.json';
 
 const imageMap = {
-  yogurtImage,
+  yogult,
+  yogurt1Image,
   yogurt2Image,
   cheeseImage,
   milkImage
@@ -15,7 +17,7 @@ const imageMap = {
 
 const initialProducts = productData.map(product => ({
   ...product,
-  imageUrl: imageMap[product.imageUrl] || yogurtImage
+  imageUrl: imageMap[product.imageUrl] || yogult
 }));
 
 function useProducts() {
