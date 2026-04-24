@@ -19,15 +19,13 @@ button {
 }
 
 .not-found {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   max-width: 1280px;
-  margin: 0 auto;
-  gap: 4rem;
-
+  margin: 0 auto 280px;
+  gap: 100px;
   &__left {
     flex: 1;
     display: flex;
@@ -36,30 +34,33 @@ button {
   }
 
   &__image {
-    width: 100%;
-    max-width: 384px;
-    height: auto;
+    width:384px;
+    height: 168px;
     object-fit: contain;
   }
 
   &__right {
     flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
   }
 
   &__title {
     color: var(--color-green);
     font-size: 72px;
     font-weight: 900;
+    margin-bottom: 24px;
   }
-
+  &__subtitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
   &__message {
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 18px;
     color: #333;
     font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 60px;
+
   }
 
   &__actions {
