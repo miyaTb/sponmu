@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import PageTitle from '../components/PageTitle';
+
 import './css/recipe.css'
 
 function RecipeLayout() {

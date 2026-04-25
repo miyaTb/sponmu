@@ -3,10 +3,6 @@
     margin: 0;
     padding: 0;
 }
-a {
-    color: var(--color-black);
-    text-decoration: none;
-}
 img {
     width: 100%;
     height: auto;
@@ -23,9 +19,11 @@ span{
 /* footer */
 footer {
     height: 100%;
-    color: var(--color-white);
     padding: 100px 80px 20px;
     position: relative;
+}
+footer span{
+    color: var(--color-white);
 }
 .footer-wave-image {
     width: 100%; 

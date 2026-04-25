@@ -48,8 +48,10 @@ h3{
     color: var(--color-green);
 }
 .ItemBox img {
-    height: 270px;
-    object-fit: cover;
+     height: 100%;
+    width: 100%;
+  object-fit: cover;
+  object-position: center 65%;
 }
 .ItemBox:hover {
     img {
@@ -196,6 +198,7 @@ h3{
   position: relative;
   margin-left: 40px;
   line-height: 1.4;
+  color: var(--color-green) ;
 }
 .FreeShipping a:first-of-type::before {
   content: "";
