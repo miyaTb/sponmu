@@ -19,14 +19,13 @@ button {
 }
 
 .not-found {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   max-width: 1280px;
-  margin: 0 auto;
-  gap: 4rem;
+  margin: 0 auto 280px;
+  gap: 100px;
 }
 .not-found__left {
   flex: 1;
@@ -35,28 +34,31 @@ button {
   justify-content: center;
 }
 .not-found__image {
-  width: 100%;
-  max-width: 384px;
-  height: auto;
+  width: 384px;
+  height: 168px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 .not-found__right {
   flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 .not-found__title {
   color: var(--color-green);
   font-size: 72px;
   font-weight: 900;
+  margin-bottom: 24px;
+}
+.not-found__subtitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
 }
 .not-found__message {
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 18px;
   color: #333;
   font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 60px;
 }
 .not-found__actions {
   display: flex;

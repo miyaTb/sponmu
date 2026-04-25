@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import recipesData from '../data/productBox.json'; // JSONファイルを直接インポート
+import recipesData from '../data/productBox.json'; 
 import ProductDetail from '../components/ProductDetail';
-import yogurtImage from '../assets/yogurt.png';
-import yogurtSubImage1 from '../assets/yogurtsub1.png';
-import yogurtSubImage2 from '../assets/yogurtsub1.png';
+import yogult from '../assets/yogult.png';
+import yogultSubImage1 from '../assets/yogultSub1.png';
+import yogultSubImage2 from '../assets/yogultSub1.png';
 import cheeseImage from '../assets/cheese.png';
-import milkImage from '../assets/milk.png';
+import milk from '../assets/milk.png';
 import './css/Product.css'
+import { useRecentlyViewed } from '../context/RecentlyViewedContext';
 
 const imageMap = {
-  'yogurt.png': yogurtImage,
-  'milk.png': milkImage,
+  'yogurt.png': yogult,
+  'milk.png': milk,
   'cheese_dip.jpg': cheeseImage,
 };
 
 const subImageMap ={
-  'yogurtsub1.png': yogurtSubImage1,
-  'yogurt2.png': yogurtSubImage2,
+  'yogultSub1.png': yogultSubImage1,
+  'yogultSub2.png': yogultSubImage2,
 }
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addViewedProduct } = useRecentlyViewed();
 
   useEffect(() => {
     // 取得したJSONデータにidを追加する処理
@@ -37,7 +39,10 @@ function Product() {
     // URLのidに一致する商品を見つける
     const foundProduct = productsWithId.find((p) => p.id === parseInt(id, 10));
     setProduct(foundProduct);
-  }, [id]); // idが変わったときに再実行
+    if (foundProduct) {
+      addViewedProduct(foundProduct.id);
+    }
+  }, [id, addViewedProduct]); // idが変わったときに再実行
 
   if (!product) {
     return <div>Loading...</div>;

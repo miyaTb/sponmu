@@ -81,7 +81,10 @@ const CartSummary = ({ total, onCheckout }) => (
     <div className="cart-summary">
         <div className="cart-summary__header">
             <p className="cart-summary__label">合計</p>
-            <h2 className="cart-summary__total">¥{total.toLocaleString()}（税込）</h2>
+            <div className="cart-summary__total-wrapper">
+                <h2 className="cart-summary__total">¥{total.toLocaleString()}</h2>
+                <h2 className="cart-summary__total-small">（税込）</h2>
+            </div>
         </div>
         <div className="cart-summary__center">
             <p className="cart-summary__note">送料は地域により異なります</p>
