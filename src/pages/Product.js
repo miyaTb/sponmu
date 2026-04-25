@@ -2,23 +2,49 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import recipesData from '../data/productBox.json'; 
 import ProductDetail from '../components/ProductDetail';
-import yogult from '../assets/yogult.png';
-import yogultSubImage1 from '../assets/yogultSub1.png';
-import yogultSubImage2 from '../assets/yogultSub1.png';
-import cheeseImage from '../assets/cheese.png';
+import milkYogurt from '../assets/milkYogurt.png';
+import milkYogurtSub1 from '../assets/milkYogurtSub1.png';
+import milkYogurtSub2 from '../assets/milkYogurtSub2.png';
+import saltedCheese from '../assets/saltedCheese.png';
+import saltedCheeseSub1 from '../assets/saltedCheeseSub1.png';
+import saltedCheeseSub2 from '../assets/saltedCheeseSub2.png';
+import yogurtSpread from '../assets/yogurtSpread.png';
+import yogurtSpreadSub1 from '../assets/yogurtSpreadSub1.png';
+import yogurtSpreadSub2 from '../assets/yogurtSpreadSub2.png';
+import happyYogurt from '../assets/happyYogurt.png';
+import happyYogurtSub1 from '../assets/happyYogurtSub1.png';
+import happyYogurtSub2 from '../assets/happyYogurtSub2.png';
+import creamCheese from '../assets/creamCheese.png';
+import creamCheeseSub1 from '../assets/creamCheeseSub1.png';
+import creamCheeseSub2 from '../assets/creamCheeseSub2.png';
 import milk from '../assets/milk.png';
+import milkSub1 from '../assets/milkSub1.png';
+import milkSub2 from '../assets/milkSub2.png';
 import './css/Product.css'
 import { useRecentlyViewed } from '../context/RecentlyViewedContext';
 
 const imageMap = {
-  'yogurt.png': yogult,
+  'milkYogurt.png': milkYogurt,
   'milk.png': milk,
-  'cheese_dip.jpg': cheeseImage,
+  'saltedCheese.png': saltedCheese,
+  'creamCheese.png' : creamCheese,
+  'happyYogurt.png' : happyYogurt,
+  'yogurtSpread.png' : yogurtSpread
 };
 
 const subImageMap ={
-  'yogultSub1.png': yogultSubImage1,
-  'yogultSub2.png': yogultSubImage2,
+  'milkYogurtSub1.png': milkYogurtSub1,
+  'milkYogurtSub2.png': milkYogurtSub2,
+  'saltedCheeseSub1.png':saltedCheeseSub1,
+  'saltedCheeseSub2.png':saltedCheeseSub2,
+  'milkSub1.png':milkSub1,
+  'milkSub2.png':milkSub2,
+  'creamCheeseSub1.png': creamCheeseSub1,
+  'creamCheeseSub2.png': creamCheeseSub2,
+  'happyYogurtSub1.png' : happyYogurtSub1,
+  'happyYogurtSub2.png' : happyYogurtSub2,
+  'yogurtSpreadSub1.png' : yogurtSpreadSub1,
+  'yogurtSpreadSub2.png' : yogurtSpreadSub2
 }
 
 function Product() {
