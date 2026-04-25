@@ -155,11 +155,12 @@ button {
 }
 
 .recently-viewed {
-  margin-top: 180px;
+  margin: 180px 0 295px;
 }
 .recently-viewed__title {
   font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 32px;
+  margin-bottom: 32px;
 }
 .recently-viewed__list {
   display: flex;
@@ -176,10 +177,10 @@ button {
 }
 .recently-viewed__image {
   width: 300px;
-  height: 257px;
+  height: 225px;
   background-color: #ccc;
   border-radius: 20px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 24px;
   border: 5px solid black;
   overflow: hidden;
 }
@@ -192,13 +193,14 @@ button {
 .recently-viewed__name {
   font-weight: bold;
   font-size: 20px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
 }
 .recently-viewed__price {
   color: var(--color-green);
   font-weight: bold;
   font-size: 20px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 .cart-summary {
@@ -223,7 +225,6 @@ button {
   font-weight: bold;
   margin: 0;
   letter-spacing: 0.2em;
-  height: 23px;
 }
 .cart-summary__total-small {
   display: flex;
@@ -236,7 +237,8 @@ button {
   text-align: center;
 }
 .cart-summary__note {
-  font-size: 0.875rem;
+  color: var(--color-gray);
+  font-size: 14px;
   margin-top: 20px;
   margin-bottom: 40px;
 }
