@@ -43,9 +43,7 @@ p,span,small{
 
 /* ItemBox */
 .ItemBox {
-  cursor: pointer;
-  padding: 30px;
-  height: 500px;
+  cursor: pointer;  
 }
 .ItemBox:hover, .RecipeBox:hover {
   transition: 0.3s;
@@ -66,8 +64,10 @@ p,span,small{
   overflow: hidden;
 }
 .itemImageWrapper img{
-    height: 270px;
+    height: 100%;
+    width: 100%;
   object-fit: cover;
+  object-position: center 65%;
 }
 .ItemBox h3 {
   display: inline-block;

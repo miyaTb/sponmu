@@ -2,16 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import productData from '../data/productBox.json';
 import ItemBox from '../components/ItemBox';
-import yogult from '../assets/yogult.png';
-import cheeseImage from '../assets/cheese.png';
+import milkYogurt from '../assets/milkYogurt.png';
+import saltedCheese from '../assets/saltedCheese.png';
+import yogurtSpread from '../assets/yogurtSpread.png';
+import happyYogurt from '../assets/happyYogurt.png';
+import creamCheese from '../assets/creamCheese.png';
 import milk from '../assets/milk.png';
-import './css/Product.css'
+import './css/Product.css';
 
 // 1. 画像ファイル名とインポートした変数のマッピング
 const imageMap = {
-  'yogult.png': yogult,
-  'cheese_dip.jpg': cheeseImage,
-  'cheese_toast.jpg': milk,
+  'milkYogurt.png': milkYogurt,
+  'milk.png': milk,
+  'saltedCheese.png': saltedCheese,
+  'creamCheese.png' : creamCheese,
+  'happyYogurt.png' : happyYogurt,
+  'yogurtSpread.png' : yogurtSpread
 };
 
 function ProductListPage() {
