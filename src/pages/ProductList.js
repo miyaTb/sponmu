@@ -8,7 +8,7 @@ import yogurtSpread from '../assets/yogurtSpread.png';
 import happyYogurt from '../assets/happyYogurt.png';
 import creamCheese from '../assets/creamCheese.png';
 import milk from '../assets/milk.png';
-import './css/Product.css'
+import './css/Product.css';
 
 // 1. 画像ファイル名とインポートした変数のマッピング
 const imageMap = {

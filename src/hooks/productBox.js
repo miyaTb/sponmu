@@ -19,6 +19,7 @@ import milk from '../assets/milk.png';
 import milkSub1 from '../assets/milkSub1.png';
 import milkSub2 from '../assets/milkSub2.png';
 import productData from '../data/productBox.json';
+import "../pages/css/Product.css";
 
 const imageMap = {
   milkYogurt,

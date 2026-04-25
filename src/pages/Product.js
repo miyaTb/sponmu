@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { useParams, Link } from 'react-router-dom';
 import recipesData from '../data/productBox.json'; 
 import ProductDetail from '../components/ProductDetail';
