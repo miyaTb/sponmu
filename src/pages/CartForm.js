@@ -275,14 +275,16 @@ const CartForm = () => {
                     <form className="cart-form__form" onSubmit={handleSubmit}>
                 <div className="cart-form__field">
                     <label className="cart-form__label-bold">メールアドレス</label>
-                    <input
-                        className={`cart-form__input ${errors.form.email ? 'cart-form__input--error' : ''}`}
-                        type="email"
-                        placeholder="example@example.com"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange('email', e.target.value)}
-                        onBlur={() => validateField('email')}
-                    />
+                    <div className="cart-form__input-wrapper">
+                        <input
+                            className={`cart-form__input ${errors.form.email ? 'cart-form__input--error' : ''}`}
+                            type="email"
+                            placeholder="example@example.com"
+                            value={formData.email}
+                            onChange={(e) => handleInputChange('email', e.target.value)}
+                            onBlur={() => validateField('email')}
+                        />
+                    </div>
                     {errors.form.email && <span className="cart-form__error">{errors.form.email}</span>}
                 </div>
 
@@ -291,26 +293,30 @@ const CartForm = () => {
 
                     <div className="cart-form__field">
                         <label className="cart-form__label">お名前</label>
-                        <input
-                            className={`cart-form__input ${errors.form.name ? 'cart-form__input--error' : ''}`}
-                            type="text"
-                            placeholder="姓名を入力してください"
-                            value={formData.name}
-                            onChange={(e) => handleInputChange('name', e.target.value)}
-                            onBlur={() => validateField('name')}
-                        />
+                        <div className="cart-form__input-wrapper">
+                            <input
+                                className={`cart-form__input ${errors.form.name ? 'cart-form__input--error' : ''}`}
+                                type="text"
+                                placeholder="姓名を入力してください"
+                                value={formData.name}
+                                onChange={(e) => handleInputChange('name', e.target.value)}
+                                onBlur={() => validateField('name')}
+                            />
+                        </div>
                         {errors.form.name && <span className="cart-form__error">{errors.form.name}</span>}
                     </div>
                     <div className="cart-form__field">
                         <label className="cart-form__label">フリガナ</label>
-                        <input
-                            className={`cart-form__input ${errors.form.furigana ? 'cart-form__input--error' : ''}`}
-                            type="text"
-                            placeholder="カタカナで入力してください"
-                            value={formData.furigana}
-                            onChange={(e) => handleInputChange('furigana', e.target.value)}
-                            onBlur={() => validateField('furigana')}
-                        />
+                        <div className="cart-form__input-wrapper">
+                            <input
+                                className={`cart-form__input ${errors.form.furigana ? 'cart-form__input--error' : ''}`}
+                                type="text"
+                                placeholder="カタカナで入力してください"
+                                value={formData.furigana}
+                                onChange={(e) => handleInputChange('furigana', e.target.value)}
+                                onBlur={() => validateField('furigana')}
+                            />
+                        </div>
                         {errors.form.furigana && <span className="cart-form__error">{errors.form.furigana}</span>}
                     </div>
 
@@ -365,38 +371,44 @@ const CartForm = () => {
 
                     <div className="cart-form__field">
                         <label className="cart-form__label">市区町村・番地</label>
-                        <input
-                            className={`cart-form__input ${errors.form.city ? 'cart-form__input--error' : ''}`}
-                            value={formData.city + formData.town}
-                            onChange={(e) => {
-                            handleInputChange('city', e.target.value);
-                            handleInputChange('town', '');
-                            }}
-                            onBlur={() => validateField('city')}
-                        />
+                        <div className="cart-form__input-wrapper">
+                            <input
+                                className={`cart-form__input ${errors.form.city ? 'cart-form__input--error' : ''}`}
+                                value={formData.city + formData.town}
+                                onChange={(e) => {
+                                handleInputChange('city', e.target.value);
+                                handleInputChange('town', '');
+                                }}
+                                onBlur={() => validateField('city')}
+                            />
+                        </div>
                         {errors.form.city && <span className="cart-form__error">{errors.form.city}</span>}
                     </div>
 
                     <div className="cart-form__field">
                         <label className="cart-form__label">建物名・部屋</label>
-                        <input
-                            className="cart-form__input"
-                            type="text"
-                            placeholder="マンション名・部屋番号"
-                            value={formData.building}
-                            onChange={(e) => handleInputChange('building', e.target.value)}
-                        />
+                        <div className="cart-form__input-wrapper">
+                            <input
+                                className="cart-form__input"
+                                type="text"
+                                placeholder="マンション名・部屋番号"
+                                value={formData.building}
+                                onChange={(e) => handleInputChange('building', e.target.value)}
+                            />
+                        </div>
                     </div>
                     <div className="cart-form__field">
                         <label className="cart-form__label">電話番号</label>
-                        <input
-                            className={`cart-form__input ${errors.form.phone ? 'cart-form__input--error' : ''}`}
-                            type="text"
-                            placeholder="090-1234-5678"
-                            value={formData.phone}
-                            onChange={(e) => handleInputChange('phone', e.target.value)}
-                            onBlur={() => validateField('phone')}
-                        />
+                        <div className="cart-form__input-wrapper">
+                            <input
+                                className={`cart-form__input ${errors.form.phone ? 'cart-form__input--error' : ''}`}
+                                type="text"
+                                placeholder="090-1234-5678"
+                                value={formData.phone}
+                                onChange={(e) => handleInputChange('phone', e.target.value)}
+                                onBlur={() => validateField('phone')}
+                            />
+                        </div>
                         {errors.form.phone && <span className="cart-form__error">{errors.form.phone}</span>}
                     </div>
                 </fieldset>
