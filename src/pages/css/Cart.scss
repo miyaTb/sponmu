@@ -180,11 +180,12 @@ button {
 }
 
 .recently-viewed {
-  margin-top: 180px;
+  margin: 180px 0 295px;
 
   &__title {
     font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 32px;
+    margin-bottom: 32px;
   }
 
   &__list {
@@ -205,10 +206,10 @@ button {
 
   &__image {
     width: 300px;
-    height: 257px;
+    height: 225px;
     background-color: #ccc;
     border-radius: 20px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 24px;
     border: 5px solid black;
     overflow: hidden;
 
@@ -222,14 +223,15 @@ button {
   &__name {
     font-weight: bold;
     font-size: 20px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
   }
 
   &__price {
     color: var(--color-green);
     font-weight: bold;
     font-size: 20px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -257,7 +259,6 @@ button {
     font-weight: bold;
     margin: 0;
     letter-spacing: 0.2em;
-    height: 23px;
   }
     &__total-small {
     display: flex;
@@ -272,7 +273,8 @@ button {
   }
 
   &__note {
-    font-size: 0.875rem;
+    color: var(--color-gray);
+    font-size: 14px;
     margin-top: 20px;
     margin-bottom: 40px;
   }
