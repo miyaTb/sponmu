@@ -43,3 +43,27 @@ header {
 li {
   list-style: none;
 }
+
+.header-cart-link {
+  position: relative;
+  display: block;
+}
+
+.header-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  border: 2px solid black;
+}
